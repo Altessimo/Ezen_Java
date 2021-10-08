@@ -1,0 +1,38 @@
+package Day08;
+
+public class DmbCellPhone extends CellPhone {
+	// extends : 연장하다 / 상속 1개
+		// 핸드폰 기본 기능 → CellPhone 상속
+		// 1. 필드
+		int channel;
+		// 2. 생성자
+		public DmbCellPhone(String model, String color, int channel) {
+			// this : 현재 클래스 내 맴버
+			// this.model = model; // 부모 클래스 내 맴버 사용
+			// this.color = color; // 부모 클래스 내 맴버 사용
+			// this.channel = channel; // 본인 클래스 내 맴버 사용
+			
+			// 부모 클래스가 생성자 있을때 → super() 키워드를 이용한 부모 클래스 생성자 호출
+			super(model, color); // super() : 부모 클래스 내 생성자 호출
+			this.channel = channel;
+		}
+		// 3. 메소드
+		void turnOnDmb() {
+			System.out.println("채널 " + channel + "번 DMB 방송 수신을 시작합니다.");
+		}
+		void changeChannelDmb(int channel) {
+			this.channel = channel;
+			// this.channel : 파랑색 → 현재 클래스 내 맴버
+			// channel : 빨강색 → 메소드에 외부로부터 들어온 변수[인수]
+			System.out.println("채널 " + channel + "번으로 바꿉니다.");
+		}
+		void turnOffDmb() {
+			System.out.println("DMB 방송 수신을 멈춥니다.");
+			
+			// 오버라이딩[부모 클래스 내 메소드 재 정으] : 자동완성
+			@Override // 재정의 → 코드변경 // @ : 어노테이션
+			void powerOn() {
+			// super.powerOn(); // 부모 매소드 호출
+			System.out.println("@전원 메소드 재정의 : DMB폰 켭니다.");
+			}
+		}

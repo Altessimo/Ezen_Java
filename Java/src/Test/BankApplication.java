@@ -45,7 +45,8 @@ public class BankApplication {
 		for(int i=0; i<accountArray.length; i++) {
 			if(accountArray[i] == null) { // i번쨰 인덱스가 비어있으면
 				accountArray[i] = account; // i번째 인덱스의 객체넣기
-				System.out.println("결과 : 계좌가 생성되었습니다"); break;
+				System.out.println("결과 : 계좌가 생성되었습니다");
+				break;
 			}
 		}
 	}

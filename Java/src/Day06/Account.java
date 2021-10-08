@@ -8,8 +8,9 @@ public class Account { // 계좌설계
 	private String ano; // 계좌번호
 	private String owner; // 계좌주
 	private int balance; // 계좌 예금액
+	
 // 2. 생성자
-	// 자동완성 : 마우스 오른쪽 클릭 → 
+	// 자동완성 : 마우스 오른쪽 클릭 → source
 	public Account(String ano, String owner, int balance) {
 		this.ano = ano;
 		this.owner = owner;

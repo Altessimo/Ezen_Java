@@ -34,8 +34,8 @@ public class Day05_3_Board {
  * >> 내용 : 안녕하세요. 자바 입니다.
  */
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
 		String[][] boards = new String[100][5]; // 게시물 100개를 지정할 수 있는 배열 선언(게시물당 5열)
+		Scanner scanner = new Scanner(System.in);
 		
 		// 1. 무한루프
 		while(true) {
@@ -65,7 +65,7 @@ public class Day05_3_Board {
 				String date = dateFormat.format(now); // 현재 날짜
 				
 				// 조회수
-					// String count = "1";
+				String count = "1"; // 카운트
 				
 				// 모든 변수를 빈공간 배열에 저장
 				for(int i=0; i<boards.length; i++) {
