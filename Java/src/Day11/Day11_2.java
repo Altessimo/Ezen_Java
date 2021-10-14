@@ -47,7 +47,7 @@ public static void main(String[] args) {
 	Member3 original2 = new Member3("홍길동",25, new int[] {90,90}, new Car("소나타"));
 	
 	// 2. 깊은 복제
-	Member3 cloned = original2.getMember3();
+	Member3 cloned2 = original2.getMember3();
 	cloned2.scpres[0] = 100;
 	cloned2.car.model="그랜저";
 	
