@@ -3,7 +3,7 @@ package Day04;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Day04_Q {
+public class Day04_7_로또판별기 {
 /*
  * 1. 로또 판별기
  * 	[조건1] : 1~45 사이의 수를 5개 입력받아 배열에 저장 // 사용자 6개 입력하고 
