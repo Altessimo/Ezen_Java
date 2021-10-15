@@ -65,7 +65,7 @@ public class Day11_5 {
 	                }
 	             }
 	             
-	             // 수정할 도서번호 [ 인덱스 ]  
+	             // 수정할 도서번호 [ 인덱스 ]  e
 	             System.out.println("수정 할 도서번호 : "); 
 
 	             int count3 = System.in.read(b);
