@@ -35,30 +35,56 @@
 		.nextInt(숫자)+1 : 1~숫자 까지의 난수 생성 
 		
 	5. Arrays : 배열관련 메소드 제공 클래스
-		.sort( 배열명 ) : 해당 배열을 오름차순 
-		.sort( 배열명, Collections.reverseOrder() ) : 내림차순 
-		
-	6. Date
+		1. Arrays.copyOf( 원본배열 , 복사길이 ) : 배열 복사 
+		2. Arrays.toString(배열) : 인덱스 순으로 데이터 출력
+		3. Arrays.copyOfRange(원본배열 , 시작인덱스 , 끝인덱스 )
+		4. System.arraycopy( 원본배열 , 시작인덱스 , 타켓배열 , 타겟지작인덱스 , 복사개수 )
+		5. Arrays.equals( 배열1 , 배열2 ) : 1차원 배열 비교 
+		6. Arrays.deepEquals( 배열1 , 배열2 ) : 2차원 배열 비교 
+		7. Arrays.sort( 배열명 ) : 해당 배열내 오름차순 정렬 
+		8. Arrays.sort( 배열명 , Collections.reverseOrder()  ) : 배열내 내림차순
+			* 주의 : 해당 배열이 기본자료형일 경우 불가
+		9.Arrays.binarySearch( 배열명 , 데이터 ) : 해당 데이터의 인덱스 번호
+			* 주의 : 오름차순(sort) 정렬후 사용
+		 
+	6. Date 클래스
 		Date 객체명 = new Date() : 현재 시스템내 날짜/시간 객체 
-		
 		*SimpleDateFormat : 날짜 형식 클래스 
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd");
+			SimpleDateFormat dateFormat = new SimpleDateFormat( "MM-dd" );
 			dateFormat.format(날짜객체);
+			
+	7. Calendar 클래스
+		* Calendar now = Calendar.getInstance(); 
+		* now.get( Calendar.필드명 ) : 해당필드의 정보 얻기
 		
-	7. Integer : 정수 클래스 
+	8. ZonedDateTime 클래스 : 협정시계
+		* ZonedDateTime.now( ZoneId.of(대륙명/도시명) );
+		
+	8. Integer : 정수 클래스 
 		Integer.parseInt("문자열")   : String -> int형
 		Integer.toString(정수) 		: int -> String  
 			* 숫자+"" 				: int+"" -> String
-		
-형식문자 [printf]  
-	%d : 정수 	%숫자d [숫자만큼 자릿수 포함]		%2d [정수가 2칸 차지] 
-	%f : 실수 	%.2f [소수점 2자리 표현]
+			
+	8. Math : 수학 클래스 
+		1. Math.abs()
+		2. Math.ceil()
+		3. Math.floor()
+		4. Math.max()
+		5. Math.min()
+		6. Math.ramdom() 
+		7. Math.rint() 
+		8. Math.round() : 소수점 첫째자리 반올림
+			* 소수점 셋째자리 반올림 [ 자릿수 올리고 반올림 자릿수 내림 ]
+			
+형식문자 [ printf , String.format()  ]  
+	%d : 정수 	%숫자d [ 숫자만큼 자릿수 포함 ]		%2d [ 정수가 2칸 차지 ]  %02d [ 공백 0 으로 사용 ]
+	%f : 실수 	%.2f [ 소수점 2자리 표현 ]
 	%c : 문자 
 	%s : 문자열 
 	
 제어문자 
 	\n : 줄바꿈 
-	\t : 들여쓰기 [5칸]
+	\t : 들여쓰기 [ 5칸 ]
 	\r : 앞칸으로 이동  
 	
 자료형 
@@ -66,7 +92,7 @@
 	char : 문자 2바이트 [유니코드]
 	byte : 정수 1바이트 
 	short : 정수 2바이트 
-	int : 정수 4바이트 [기본 정수 자료형] 
+	int : 정수 4바이트 [ 기본 정수 자료형 ] 
 	long : 정수 8바이트 
 	float : 실수 4바이트 [ 소수점 8자리 표현 ] 
 	double : 실수 8바이트 [ 소수점 18자리 표현 / 기본 실수 자료형 ] 
@@ -122,3 +148,18 @@
 오버로딩 : 동일한 이름 사용시
 	* 변수 , 객체X
 	* 생성자 , 메소드 [ 인수(매개변수) 타입,개수,순서 ]
+	
+스레드 : 코드를 순차적으로 실행
+멀티 스레드 [병렬작업]
+1. 단일 스레드 : main 스레드만 있을경우
+2.  스레드 : 1. Runnable 2. Thread
+	* run 메소드를 오버라이딩
+	* start 메소드를 정한 run 메소드 호출
+3. 동기화 : 여러 스레드가 동일한 메소드에 접근 할때 대기순서 매기기
+		* synchronized
+4. 스레드 메소드
+	1. Thread.sleep() : 일시정지
+	2. Thread.yield() : 스레드 정보
+	3. Thread.join() : 스레드 객체가 끝날때까지 
+	4. 스레드 객체.stop : 스레드 강제종료[]
+	
