@@ -14,7 +14,7 @@ public class Day15_9 {
 		treeSet.add(new Person("감자바", 25));
 		treeSet.add(new Person("박지원", 31));
 		// tree : 자동 정렬 → 겍체(객체 1, 객체 2, 객체 3)
-			// tree → compareTo → 나이정렬
+			// tree → compareTo(자동정렬) → 나이정렬
 		
 		// 3. 나이 기준으로 오름차순
 		Iterator<Person> inIterable = treeSet.iterator();
