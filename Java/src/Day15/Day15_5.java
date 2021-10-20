@@ -20,6 +20,7 @@ public class Day15_5 {
 	
 	public static void main(String[] args) {
 		// P.769 : Stack 클래스
+		
 		// 1. 스택 객체 생성
 		Stack<Coin> coinbox = new Stack<>();
 		
@@ -48,14 +49,13 @@ public class Day15_5 {
 		coinbox2.offer(new Coin(500));
 		coinbox2.offer(new Coin(10));
 		System.out.println(coinbox2);
+		
 		//3. 객체
 		System.out.println(coinbox2.poll());
 		
 		// 4.
 		while(!coinbox2.isEmpty()) {
 			System.out.println("제거 : " + coinbox2.poll());
-			
-			
 		}
 	}
 }
