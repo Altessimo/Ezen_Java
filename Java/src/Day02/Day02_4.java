@@ -46,6 +46,8 @@ public class Day02_4 {
 		// 4. 백원 권
 		System.out.println("백원 : " + (금액/100) + "개");
 		
+		
+		
 		//문제3 : 하나의 정수를 입력받아 7의 배수인지 출력[ true , false ]
 		System.out.println("문제3 정수 입력 : ");	int 문제3 = A.nextInt();
 		// 배수찾기
