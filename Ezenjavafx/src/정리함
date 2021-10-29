@@ -1,0 +1,16 @@
+2021. 10. 29.
+Database : 데이터 베이스[표(테이블) 만들기]
+서버 : 데이터를 가지고 있는 컴퓨터
+DB[데이터 테이블] ← DBMS[DB관리시스템] → DBA[DB관리자]
+				MYSQL
+설치 : 
+	1. MySQL Installer for Windows[MySql 서버와 관련 소프트웨어 제공]
+	- Windows (x86, 32-bit), MSI Installer	8.0.27	470.0M
+	- No thanks, just start my download.
+	
+	2. Connector/J[MySql과 Java 연결해주는 라이브러리]
+	- Platform Independent (Architecture Independent),
+		ZIP Archive	8.0.27	4.8M
+	- No thanks, just start my download.
+	
+	port 3307, 1234

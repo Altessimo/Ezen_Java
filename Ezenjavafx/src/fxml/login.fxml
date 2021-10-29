@@ -21,7 +21,7 @@
             </ImageView>
             <AnchorPane layoutX="34.0" layoutY="121.0" opacity="0.58" prefHeight="460.0" prefWidth="303.0" style="-fx-background-color: #ffff00; -fx-background-radius: 50;">
                <children>
-                  <TextField fx:id="txtid" layoutX="48.0" layoutY="91.0" onMouseClicked="#findid" prefHeight="42.0" prefWidth="203.0" promptText="User ID">
+                  <TextField fx:id="txtid" layoutX="48.0" layoutY="91.0" prefHeight="42.0" prefWidth="203.0" promptText="User ID">
                      <font>
                         <Font name="HYdnkM" size="11.0" />
                      </font>

@@ -1,8 +1,9 @@
-package controller;
+package Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import dao.MemberDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,22 +18,22 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 public class LoginController implements Initializable {
-										// ÃÊ±âÈ­ °ü·ÃµÈ ¸Ş¼Òµå Á¦°ø
-	// ÇöÀç Å¬·¡½º¸¦ °´Ã¼È­ [ Å¬·¡½º ÀÚÃ¼ÀÇ °´Ã¼ ] 
-		// 1. static º¯¼ö ¼±¾ğ 
+										// ì´ˆê¸°í™” ê´€ë ¨ëœ ë©”ì†Œë“œ ì œê³µ
+	// í˜„ì¬ í´ë˜ìŠ¤ë¥¼ ê°ì²´í™” [í´ë˜ìŠ¤ ìì²´ì˜ ê°ì²´]
+		// 1. static ë³€ìˆ˜ ì„ ì–¸ 
 	private static LoginController instance;
 	public LoginController() {
-		// 2. ÇöÀç Å¬·¡½ºÀÇ ¸Ş¸ğ¸® È£Ãâ = this
-		instance = this; // [ ÇöÀçÅ¬·¡½ºÀÇ ¸â¹ö Æ÷ÇÔ ]
+		// 2. í˜„ì¬ í´ë˜ìŠ¤ì˜ ë©”ëª¨ë¦¬ í˜¸ì¶œ = this
+		instance = this; // [í˜„ì¬í´ë˜ìŠ¤ì˜ ë©¤ë²„ í¬í•¨]
 	}
-		// 3. private instance¹İÈ¯
+		// 3. private instance ë°˜í™˜
 	public static LoginController getinstance() {
 		return instance;
 	}
-	// fxml ½ÇÇà½Ã ÃÊ±â°ª ¼³Á¤ ¸Ş¼Òµå 
+	// fxml ì‹¤í–‰ì‹œ ì´ˆê¸°ê°’ ì„¤ì • ë©”ì†Œë“œ
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		lblconfirm.setText(""); // °æ°í¸Ş½ÃÁö´Â °ø¹é ¼³Á¤
+		lblconfirm.setText(""); // ê²½ê³ ë©”ì‹œì§€ëŠ” ê³µë°± ì„¤ì •
 	}
 	
     @FXML
@@ -64,26 +65,26 @@ public class LoginController implements Initializable {
 
     @FXML
     void findid(MouseEvent event) {
-
+    	loadpage("findid");
     }
 
     @FXML
     void findpassword(MouseEvent event) {
-
+    	loadpage("findpassword");
     }
 
     @FXML
     void login(ActionEvent event) {
-    	
-    	// txt ÀÔ·ÂµÈ ¾ÆÀÌµğ¿Í ÆĞ½º¿öµå È¸¿ø°ú µ¿ÀÏÇÏ¸é ·Î±×ÀÎ¼º°ø 
-    	if( txtid.getText().equals("admin") 
-    			&& txtpassword.getText().equals("1234") ) {
-    		// ¾ÆÀÌµğ¿Í ÆĞ½º¿öµå°¡ µ¿ÀÏÇÏ¸é ·Î±×ÀÎ ¼º°ø 
-    		lblconfirm.setText(" ·Î±×ÀÎ ¼º°ø ");
+    	// 
+    	// txt ì…ë ¥ëœ ì•„ì´ë””ì™€ íŒ¨ìŠ¤ì›Œë“œ íšŒì›ê³¼ ë™ì¼í•˜ë©´ ë¡œê·¸ì¸ì„±ê³µ
+    	boolean result = MemberDao.getMemberDao().login(txtid.getText(), txtpassword.getText());
+    	if(result) {
+    		// ì•„ì´ë””ì™€ íŒ¨ìŠ¤ì›Œë“œê°€ ë™ì¼í•˜ë©´ ë¡œê·¸ì¸ ì„±ê³µ
+    		lblconfirm.setText("ë¡œê·¸ì¸ ì„±ê³µ");
     	}else {
-    		lblconfirm.setText(" ·Î±×ÀÎ ½ÇÆĞ : µ¿ÀÏÇÑ È¸¿øÁ¤º¸°¡ ¾ø½À´Ï´Ù");
+    		lblconfirm.setText("ë¡œê·¸ì¸ ì‹¤íŒ¨ : ë™ì¼í•œ íšŒì›ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤");
     	}
-    	// ¾Æ´Ï¸é ½ÇÆĞ 
+    	// ì•„ë‹ˆë©´ ì‹¤íŒ¨ 
     	
     }
 
@@ -93,7 +94,7 @@ public class LoginController implements Initializable {
     	
     	loadpage("signup");
     }
-    // boarderpane center º¯°æ 
+    // boarderpane center ë³€ê²½
     public void loadpage( String page ) {
     	try {
     		Parent parent = FXMLLoader.load(
@@ -102,9 +103,4 @@ public class LoginController implements Initializable {
     	}
     	catch (Exception e) {}
     }
-    
-    
-    
-	
-
 }

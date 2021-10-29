@@ -1,44 +1,24 @@
-package Controller;
+package controller;
 
-import Controller.LoginController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class SignupController {
 
-	  @FXML
-	    private Label btnback;
+    @FXML
+    private Label btnback;
 
-	    @FXML
-	    private Label lblconfirm;
+    @FXML
+    private AnchorPane signuppane;
 
-	    @FXML
-	    private AnchorPane signuppane;
-
-	    @FXML
-	    private TextField txtemail;
-
-	    @FXML
-	    private TextField txtid;
-
-	    @FXML
-	    private TextField txtname;
-
-	    @FXML
-	    private PasswordField txtpassword;
-
-	    @FXML
-	    private PasswordField txtpasswordconfirm;
-
-	    @FXML
+    @FXML
     void back(MouseEvent event) {
-    	// ìƒˆë¡œìš´ ê°ì²´ ì„ ì–¸ì‹œì—ëŠ” ìƒˆë¡œìš´ ë©”ëª¨ë¦¬
-    	// LoginController loginController = new LoginController
-    		// ë™ì¼í•œ ë©”ëª¨ë¦¬ ì‚¬ìš©í•˜ê¸°
+    		// !! »õ·Î¿î °´Ã¼ ¼±¾ğ½Ã¿¡´Â »õ·Î¿î ¸Ş¸ğ¸®
+    	// LoginController loginController = new LoginController();
+    		
+    		// µ¿ÀÏÇÑ ¸Ş¸ğ¸® »ç¿ëÇÏ±â À§ÇØ¼­ this Å°¿öµå¸¦ »ç¿ëÇÑ °´Ã¼ È£Ãâ 
     	LoginController.getinstance().loadpage("login");
     }
 }
