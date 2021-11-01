@@ -4,12 +4,32 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MyinfoController">
    <children>
-      <TableView layoutX="416.0" layoutY="62.0" prefHeight="214.0" prefWidth="389.0">
+      <Label layoutX="68.0" layoutY="136.0" prefHeight="39.0" prefWidth="93.0" text="ID" />
+      <Button fx:id="btnupdate" layoutX="61.0" layoutY="287.0" mnemonicParsing="false" onAction="#update" prefHeight="60.0" prefWidth="212.0" style="-fx-background-color: #ffffff;" text="UPDATE">
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <Button fx:id="btndelete" layoutX="62.0" layoutY="356.0" mnemonicParsing="false" onAction="#delete" prefHeight="60.0" prefWidth="212.0" style="-fx-background-color: #ffffff;" text="DELETE">
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <Label fx:id="lblid" layoutX="161.0" layoutY="136.0" prefHeight="39.0" prefWidth="93.0" text="id" />
+      <Label layoutX="68.0" layoutY="211.0" prefHeight="39.0" prefWidth="93.0" text="Email" />
+      <Label fx:id="lblemail" layoutX="161.0" layoutY="211.0" prefHeight="39.0" prefWidth="93.0" text="email" />
+      <Label layoutX="68.0" layoutY="172.0" prefHeight="39.0" prefWidth="93.0" text="NAME" />
+      <Label fx:id="lblname" layoutX="161.0" layoutY="172.0" prefHeight="39.0" prefWidth="93.0" text="name" />
+      <Label layoutX="62.0" layoutY="37.0" prefHeight="43.0" prefWidth="201.0" text="My">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <TableView layoutX="406.0" layoutY="51.0" prefHeight="161.0" prefWidth="414.0">
         <columns>
           <TableColumn prefWidth="45.0" text="Num" />
           <TableColumn prefWidth="187.0" text="Table" />
@@ -17,23 +37,28 @@
             <TableColumn text="View" />
         </columns>
       </TableView>
-      <TableView layoutX="416.0" layoutY="317.0" prefHeight="197.0" prefWidth="389.0">
+      <Label layoutX="415.0" layoutY="26.0" prefHeight="14.0" prefWidth="100.0" text="- My community" />
+      <Label layoutX="416.0" layoutY="235.0" prefHeight="14.0" prefWidth="100.0" text="- My Product" />
+      <Label layoutX="61.0" layoutY="89.0" prefWidth="100.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="161.0" layoutY="135.0" startX="-100.0" />
+      <TableView layoutX="406.0" layoutY="261.0" prefHeight="161.0" prefWidth="414.0">
          <columns>
-            <TableColumn prefWidth="48.0" text="Num" />
-            <TableColumn prefWidth="93.0" text="Name" />
-            <TableColumn prefWidth="110.0" text="Brand" />
-            <TableColumn prefWidth="70.0" text="Category" />
-            <TableColumn prefWidth="67.0" text="Price" />
+            <TableColumn prefWidth="45.0" text="Num" />
+            <TableColumn prefWidth="187.0" text="Table" />
+            <TableColumn prefWidth="76.0" text="Date" />
+            <TableColumn text="View" />
          </columns>
       </TableView>
-      <Label layoutX="61.0" layoutY="157.0" prefHeight="39.0" prefWidth="93.0" text="ID" />
-      <Button layoutX="61.0" layoutY="317.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="212.0" style="-fx-background-color: #;" text="Up Date" />
-      <Button layoutX="62.0" layoutY="386.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="212.0" style="-fx-background-color: #;" />
-      <Label layoutX="61.0" layoutY="62.0" prefHeight="90.0" prefWidth="226.0" text="My Information" />
-      <Label layoutX="154.0" layoutY="157.0" prefHeight="39.0" prefWidth="93.0" text="id" />
-      <Label layoutX="61.0" layoutY="235.0" prefHeight="39.0" prefWidth="93.0" text="Email" />
-      <Label layoutX="154.0" layoutY="235.0" prefHeight="39.0" prefWidth="93.0" text="email" />
-      <Label layoutX="61.0" layoutY="196.0" prefHeight="39.0" prefWidth="93.0" text="NAME" />
-      <Label layoutX="154.0" layoutY="196.0" prefHeight="39.0" prefWidth="93.0" text="name" />
+      <Label layoutX="61.0" layoutY="80.0" prefHeight="43.0" prefWidth="201.0" text="Infomation">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="248.0" prefHeight="39.0" prefWidth="93.0" text="POINT" />
+      <Label fx:id="lblpoint" layoutX="159.0" layoutY="248.0" prefHeight="39.0" prefWidth="93.0" text="point" />
    </children>
 </AnchorPane>

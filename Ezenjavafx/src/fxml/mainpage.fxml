@@ -7,17 +7,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane fx:id="mainpageboardpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="mainpageboardpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainpageController">
    <left>
       <AnchorPane fx:id="lp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="btnhome" layoutX="16.0" layoutY="235.0" mnemonicParsing="false" onAction="#home" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="Home" />
-            <Button fx:id="btnnotice" layoutX="15.0" layoutY="293.0" mnemonicParsing="false" onAction="#notice" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="Notice" />
+            <Button fx:id="btncommunity" layoutX="15.0" layoutY="293.0" mnemonicParsing="false" onAction="#community" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="Community" />
             <Button fx:id="btnchatting" layoutX="15.0" layoutY="350.0" mnemonicParsing="false" onAction="#chatting" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="Chatting" />
             <Button fx:id="btnproduct" layoutX="15.0" layoutY="407.0" mnemonicParsing="false" onAction="#product" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="Product" />
             <Button fx:id="btnmyinfo" layoutX="15.0" layoutY="461.0" mnemonicParsing="false" onAction="#myinfo" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="My Info" />
-            <Button fx:id="btnlogout" layoutX="15.0" layoutY="518.0" mnemonicParsing="false" onAction="#logput" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="Logout" />
-            <Label layoutX="18.0" layoutY="156.0" prefHeight="34.0" prefWidth="167.0" text="Login" />
+            <Button fx:id="btnlogout" layoutX="15.0" layoutY="518.0" mnemonicParsing="false" onAction="#logout" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="Logout" />
+            <Label layoutX="18.0" layoutY="156.0" prefHeight="34.0" prefWidth="167.0" text="Welcome" />
             <Label fx:id="lbloginid" layoutX="16.0" layoutY="197.0" prefHeight="34.0" prefWidth="167.0" text="Login ID" />
             <ImageView fitHeight="47.0" fitWidth="56.0" layoutX="16.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -57,15 +57,4 @@
          </children>
       </AnchorPane>
    </left>
-   <center>
-      <AnchorPane fx:id="cp" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="446.0" fitWidth="871.0" layoutX="11.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@GettyImages1090127194.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </center>
 </BorderPane>

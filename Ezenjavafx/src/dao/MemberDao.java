@@ -145,16 +145,51 @@ public class MemberDao {
 		} else {
 			return null; // 검색 결과가 없으면 null 변환
 		}
-		} catch (Exception e) {
-			return null;
-		}
-		
+		} catch (Exception e) {}
+			return null; // DB 오류
 	}
 	
 	// 5. 회원수정 메소드
 	
 	
 	// 6. 회원 탈퇴 메소드
+	public boolean delete(String loginid) {
+		String sql = "delete from member where m_id=?";
+					// delete from 테이블명
+					// delete from 테이블명 where 조건
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, loginid);
+			preparedStatement.executeUpdate();
+			return true; // 탈퇴 성공시
+			
+		} catch (Exception e) { }
+			return false; // DB 오류
+	}
+	
+	// 7. 회원 정보 메소드[
+	public Member getmember(String loginid) {
+		// 1. SQL 작성
+		String sql = "select*from member where m_id=?";
+		// 2. SQL 연결
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			// 3. SQL 설정
+			preparedStatement.setString(1, loginid);
+			// 4. SQL 실행
+			resultSet = preparedStatement.executeQuery();
+			// 5. SQL 결과
+			if(resultSet.next()) {
+				// 회원정보, 패스워드를 제외한 회원정보 변환
+				Member member = new Member(resultSet.getString(2), " ", resultSet.getString(4), resultSet.getString(5), resultSet.getInt(6));
+				return member; // 찾은 정보를 객체로 반환
+			} else {
+				return null; // 회원정보가 없을경우
+			}
+		} catch (Exception e) { }
+			return null; // DB 오류
+	}
+	
 	
 	
 }

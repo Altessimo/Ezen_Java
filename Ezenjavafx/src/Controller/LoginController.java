@@ -90,8 +90,10 @@ public class LoginController implements Initializable {
     	if(result) {
     		// 아이디와 패스워드가 동일하면 로그인 성공
     		lblconfirm.setText("로그인 성공");
+    		
     		// 기존 스테이지 종료
     		btnlogin.getScene().getWindow().hide(); // 해당 버튼의 씬 윈도우 숨기기
+    		
     		// 메인 스테이지
     		Stage stage = new Stage();
     		try {
@@ -102,7 +104,7 @@ public class LoginController implements Initializable {
     			stage.setTitle("Autumn"); // 스테이지 이름
     				Image image = new Image("file:D:/2021.09.28/Ezenjavafx/src/fxml/pngwing.png");
     				stage.getIcons().add(image);
-    				stage.show();
+    			stage.show();
     		} catch (Exception e) {
 			}
     	}else {

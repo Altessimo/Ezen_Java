@@ -19,7 +19,7 @@ public class Appstart extends Application {
 			stage.setTitle("Autumn"); // 스테이지 이름
 			// 스테이지 아이콘 
 				// 1. 이미지 불러오기
-				Image image = new Image("file:D:/2021.09.28/Ezenjavafx/src/fxml/pngwing.png");
+				Image image = new Image("file:C:/Users/505/git/Ezen_Java/Ezenjavafx/src/fxml");
 				stage.getIcons().add(image);
 		stage.show();
 		
