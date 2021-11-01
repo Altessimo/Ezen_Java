@@ -9,13 +9,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
 										// 초기화 관련된 메소드 제공
@@ -30,6 +33,12 @@ public class LoginController implements Initializable {
 	public static LoginController getinstance() {
 		return instance;
 	}
+	// 4. 로그인 시 입력된 아이디 변환
+	public String getid() {
+		return txtid.getText();
+	}
+	
+	
 	// fxml 실행시 초기값 설정 메소드
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -81,6 +90,21 @@ public class LoginController implements Initializable {
     	if(result) {
     		// 아이디와 패스워드가 동일하면 로그인 성공
     		lblconfirm.setText("로그인 성공");
+    		// 기존 스테이지 종료
+    		btnlogin.getScene().getWindow().hide(); // 해당 버튼의 씬 윈도우 숨기기
+    		// 메인 스테이지
+    		Stage stage = new Stage();
+    		try {
+    			Parent parent = FXMLLoader.load(getClass().getResource("/fxml/mainpage.fxml"));
+    			Scene scene = new Scene(parent);
+    			stage.setScene(scene);
+    			stage.setResizable(false); // 스테이지 크기 고정
+    			stage.setTitle("Autumn"); // 스테이지 이름
+    				Image image = new Image("file:D:/2021.09.28/Ezenjavafx/src/fxml/pngwing.png");
+    				stage.getIcons().add(image);
+    				stage.show();
+    		} catch (Exception e) {
+			}
     	}else {
     		lblconfirm.setText("로그인 실패 : 동일한 회원정보가 없습니다");
     	}

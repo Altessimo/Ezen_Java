@@ -13,7 +13,7 @@ public class Appstart extends Application {
 	public void start(Stage stage) throws Exception {
 		
 		Parent parent = FXMLLoader.load( getClass().getResource("/fxml/login.fxml"));
-		Scene scene = new Scene( parent );
+		Scene scene = new Scene(parent);
 		stage.setScene(scene);
 			stage.setResizable(false); // 스테이지 크기 고정
 			stage.setTitle("Autumn"); // 스테이지 이름
@@ -28,14 +28,3 @@ public class Appstart extends Application {
 		launch(args);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-

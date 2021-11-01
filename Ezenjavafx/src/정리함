@@ -1,16 +1,70 @@
 2021. 10. 29.
-Database : 데이터 베이스[표(테이블) 만들기]
-서버 : 데이터를 가지고 있는 컴퓨터
-DB[데이터 테이블] ← DBMS[DB관리시스템] → DBA[DB관리자]
+● Database : 데이터 베이스[표(테이블) 만들기]
+● 서버 : 데이터를 가지고 있는 컴퓨터
+● DB[데이터 테이블] ← DBMS[DB관리시스템] → DBA[DB관리자]
 				MYSQL
-설치 : 
+● 설치 : 
 	1. MySQL Installer for Windows[MySql 서버와 관련 소프트웨어 제공]
 	- Windows (x86, 32-bit), MSI Installer	8.0.27	470.0M
 	- No thanks, just start my download.
 	
 	2. Connector/J[MySql과 Java 연결해주는 라이브러리]
-	- Platform Independent (Architecture Independent),
-		ZIP Archive	8.0.27	4.8M
+	- Platform Independent (Architecture Independent), ZIP Archive	8.0.27	4.8M
 	- No thanks, just start my download.
 	
-	port 3307, 1234
+● port Number : 3307, Pw : 1234
+
+● DB - Java 연동
+
+● 주요 인터페이스
+1. Connection DB 연결 인터페이스
+			- DriverManager SQL 연결 조작 인터페이스
+2. PrepareStatement SQL 연결 인터페이스
+	- ?에 데이터 넣기
+3. ResultSet SQL 결과(처리) 인터페이스
+			.next : 쿼리 결과의 다음 레코드 가져오기
+			.getString(자료형) : 현재 레코드의 필드 가져오기
+			
+2021. 11. 01.
+● JDVC
+
+● Database
+	데이터 집합 → 테이블 관리
+				// 표 만들기 같은것
+● 용어
+표 = table
+세로(열) = 필드, 속성
+가로(행) = 레코드, 튜플
+
+● SQL : 데이터 베이스 관리 언어
+		// 암기 문법이 생김
+/* 암기 시작
+● DDL(데이터 베이스 정의어)
+● DML(조작어)
+	1. 삽입 : insert info 테이블명(필드1, 필드2) values(값1, 값2)
+			- 모든 필드 삽입 : insert into 테이블 명 values(값1, 값2, 값3)
+			- 모든 필드 삽입 시 : 필드명 생략
+	2. 검색 : select 필드명 from 테이블명 where 조건
+			- 모든 필드 검색 : select*from 테이블 명 where 조건
+			- 모든 필드 검색 시 : *(와일드 카드)
+	3. 삭제 : delete
+			
+	4. 수정(업데이트) : update
+	키워드
+	1. where : 조건
+		- and : 이면서, 면서, 이고, 모두, 그리고
+		- or : 이거나, 거나, 하나라도
+● DCL(제어어)
+
+*/ 암기 끝
+
+CRUD[생성, 로드(읽기), 수정, 삭제]
+MVC[Model(클래스, 도메인 → DB), View(FXML), Controller]
+	1. Model : 데이터/DB 데이터 ←
+	2. View : 프론트엔드[씬빌더(fxml), html]
+	3. Controller : java 파일(클래스)
+		삽입 : View → dto → Controller → dto → Model → dto → DB
+		조회 : View ← dto ← Controller ← dto ← Model ← dto ← DB
+DTO : 데이터 이동 객체[Data Transfer Object]
+
+DAO : 데이터 베이스 기능 조작 객체[Data Access Object]

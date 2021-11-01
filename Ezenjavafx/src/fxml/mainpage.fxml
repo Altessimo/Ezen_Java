@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="mainpageboardpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane fx:id="lp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnhome" layoutX="16.0" layoutY="235.0" mnemonicParsing="false" onAction="#home" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="Home" />
+            <Button fx:id="btnnotice" layoutX="15.0" layoutY="293.0" mnemonicParsing="false" onAction="#notice" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="Notice" />
+            <Button fx:id="btnchatting" layoutX="15.0" layoutY="350.0" mnemonicParsing="false" onAction="#chatting" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="Chatting" />
+            <Button fx:id="btnproduct" layoutX="15.0" layoutY="407.0" mnemonicParsing="false" onAction="#product" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="Product" />
+            <Button fx:id="btnmyinfo" layoutX="15.0" layoutY="461.0" mnemonicParsing="false" onAction="#myinfo" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="My Info" />
+            <Button fx:id="btnlogout" layoutX="15.0" layoutY="518.0" mnemonicParsing="false" onAction="#logput" prefHeight="48.0" prefWidth="169.0" style="-fx-background-color: #ffffff;" text="Logout" />
+            <Label layoutX="18.0" layoutY="156.0" prefHeight="34.0" prefWidth="167.0" text="Login" />
+            <Label fx:id="lbloginid" layoutX="16.0" layoutY="197.0" prefHeight="34.0" prefWidth="167.0" text="Login ID" />
+            <ImageView fitHeight="47.0" fitWidth="56.0" layoutX="16.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@home.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="42.0" fitWidth="64.0" layoutX="19.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@premiumiconloudspaker5909943.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="42.0" fitWidth="55.0" layoutX="20.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Untitled03icoicons.com75120.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="22.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pngaaa.com-5867083.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="48.0" layoutX="21.0" layoutY="466.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@information_info_1565.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="59.0" layoutX="25.0" layoutY="522.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Logout_icon-icons.com_52027.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="138.0" fitWidth="145.0" layoutX="34.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Community.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane fx:id="cp" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="446.0" fitWidth="871.0" layoutX="11.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@GettyImages1090127194.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
