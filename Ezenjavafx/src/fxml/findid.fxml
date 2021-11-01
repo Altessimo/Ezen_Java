@@ -11,12 +11,12 @@
 
 <AnchorPane fx:id="findidpane" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignupController">
    <children>
-      <ImageView fitHeight="581.0" fitWidth="1033.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="656.0" fitWidth="1060.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Desktop/KakaoTalk_20211028_221632680_01.png" />
+            <Image url="@../../../../../Desktop/thumb_l_7B46E9C49594CDBD993E8B53804246F9.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="681.0" layoutY="100.0" prefHeight="460.0" prefWidth="303.0" style="-fx-background-color: #e76110; -fx-background-radius: 50;">
+      <AnchorPane layoutX="39.0" layoutY="163.0" prefHeight="460.0" prefWidth="303.0" style="-fx-background-color: #e76110; -fx-background-radius: 50;">
          <children>
             <TextField fx:id="txtname" layoutX="46.0" layoutY="167.0" prefHeight="42.0" prefWidth="203.0" promptText="User Name">
                <font>
@@ -48,11 +48,6 @@
                   <Font name="Californian FB Bold" size="11.0" />
                </font>
             </Label>
-            <ImageView fitHeight="108.0" fitWidth="134.0" layoutX="94.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../Desktop/KakaoTalk_20211028_221632680_02.png" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
    </children>
