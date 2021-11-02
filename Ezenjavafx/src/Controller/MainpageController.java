@@ -95,7 +95,7 @@ public class MainpageController implements Initializable{
 	    }
 	    @FXML
 	    void community(ActionEvent event) {
-	    	loadpage("community");
+	    	loadpage("boardlist");
 	    }
 	    
 	    @FXML // 로그아웃 메소드(현재 스테이지 닫고 → login 스테이지 열기
