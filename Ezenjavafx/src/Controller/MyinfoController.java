@@ -21,6 +21,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class MyinfoController implements Initializable{
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 	// 1. 로그인 된 아이디의 DB에서 회원 정보 찾기
@@ -84,9 +85,9 @@ public class MyinfoController implements Initializable{
 	    					Image image = new Image("file:C:/Users/505/git/Ezen_Java/Ezenjavafx/src/fxml");
 	    					stage.getIcons().add(image);
 	    			stage.show();
-	    		}catch (Exception e) { }
+	    		} catch (Exception e) { }
 	    	} else {
-	    		alert2.setHeaderText("DB 오류 : 관리자 에게 문의");
+	    		alert2.setHeaderText("DB 오류 : 관리자에게 문의");
 	    		alert2.setTitle("알림");
 	    		alert2.showAndWait();
 	    	}
@@ -95,6 +96,6 @@ public class MyinfoController implements Initializable{
 
 	    @FXML
 	    void update(ActionEvent event) {
-
+	    	MainpageController.getinstance().loadpage("myinfoupdate");
 	    }
 }

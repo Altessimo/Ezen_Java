@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import dao.MemberDao;
+import domain.Member;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -90,6 +91,7 @@ public class LoginController implements Initializable {
     	if(result) {
     		// 아이디와 패스워드가 동일하면 로그인 성공
     		lblconfirm.setText("로그인 성공");
+    		MemberDao.getMemberDao().pointupdate(txtid.getText(), 10);
     		
     		// 기존 스테이지 종료
     		btnlogin.getScene().getWindow().hide(); // 해당 버튼의 씬 윈도우 숨기기

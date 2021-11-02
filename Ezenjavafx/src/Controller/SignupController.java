@@ -69,7 +69,7 @@ public void initialize(URL arg0, ResourceBundle arg1) {
     	}
     	// 3. 패스워드 동일 체크
     	if(!txtpassword.getText().equals(txtpasswordconfirm.getText())){
-    		// ! : 부정 [ 반대 ]
+    		// ! : 부정 [반대]
     		lblconfirm.setText("비밀번호가 동일하지 않습니다.");
     		return; // 메소드 끝 
     	}
@@ -83,6 +83,8 @@ public void initialize(URL arg0, ResourceBundle arg1) {
     		lblconfirm.setText("이메일 형식으로 입력해 주세요."); return;
     		}
     	// 2. 중복체크
+    	boolean idcheck = MemberDao.getMemberDao().idcheck(txtid.getText());
+    	if(idcheck) {lblconfirm.setText("현재 사용중인 아이디 입니다"); return;}
     	
     	// 3. 객체화
     Member member = new Member(txtid.getText(), txtpassword.getText(),txtname.getText(), txtemail.getText());

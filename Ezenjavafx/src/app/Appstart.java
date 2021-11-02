@@ -5,9 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Appstart extends Application {
+	
+	
 	
 	@Override
 	public void start(Stage stage) throws Exception {
