@@ -80,7 +80,7 @@ public class MainpageController implements Initializable{
 	    	try {
 	    		Parent patent = FXMLLoader.load(getClass().getResource("/fxml/"+page+".fxml"));
 	    		mainpageboardpane.setCenter(patent);
-	    	}catch (Exception e) {
+	    	} catch (Exception e) {
 				
 			}
 	    }
@@ -98,8 +98,7 @@ public class MainpageController implements Initializable{
 	    	loadpage("boardlist");
 	    }
 	    
-	    @FXML // 로그아웃 메소드(현재 스테이지 닫고 → login 스테이지 열기
-	    
+	    @FXML // 로그아웃 메소드(현재 스테이지 닫고 → login 스테이지 열기   
 	    void logout(ActionEvent event) {
 	    	// 0. 메시지 창 띄우기 [Alert : 메시지 클래스]
 	    	Alert alert = new Alert(AlertType.CONFIRMATION); // 확인 취소 버튼

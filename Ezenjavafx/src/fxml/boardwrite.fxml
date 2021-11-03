@@ -8,12 +8,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="871.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="871.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.BoardwriteController">
    <children>
       <TextField fx:id="txttitle" layoutX="63.0" layoutY="86.0" prefHeight="55.0" prefWidth="725.0" promptText="제목을 입력해주세요." />
-      <TextArea fx:id="txtconts" layoutX="63.0" layoutY="150.0" prefHeight="200.0" prefWidth="725.0" promptText="내용을 입력해주세요." />
-      <Button fx:id="btnwrite" layoutX="63.0" layoutY="357.0" mnemonicParsing="false" onAction="#write" prefHeight="62.0" prefWidth="306.0" text="Write" />
+      <TextArea fx:id="txtcontents" layoutX="63.0" layoutY="150.0" prefHeight="200.0" prefWidth="725.0" promptText="내용을 입력해주세요." />
+      <Button fx:id="btnwrite" layoutX="63.0" layoutY="357.0" mnemonicParsing="false" onAction="#write" prefHeight="62.0" prefWidth="306.0" text="REGISTER" />
       <Button fx:id="btncancel" layoutX="482.0" layoutY="357.0" mnemonicParsing="false" onAction="#cancel" prefHeight="62.0" prefWidth="306.0" text="Cancel" />
       <Label contentDisplay="TOP" layoutX="63.0" layoutY="14.0" prefHeight="46.0" prefWidth="284.0" style="-fx-background-color: #ffffff;" text="Company Write">
          <font>

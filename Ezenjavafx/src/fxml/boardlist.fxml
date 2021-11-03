@@ -4,13 +4,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="Controller.BoardlistController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="871.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="871.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.BoardlistController">
    <children>
-      <TableView fx:id="boardlist" layoutX="70.0" layoutY="109.0" prefHeight="294.0" prefWidth="741.0">
+      <TableView fx:id="boardlist" layoutX="65.0" layoutY="122.0" prefHeight="294.0" prefWidth="741.0">
         <columns>
           <TableColumn prefWidth="75.0" text="No," />
           <TableColumn prefWidth="251.0" text="Title" />
@@ -19,7 +20,10 @@
             <TableColumn prefWidth="70.0" text="View" />
         </columns>
       </TableView>
-      <Button fx:id="btnwrier" blendMode="SRC_ATOP" layoutX="693.0" layoutY="63.0" mnemonicParsing="false" onAction="#wrier" prefHeight="38.0" prefWidth="118.0" text="Register" />
+      <Button fx:id="btnwrier" layoutX="645.0" layoutY="74.0" mnemonicParsing="false" onAction="#wrier" prefHeight="38.0" prefWidth="161.0" style="-fx-background-color: #FFFFFF;" text="Register">
+         <effect>
+            <DropShadow />
+         </effect></Button>
       <Label contentDisplay="TOP" layoutX="70.0" layoutY="14.0" prefHeight="68.0" prefWidth="251.0" style="-fx-background-color: #ffffff;" text="Company List">
          <font>
             <Font size="36.0" />

@@ -1,4 +1,4 @@
-2021. 10. 29.
+★☆★☆★☆ 2021. 10. 29. ★☆★☆★☆
 ● Database : 데이터 베이스[표(테이블) 만들기]
 ● 서버 : 데이터를 가지고 있는 컴퓨터
 ● DB[데이터 테이블] ← DBMS[DB관리시스템] → DBA[DB관리자]
@@ -21,11 +21,13 @@
 			- DriverManager SQL 연결 조작 인터페이스
 2. PrepareStatement SQL 연결 인터페이스
 	- ?에 데이터 넣기
+	- preparedStatement.executeQuery() : Select
+	- preparedStatement.executeUpdate(); : insert, update, delete
 3. ResultSet SQL 결과(처리) 인터페이스
 			.next : 쿼리 결과의 다음 레코드 가져오기
-			.getString(자료형) : 현재 레코드의 필드 가져오기
+			.get자료형(String) : 현재 레코드의 필드 가져오기
 			
-2021. 11. 01.
+★☆★☆★☆ 2021. 11. 01, 03 ★☆★☆★☆
 ● JDVC
 
 ● Database
@@ -33,13 +35,47 @@
 				// 표 만들기 같은것
 ● 용어
 표 = table
-세로(열) = 필드, 속성
-가로(행) = 레코드, 튜플
+세로(열) = 필드, 속성, 컬럼(Column)
+가로(행) = 레코드, 튜플, 로우(raw)
+
+create table javafx.board( 
+    b_no int auto_increment primary key ,
+    b_title varchar(100) not null ,
+    b_contents varchar(5000) not null ,
+    b_write varchar(15) not null ,
+    b_date timestamp default now() ,
+    b_view int default 0
+)
+
+● 자료형
+1. int : 정수형[4바이트]
+2. varchar : 문자형[가변길이]
+	// 자동으로 메모리 관리를 해줌 / 작은 데이터를 저장할때 필요한 만큼 사용
+3. timestamp : 날짜/시간
+
+● 속성
+1. primary key : 기본키
+2. auto_increment : 자동번호 주입
+3. not null : null값 제외[null일경우 오류발생]
+4. default : 자동 초기값 주입
+
+● 정수
+1. now() : 시스템 날짜/시간 함수
 
 ● SQL : 데이터 베이스 관리 언어
 		// 암기 문법이 생김
+		
 /* 암기 시작
 ● DDL(데이터 베이스 정의어)
+	create : 생성
+		DB : create database db명 // ex) create datavase test
+		Table : create table db명.테이블명(
+				필드명 자료형 속성, 필드명2 자료형 속성 )
+	drop : 삭제
+		
+	alter : 수정
+		
+
 ● DML(조작어)
 	1. 삽입 : insert info 테이블명(필드1, 필드2) values(값1, 값2)
 			- 모든 필드 삽입 : insert into 테이블 명 values(값1, 값2, 값3)
@@ -47,9 +83,9 @@
 	2. 검색 : select 필드명 from 테이블명 where 조건
 			- 모든 필드 검색 : select*from 테이블 명 where 조건
 			- 모든 필드 검색 시 : *(와일드 카드)
-	3. 삭제 : delete
+	3. 삭제 : delete 테이블명 
 			
-	4. 수정(업데이트) : update
+	4. 수정(업데이트) : update 테이블명 set 변경필드 = 값, 변경필드2 = 값2 wher 조건
 	키워드
 	1. where : 조건
 		- and : 이면서, 면서, 이고, 모두, 그리고
@@ -58,13 +94,49 @@
 
 */ 암기 끝
 
-CRUD[생성, 로드(읽기), 수정, 삭제]
-MVC[Model(클래스, 도메인 → DB), View(FXML), Controller]
+● CRUD[생성, 로드(읽기), 수정, 삭제]
+● MVC[Model(클래스, 도메인 → DB), View(FXML), Controller]
 	1. Model : 데이터/DB 데이터 ←
 	2. View : 프론트엔드[씬빌더(fxml), html]
 	3. Controller : java 파일(클래스)
 		삽입 : View → dto → Controller → dto → Model → dto → DB
 		조회 : View ← dto ← Controller ← dto ← Model ← dto ← DB
-DTO : 데이터 이동 객체[Data Transfer Object]
+● DTO : 데이터 이동 객체[Data Transfer Object]
 
-DAO : 데이터 베이스 기능 조작 객체[Data Access Object]
+● DAO : 데이터 베이스 기능 조작 객체[Data Access Object]
+
+★☆★☆★☆ 2021. 11. 03 ★☆★☆★☆
+테이블 뷰
+● ObservableList : javafx 사용하는 컬렉션프레임워크
+1. 테이블에 리스트 세팅 : Tableview에 리스트를 넣을때 setItems(ObservableList)
+2. 테이블 필드에 리스트 내 객체 세팅
+	1. 테이블 내 플드 가져오기
+		TableColumn 열이름 = 테이블뷰이름.getColumns().get(열번호);
+	2. 해당 열에 객체값 넣기
+		열이름.setCellValueFactory(new PropertyValueFactory<>("필드명"));
+		주의) 리스트 내 연결된 클래스 내 필드와 필드명과 동일
+		
+테이블 뷰 클릭한 아이템[객체]
+	1. 테이블뷰이름.getSelectionModel().getSelectedItem();
+	 - 테이블 뷰에서 클릭한 모델의 아이템을 빼옴[객체]
+	 
+● 화면전환
+1. 로드페이지 메소드
+public void loadpage(String page) {
+	try {
+	  Parent patent = FXMLLoader.load(getClass().getResource("/fxml/"+page+".fxml"));
+	  mainpageboardpane.setCenter(patent);
+	  }catch (Exception e) { }
+}
+2. 다른 페이지에서 로드 페이지 메소드 호출
+	1. 현재 클래스를 객체화
+	public static MainpageController instance; // 변수선언
+	    public MainpageController() {// 생성자
+	    	instance = this; // this : 현 클래스의 전체 메모리
+	    }
+	    public static MainpageController getinstance()  {// 인스턴스변환 메소드
+	    	return instance;
+	    }
+	    
+	 2. 다른 페이지에서 메소드 호출
+		1.  MainpageController.getinstance().loadpage("fxml 이름");

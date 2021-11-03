@@ -9,5 +9,5 @@ module Ezenjavafx {
 	opens app to javafx.graphics, javafx.fxml;
 	opens Controller to javafx.graphics, javafx.fxml;
 	opens dao to java.sql;
-	opens domain to mail, activation;
+	opens domain to mail, activation, javafx.base;
 }

@@ -1,0 +1,86 @@
+게시판 설계
+1. DB 설계
+	게시물 번호 int
+	게시물 제목 String
+	게시물 내용 String
+	게시물 작성자 String [로그인 된 ID]
+	게시물 작성일 String [자동 주입]
+	게시물 조회수 int
+
+2. DTO 설계
+3. DAO 설계
+-------------
+4. FXML 작성
+5. CONTROLLER 작성
+6. DAO 작성
+
+DDL : 정의어
+insert : 행 추가[레코드]
+
+	create table DB명.테이블명(
+	필드명 타입(int char) 속성,
+	필드명 타입 속성
+	필드명 타입 속성 // 마지막에는 , 안붙임
+)
+
+create table javafx.board( 
+    b_no int auto_increment primary key,
+    b_title varchar(100) not null,
+    b_contents varchar(5000) not null,
+    b_write varchar(15) not null,
+    b_date timestamp default now(),
+    b_view int default 0
+)
+
+create : 생성
+drop : 삭제 drop table javafx.board
+
+자료형
+int : 정수			4바이트
+varchar : 문자열		(바이트)
+timestamp : 날짜/시간	4바이트
+
+
+속성
+primary key : 기본키[PK] 
+auto_increment : 자동번호 주입
+not null : null값 제외
+default : 초기값
+
+함수
+now() : 현재 날짜/시간
+
+
+
+회원			게시판			댓글
+회원 번호			게시물 번호		댓글 번호
+회원 아이디 1		게시물 제목		댓글 내용
+회원 비밀번호		게시물 내용		댓글 작성자
+			회원번호
+회원 이름			(FK)게시물 작성자 1	댓글 작성일
+회원 이메일		게시물 작성일		게시물 번호 1
+회원 포인트		게시물 조회수
+1		:	M	1	:	M
+
+회원번호(PK) → 회원번호(FK)
+		게시물 작성자(PK) → 게시물 번호(FK)
+
+PK : 식별 가능한 키[식별 필드 : 중복, Null X]
+	주민등록번호, 사번, 학번, 카드번호, 사업장번호, 주소 등
+	다른 테이블과 연결시 사용되는 식별키[대부분 1]
+// 테이블 연결 할때 식별, 중복 X
+
+FK : PK와 연결된 필드[중복 O]
+	외래키
+	다른 테이블의 PK와 연결된 필드[대부분 M]
+
+oder by : 정렬
+	order by 필드명 asc 
+	oder by 필드명 desc 내림차순
+"select * from board order by b_no dasc";
+
+작성자==로그인ID 동일하면 삭제처리
+
+댓글번호[PK] int auto
+
+DB → DB

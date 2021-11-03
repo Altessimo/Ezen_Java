@@ -12,9 +12,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
-public class MyinfoupdateController implements Initializable {@Override
-public void initialize(URL arg0, ResourceBundle arg1) {
+public class MyinfoupdateController implements Initializable {
+	
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
 	String loginid = MainpageController.getinstance().getloginid();
 	Member member =  MemberDao.getMemberDao().getmember(loginid);
 	lblid.setText(member.getM_id());
@@ -35,11 +39,11 @@ public void initialize(URL arg0, ResourceBundle arg1) {
 	@FXML
 	private Label lblpoint;
 
-	@FXML
-	private Label txtemail;
+    @FXML
+    private TextField txtemail;
 
-	@FXML
-	private Label txtname;
+    @FXML
+    private TextField txtname;
 
 	@FXML
 	void cancel(ActionEvent event) {

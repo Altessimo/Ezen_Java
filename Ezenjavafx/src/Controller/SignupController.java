@@ -51,8 +51,6 @@ public void initialize(URL arg0, ResourceBundle arg1) {
     @FXML
     private PasswordField txtpasswordconfirm;
     
-    
-
     @FXML
     void signup(ActionEvent event) {
     	// 0.컨트롤 호출시 => fx:id 호출 [ 객체 ] 

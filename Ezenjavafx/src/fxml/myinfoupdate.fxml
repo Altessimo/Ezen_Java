@@ -21,7 +21,6 @@
          </effect></Button>
       <Label fx:id="lblid" layoutX="398.0" layoutY="132.0" prefHeight="39.0" prefWidth="210.0" text="id" />
       <Label layoutX="294.0" layoutY="207.0" prefHeight="39.0" prefWidth="93.0" text="Email" />
-      <Label fx:id="txtemail" layoutX="398.0" layoutY="207.0" prefHeight="39.0" prefWidth="210.0" />
       <Label layoutX="294.0" layoutY="168.0" prefHeight="39.0" prefWidth="93.0" text="NAME" />
       <Label layoutX="62.0" layoutY="37.0" prefHeight="43.0" prefWidth="201.0" text="My">
          <font>
