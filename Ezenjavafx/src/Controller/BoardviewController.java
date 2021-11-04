@@ -36,7 +36,7 @@ public class BoardviewController implements Initializable {
 		txttile.setText(board.getB_title());
 		txtcontents.setText(board.getB_contents());
 		lblwriter.setText("작성자 : " + board.getB_write());
-		lbldate.setText("작성일 : " + board.getB_date().split(" ")[0]);
+		lbldate.setText("작성일 : " + board.getB_date().split(" ")[0]); // 0 : 날짜 1 : 시간
 		lblview.setText("조회수 : " + board.getB_view());
 		
 		if(!MainpageController.getinstance().getloginid().equals(board.getB_write())) {
@@ -124,6 +124,7 @@ public class BoardviewController implements Initializable {
     @FXML
     void replywrite(ActionEvent event) {
     	Reply reply = new Reply(txtreply.getText(), MainpageController.getinstance().getloginid(), board.getB_no());
+    	// 댓글처리
     	boolean result = BoardDao.getboardDao().replywrite(reply);
     			if(result) {
     				Alert alert = new Alert(AlertType.INFORMATION);
@@ -137,7 +138,7 @@ public class BoardviewController implements Initializable {
     			}
     }
     
-    boolean upcheck = true;
+    boolean upcheck = true; // 업데이트 버튼 스위치 변수
     @FXML
     void update(ActionEvent event) {
     	Alert alert = new Alert(AlertType.INFORMATION);
@@ -146,21 +147,18 @@ public class BoardviewController implements Initializable {
     	alert.setHeaderText("내용 수정 후 다시 버튼 클릭시 수정완료 됩니다");
     	alert.showAndWait();
     	
-    	txttile.setEditable(true);
-    	txtcontents.setEditable(true);
-    	
-    	
-    	
-    	
+    	txttile.setEditable(true); // 수정가능
+    	txtcontents.setEditable(true); // 수정가능
     	upcheck=false;
-    	} else {
+    	}
+    	else {
     		BoardDao.getboardDao().update(board.getB_no(), txttile.getText(), txtcontents.getText());
     		alert.setHeaderText("게시물이 수정 되었습니다.");
     		alert.showAndWait();
     		
     		upcheck=true;
-    		txttile.setEditable(false);
-    		txtcontents.setEditable(false);
+    		txttile.setEditable(false); // 수정 불가능
+    		txtcontents.setEditable(false); // 수정 불가능
     	}
     }
 }
