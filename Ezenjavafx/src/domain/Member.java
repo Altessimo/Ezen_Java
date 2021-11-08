@@ -39,7 +39,7 @@ public class Member {
 			this.m_enail = m_enail;
 			this.m_point = 1000;
 		}
-		// 4. 
+		// 4. 회원 수정시 사용되는 생성자
 		public Member(String m_name, String m_enail) {
 			this.m_name = m_name;
 			this.m_enail = m_enail;

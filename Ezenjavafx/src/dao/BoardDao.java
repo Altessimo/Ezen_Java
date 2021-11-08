@@ -133,10 +133,36 @@ public class BoardDao {
 		} catch (Exception e) { }
 		return replys;
 	}
-
-	
-	
+	// 9. 로그인 된 회원의 게시물 출력
+		public ObservableList<Board> myboardlist(String id){
+		// 0. 리스트 선언
+			ObservableList<Board> boards = FXCollections.observableArrayList(); // 모든 게시물을 저장
+			// 1. 조건 없이 모두 가져오기
+			String sql = "select * from board where b_write=? order by b_no desc"; // 정렬 [ DESC : 내림차순 ASC : 오름차순 ] 
+			try {
+				preparedStatement=connection.prepareStatement(sql);
+				preparedStatement.setString(1, id);
+				resultSet=preparedStatement.executeQuery();
+				// 2. 검색된[쿼리] 레코드의 하나씩 객체화
+				while(resultSet.next()) {
+					// 쿼리결과내 레코드가 없을때 까지 반복하면서 객체화
+					Board board = new Board(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
+							resultSet.getString(4), resultSet.getString(5), resultSet.getInt(6));
+				// 객체를 리스트에 담기
+					boards.add(board);
+				}
+				return boards;
+			} catch (Exception e) { } return boards;
+	}
+	// 10. 게시물 수 반환
+	public int boardcount() {
+		String sql="select count(*) from board";
+		try {
+			preparedStatement=connection.prepareStatement(sql);
+			resultSet=preparedStatement.executeQuery();
+			if(resultSet.next()) {
+				return resultSet.getInt(1);
+			}
+			} catch (Exception e) { } return 0;
+		}
 }
-	
-	
-	

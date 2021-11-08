@@ -84,3 +84,16 @@ oder by : 정렬
 댓글번호[PK] int auto
 
 DB → DB
+
+
+2021. 11. 04.
+[회원들이 등록한 제품]
+p_no 			제품번호 auto pk
+p_name 			제품명
+p_img 			제품이미지				이미지경로
+p_contents 		제품설명
+p_category 		제품카테고리[뷴류용]
+p_price 		제품가격
+p_activation 	제춤상태
+p_date 			제품등록날짜
+m_no 			회원번호 fk
