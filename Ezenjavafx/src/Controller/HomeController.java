@@ -7,17 +7,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import javax.swing.text.PlainDocument;
+
 import dao.BoardDao;
 import dao.MemberDao;
 import dao.ProductDao;
 import domain.Product;
 import domain.ProductDate;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Label;
@@ -107,7 +112,43 @@ public class HomeController implements Initializable {
 	/*
 	 * 
 	 */
+	
+	// 막대차트 // 중복이 있을 경우에는 1번째 값으로 들어옴
+	XYChart.Series series2 = new XYChart.Series<>(); // 1. 계열생성
+	// 3. 계열에 값 넣기
+	HashMap<String, Integer> hashMap = ProductDao.getProductDao().productcategorylist();
+	// Map 컬렉션<key, value>
+	String maxcategorykey=" ";
+	int max = 0;
+	for(String key : hashMap.keyset()) {
+		if(hashMap.get(key)>max) {
+			max = hashMap.get(key);
+			maxcategorykey=key;
+		}
+		XYChart.Data data = new XYChart.Data(key, hashMap.get(key));
+		series2.getData().add(data);
+		
+	}
+	// 4. 차트에 계열 넣기
+	bc.getDate().add(series2);
+	lblcategory.setText(maxcategorykey);
+	
+	// 원형 차트[중복제거 미완성]
+	ObservableList<Product> products = ProductDao.getProductDao().productlist();
+	for(Product product : product) {
+	observablelist.add(new PieChart.Data(product.getActivation(),1));
+	}
+	pc.setData(ObservableList);
 }
+	@FXML
+	private PieChart pc;
+
+	@FXML
+	private Label lblcategory;
+	
+	@FXML
+	private BarChart bc;
+
 	@FXML
 	private LineChart lc;
 	

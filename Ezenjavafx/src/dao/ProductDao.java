@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import domain.Product;
 import domain.ProductDate;
@@ -166,5 +167,20 @@ public class ProductDao {
 		} catch (Exception e) { } return productDates;
 	}
 	
-	// 9. 
+	// 9. 카테고리 별 제품수 반환
+	public HashMap<String, Integer> productcategorylist(){
+		HashMap<String, Integer> hashMap=new HashMap<>();
+		String sql = "select p_category, count(*)" + "from product" + "group by p_category";
+		try {
+			preparedStatement=connection.prepareStatement(sql);
+			resultSet=preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				// 검색된 레코드를 map 컬렉션에 넣기
+				// [key : 카테고리, value : 개수]
+				hashMap.put(resultSet.getString(1), resultSet.getInt(2));
+			}
+			return hashMap;
+		}catch (Exception e) { } return hashMap;
+	}
+	// 10. 
 }

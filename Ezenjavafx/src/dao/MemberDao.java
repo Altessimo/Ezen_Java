@@ -128,14 +128,14 @@ public class MemberDao {
 	}
 	
 	// 4. 패스워드 찾기 메소드
-	public String findpassword(String name, String email) {
+	public String findpassword(String id, String email) {
 		// 1. SQL 저장
 		String sql = "select = m_password from member where id=? and m_email=?";
 		// 2. 
 		try {
 		preparedStatement = connection.prepareStatement(sql);
 		// 3. 
-		preparedStatement.setString(1, name);
+		preparedStatement.setString(1, id);
 		preparedStatement.setString(2, email);
 		// 4. 
 		resultSet=preparedStatement.executeQuery();
