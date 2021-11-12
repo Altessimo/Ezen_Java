@@ -1,0 +1,34 @@
+2021. 11. 12. Html 시작
+[프론트 엔드 Front : 사용자 화면 입장]
+웹 사이트 → 웹 문서
+HTML : Hypertext Markup Language : 문서 작성
+CSS : Cascading Style Sheets : 문서 효과
+
+[백엔드 Backend : 기능 로직]
+JAVA : 
+JSP : 
+SPRING : 
+
+이클립스 엔터프라이즈(2번째꺼) : 웹 개발 툴
+Apache Tomcat : 프론트 엔드 파일, 백엔드 파일, 이미지 등
+다운 방법 :
+1. (프론트엔드+백엔드 : 작성 툴) 
+2. (웹 문서를 가지고 있는 서버 프로그램) Tomcat 9 Software Downloads - 32-bit/64-bit Windows Service Installer
+리눅스 서버
+HTTP Post
+HyperText Transfer Protocol : 웹 문서 교환 규약
+TCP : 두 컴퓨터 간의 연결 지향 통신을 위한 전송 계층
+
+msql : DB서버 : 데이터 저장소
+서버 : 네트워크를 통해 클라이언트에게 정보[웹문서]를 제공해주는 컴퓨터
+DB Port : 3306, 3307
+
+마크업 : <>
+1. 주석 : <!-- 주석내용 -->
+2. <HTML> 웹 문서 </HTML>
+3.
+
+인코딩 타입
+1. EUC-KR : 한글,
+2. UTF-8 : 한글, 
+3. CP949 : 
