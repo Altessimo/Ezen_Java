@@ -194,6 +194,4 @@ form 태그
 	
 [div VS span]
 	1. div : 블록(한 줄 차지)
-		ex) <div> ~ </div>
 	2. span : 인 라인(줄 안에 포함)
-		ex) 
