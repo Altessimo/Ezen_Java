@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h3> 회원가입 </h3>
+	
+	<form>
+		ID : <input type="text">
+		<br>  Name : <input type="text">
+		<br> Password : <input type="password">
+		<br> Password Confirm : <input type="password">
+		<br> Phone number : <input type="text" placeholder="010-123-4567">
+		<br> E-Mail : <input type="text"> @
+		<select>
+		<option> 직접입력 </option>
+		<option> naver.com </option>
+		<option> daum.net </option>
+		<option> gmail.con </option>
+		</select>
+		<br> 문자수신 여부 : <input type="radio" name=msg checked="checked"> 네
+		<input type="radio" name="msg"> 아니요
+		<br> 가입경로 : 
+		<input type="checkbox" name="list1"> 친구소개
+		<input type="checkbox" name="list2"> 인터넷 검색
+		<input type="checkbox" name="list3"> 블로그
+		<input type="checkbox" name="list4"> 기타
+		<br>
+		<input type="submit" value="회원가입">
+		
+		<h3> 답변 글쓰기 </h3>
+		Name : <input type="text" value="홍길동" disabled="disabled">
+		<br> 제목 : <input type="text" value="Re : ">
+		<br> <textarea rows="8" cols="80"> </textarea>
+		<br> <input type="submit" value="전송">
+	</form>
+</body>
+</html>

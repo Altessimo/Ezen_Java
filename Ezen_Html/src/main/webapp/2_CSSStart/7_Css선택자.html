@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<style type="text/css">
+	
+	* {color: blue; margin: 10px; pading: 10px;} /* 모든 대상 : 글자색, 바깥여백, 안쪽여백 */
+	p {color: green;} /* P 태그 */
+	h3 {color: black;}  /* H3 태그 */
+	h4, h5 {color: orange;} /* 복수 선택자 : , 로 구분 */
+	#p1 {color: orange;} /* id 선택자 */
+	#p2 {color: olive;}
+	.c1 {background-color: gray;} /* Class 선택자 */
+	#p1 span {background-color: orange;} /* 자식 선택자(선택자 안에 선택자) : 띄어쓰기로 구분 */
+	
+	</style>
+</head>
+
+<body>
+	
+	<h3> 요리 </h3>
+	<p id="p1"> 음식을 가공하는 행위 자체를 의미한다. 크게 나누어 지역별로, 시대별로 그 종류를 구분할 수 있다.
+		<span> 문단 안에 문단</span>
+	</p>
+	<p id="p2"> 음식을 가공하는 행위 자체를 의미한다. 크게 나누어 지역별로, 시대별로 그 종류를 구분할 수 있다. </p>
+	<p class="c1"> 음식을 가공하는 행위 자체를 의미한다. 크게 나누어 지역별로, 시대별로 그 종류를 구분할 수 있다. </p>
+	<p class="c1"> 음식을 가공하는 행위 자체를 의미한다. 크게 나누어 지역별로, 시대별로 그 종류를 구분할 수 있다. </p>
+	
+	<h4> 요리의 레시피 </h4>
+	<h5> 요리의 레시피 2 </h5>
+	
+</body>
+</html>

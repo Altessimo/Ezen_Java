@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Foam Tag</title>
+</head>
+<body>
+
+	<h1> 폼 양식 : 사용자가 키보드로 데이터 입력하거나 마우스 선택 할 수 있는 서식 </h1>
+	
+	<form action="0.HTML.html">
+	Name : <input type="text" value="홍길동" readonly="readonly"> <!-- 테그명 속성명 = 값 --> <!-- 입력 박스 -->
+	<!-- readonly : 수정 금지 -->
+	ID : <input type="text" placeholder="아이디 입력" autofocus="autofocus">
+	Rank : <input type="text" value="Normal" disabled="disabled">
+	<br> Password : <input type="password"> <!-- 비밀번호 박스 -->
+	<br> <input type="radio" name=email checked="checked"> Yes
+	<input type="radio" name=email> No
+	<!-- name이 동일 할 경우 그룹(1개의 버튼만 선택 가능) -->
+	
+	<br>
+	<input type="checkbox" name="item1" checked="checked"> News
+	<input type="checkbox" name="item2"> Drama
+	<!-- name 동일한 경우에도 복수 선택 -->
+	<input type="checkbox" name="item3"> Spot
+	<br>
+	E-Mail : <input type="text"> @
+	<select>
+	<option> 직접 입력 </option>
+	<option> naver.com </option>
+	<option> gmail.com </option>
+	</select>
+	<br> 자기소개 <textarea rows="6" cols="50"></textarea> <!-- row : 행, 문자수 cols : 열 문자수 -->
+	
+	<br>
+	<input type="file">
+	<br> <input type="button" value="Button"> <!-- 폼 이벤트 -->
+	<input type="submit" value="Save"> <!-- 폼 저장(전송 action ="전송경로")  -->
+	<input type="reset" value="Rewrite"> <!-- 폼 초기화 -->
+	</form>
+	
+</body>
+</html>

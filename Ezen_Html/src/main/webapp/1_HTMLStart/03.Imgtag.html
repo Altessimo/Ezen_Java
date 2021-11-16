@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title> 3. Image Tag </title>
+</head>
+<body>
+
+<h1> Img src = "이미지 파일경로.확장자명" </h1>
+<p> % : 문서 사이즈 백분율[자동크기]
+<p> px : 모니터 사이즈의 상대크기 [기본값] [픽셀]
+<p> 이미지 경로
+	<P> 절대 경로[모든경로] : D:\2021.11.12\Ezen_Java\Front\src\main\webapp\3_Img\Totoro.jpg
+	<p> 상대 경로 : 
+		<p> / : 루트
+		<p> ./ : 현재 경로
+		<p> ../ : 현재 폴더의 상단 폴더
+		
+<h1> 이미지 태그 </h1>
+<Img src="Totoro.jpg" title="이웃집 토토로">
+<!-- 태그명 속성명 width="원본사이즈" -->
+<img alt="" src="Totoro.jpg" width="300">
+<img alt="" src="Totoro.jpg" width="150" height="150"> <br>
+<img alt="" src="Totoro.jpg" width="300px;"> <br>
+<img alt="" src="Totoro.jpg" width="50%"> <br>
+<p> 절대경로 [X] </p>
+<img alt="" src="D:/2021.11.12/Ezen_Java/Front/src/main/webapp/3_Img/Totoro.jpg"> <br>
+<img alt="" src="http://localhost:8081/Front/3_Img/Totoro.jpg">
+<p> 상대경로 1 </p>
+<!-- 상대경로 -->
+<img alt="" src="Totoro.jpg"> <br>
+<p> 상대경로 2 [X] </p>
+<!-- 상대경로 -->
+<img alt="" src="../Webapp/Totoro.jpg"> <br>
+<p> 상대경로 3 : 상위 폴더로 이동 </p>
+<!-- 상대경로 -->
+<img src="../Totoro.jpg"> <!-- ../ : 현재폴더 위로 이동 -->
+<p> 상대경로 4 : 하위 폴더로 이동</p> <br>
+<img src="img/Totoro.jpg">
+
+</body>
+</html>
