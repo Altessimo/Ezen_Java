@@ -145,7 +145,7 @@ public class Day14_4_회원제List {
 							} catch (Exception e) {
 								
 							}
-						}0
+						}
 						else if(ch2==3) {
 							// 1. 리스트에서 객체 삭제
 							users.remove(temp);

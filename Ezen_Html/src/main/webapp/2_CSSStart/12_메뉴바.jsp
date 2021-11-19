@@ -34,14 +34,11 @@
 </head>
 <body>
 	<ul id="menuul"> <!-- ul(unorder list) : 순서(번호) 없는 목록 -->
-		<li class="menuul"> <a href="#"> 소개 </a></li>
-		<li class="menuul"> <a href="#"> 고객센터 </a></li>
+		<li class="menuul"> <a href="12_제품소개.jsp"> 소개 </a></li>
+		<li class="menuul"> <a href="12_고객센터.jsp"> 고객센터 </a></li>
 		<li class="menuul"> <a href="12_로그인.jsp"> 로그인 </a></li>
-		<li class="menuul"> <a href="#"> 회원가입 </a></li>
-		<li class="menuul"> <a href="#"> 찾아 오시는 길 </a></li>
-		
-		
-		
+		<li class="menuul"> <a href="11_중간체크4.html"> 회원가입 </a></li>
+		<li class="menuul"> <a href="12_찾아오시는길.jsp"> 찾아오시는 길 </a></li>
 	</ul>
 </body>
 </html>
