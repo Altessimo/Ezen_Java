@@ -8,7 +8,7 @@ public class Board {
 	String title;
 	String contents;
 	String writer;
-	Date Date;
+	String date;
 	int count;
 	
 	// 2. »ı¼ºÀÚ

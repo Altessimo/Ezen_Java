@@ -7,11 +7,13 @@
 <title>Insert title here</title>
 <style type="text/css">
 	*{padding: 0; margin: 0;}
+	header{height: 150px;}
+	.box{width: 1100px; margin: 0 auto;}
 	li{list-style-type: none;}
 	#logo{float: left; margin: 45px 0 0 60px;}
-	#menus{float: right; text-align: right; margin-right: 45px; padding: 45px;}
+	#menus{float: right; text-align: right; margin-right: 45px;}
 	#menus li{display: inline;}
-	#main_menu{margin:30px 0 0 10px; font-family: "±Ã¼­"; font-family: bold; font-size: 20px;}
+	#main_menu li{margin: 50px 0 0 80px; font-family: "±Ã¼­"; font-weight: bold; font-size: 20px;}
 	#top_main li {margin: 30px 0 0 10px;}
 	#top_menu{margin: 25px 0 35px 0;}
 	
@@ -19,24 +21,26 @@
 </head>
 <body>
 	<header>
-		<div id="logo">
-			<img alt="" src="Img/logo.png">
-		</div>
-		
-		<div id="menus">
-			<ul id="top_menu">
-				<li> ±èÁö¿µ(jykim)´Ô </li> <li> | </li>
-				<li> ·Î±×¾Æ¿ô </li> <li> | </li>
-				<li> Á¤º¸¼öÁ¤ </li> <li> | </li>
-			</ul>
+		<div class="box">
+			<div id="logo">
+				<img alt="" src="Img/logo.png">
+			</div>
 			
+			<div id="menus">
+				<ul id="top_menu">
+					<li> ±èÁö¿µ(jykim)´Ô </li> <li> | </li>
+					<li> ·Î±×¾Æ¿ô </li> <li> | </li>
+					<li> Á¤º¸¼öÁ¤ </li> <li> | </li>
+				</ul>
+				
 				<ul id="main_menu">
 					<li> Home </li>
 					<li> Ãâ¼®ºÎ </li>
 					<li> ÀÛÇ°°¶·¯¸® </li>
 					<li> °Ô½ÃÆÇ </li>
 				</ul>
-				</div>
+			</div>
+		</div>
 	</header>
 </body>
 </html>

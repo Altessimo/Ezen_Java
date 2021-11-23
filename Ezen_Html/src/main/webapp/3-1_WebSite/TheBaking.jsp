@@ -5,31 +5,12 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<style type="text/css">
-	*{border: solid 1px red;}
-	header{height: 150px;}
-	.box{width: 1100px; margin: 0 auto;}
-	aside{width: 200px; float: left; height: 300px;}
-	#main{width: 840px; float: right; height: 300px;}
-	footer{clear: both; height: 150px;}
-</style>
-
 </head>
 <body>
 	<%@ include file="1_Header.jsp" %>
 	<%@ include file="2_MainImg.jsp" %>
-	<div class="box">
-		<aside>
-			사이드 바
-		</aside>
-		<section id="main">
-			메인 섹션
-		</section>
-	</div>
-	<footer>
-	<div class="box">
-		 푸터
-	</div>
-	</footer>
+	<!-- 박스 : 사이즈를 잡아주는 역할 메인이미지에는 필요 없음-->
+	<%@ include file="4_Main.jsp" %>
+	<%@ include file="5_Footer.jsp" %>
 </body>
 </html>

@@ -12,6 +12,8 @@ public class Day05_4_Board_Class {
 		// 2. 작성한 클래스로 배열 선언
 		Board[] boards = new Board[100];
 		
+		Scanner scanner = new Scanner(System.in);
+		
 		// 1. 무한루프
 				while(true) {
 					System.out.println("\n\n - 커뮤니티 -");
@@ -21,7 +23,7 @@ public class Day05_4_Board_Class {
 						if(boards[i] != null) { // 해당 인덱스의 객체가 없으면
 							System.out.printf("%2d \t %10s \t %5s \t %5s %3s\n",
 									i, boards[i].title, boards[i].writer,
-							boards[i].Date, boards[i].count);
+							boards[i].date, boards[i].count);
 							// .을 찍으면 객체 접근이 가능
 						}
 					}
@@ -65,7 +67,7 @@ public class Day05_4_Board_Class {
 						System.out.println("- 게시물 상세페이지 -");
 						System.out.println(">>> 제목 : " + boards[ch2].title);
 						System.out.println(">>> 작성자 : " + boards[ch2].writer +
-								"\t 작성일 : "+ boards[ch2].Date + "\t 조회수 : " + boards[ch2].contents);
+								"\t 작성일 : "+ boards[ch2].date + "\t 조회수 : " + boards[ch2].contents);
 						System.out.println(">>> 내용 : " + boards[ch2].contents);
 						System.out.println("------------------------------------------------------");
 					}

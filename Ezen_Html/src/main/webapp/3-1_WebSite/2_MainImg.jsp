@@ -12,7 +12,6 @@
 	box-sizing: border-box;		테투리 기준으로 크기 정함
 	box-sizing: inital;			기본값
 	이미지에 링크를 넣어야지 실행이 됨 약간의 버튼 기능 생김
-	
 	*/
 	#main_img{
 	height: 320px;
@@ -21,13 +20,14 @@
 	background-position: top center;
 	margin-top: 20px; margin-bottom: 20px;
 	text-align: center; /* 신청하러 가기 a 태그 가운데 정렬 */
-	padding: 220px 0 0 750px;
+	padding: 220px 0 0 750px; /* 신청하러 가기 a 태그 위치 이동 */
 	}
 </style>
 </head>
 <body>
 	<section id="main_img"> 
-	<a href="#"><img alt="" src="Img/dslr.png"> </a>
+	<a href="www.naver.com" target="_blank"><img alt="" src="Img/dslr.png"> </a> <!-- 신청하러가기 버튼 -->
+							<!-- target="_blank" : 새창 열기 -->
 	</section>
 </body>
 </html>
