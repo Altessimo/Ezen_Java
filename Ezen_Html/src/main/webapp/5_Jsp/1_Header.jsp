@@ -13,26 +13,26 @@
 	header{position: relative; height: 70px;}
 	header .logo{position: absolute; top: 25px; left: 20px;}
 	header .logo span{color: blue; font-weight: bold;}
-	header .menu{display: none; position: absolute; top: 20px; right: 20px;}
+	header .menu{display: none; position: absolute; top: 25px; right: 20px;}
 	
 	a{text-decoration: none; color: black;}
 	
 	/* 메뉴 슘김 버튼 */
-	header .menu_btn{width: 20px; position: absolute; top: 20px;}
+	header .menu_btn{width: 20px; position: absolute; top: 20px; right: 20px;}
 	header .menu_btn li{border-bottom: solid 2px black; padding: 3px 0px;}
 	
 	
 	/* 그리드 */
-	[class*="col_"]{float: left; padding: 15px;} /* 와일드 카드(*) */
-	.col_1{width: 8.33%;} .col_2{width: 16.66%;}
-	.col_3{width: 25%;} .col_4{width: 33.33%;}
-	.col_5{width: 41.66%;} .col_6{width: 50%;}
-	.col_7{width: 58.33%;} .col_8{width: 66.66%;}
-	.col_9{width: 75%;} .col_10{width: 83.33%;}
-	.col_11{width: 91.66%;} .col_12{width: 100%;}
+	[class*="col_"]{float: left;} /* 와일드 카드(*) */
+	.col_s_1{width: 8.33%;} .col_s_2{width: 16.66%;} /* 기본, 스마트 용 */
+	.col_s_3{width: 25%;} .col_s_4{width: 33.33%;}
+	.col_s_5{width: 41.66%;} .col_s_6{width: 50%;}
+	.col_s_7{width: 58.33%;} .col_s_8{width: 66.66%;}
+	.col_s_9{width: 75%;} .col_s_10{width: 83.33%;}
+	.col_s_11{width: 91.66%;} .col_s_12{width: 100%;}
 	
 	/* 미디어 쿼리 */
-	@media only screen and(min-width:770px;){ /* 모바일용 */
+	@media only screen and(min-width:770px;){ /* 태블릿 용 */
 	.col_m_1{width: 8.33%;} .col_m_2{width: 16.66%;}
 	.col_m_3{width: 25%;} .col_m_4{width: 33.33%;}
 	.col_m_5{width: 41.66%;} .col_m_6{width: 50%;}
