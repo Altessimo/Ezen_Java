@@ -51,7 +51,7 @@ public class Day04_Q2_회원제방문록 {
 				boolean idchck = true; // 중복체크 변수
 				for(int i = 0; i<회원목록.length; i++) {
 								// 회원목록.length : 배열의 가로길이 = 100 / new String[100][2]; 100으로 선언했기 때문
-					if(회원목록[i][0] != null && 회원목록[i][0].equals(id)) { // i번째 id가 동일하면
+					if(회원목록[i][0] != null && 회원목록[i][0] != null && 회원목록[i][0].equals(id)) { // i번째 id가 동일하면
 						System.out.println("[알림] : 중복된 아이디가 존재 합니다.");
 						idchck = false;
 						break; // 중복찾기 for 종료
@@ -85,7 +85,7 @@ public class Day04_Q2_회원제방문록 {
 						// 로그인 성공시 메뉴 ↓
 						while(true) { // 회원메뉴 무한루프
 							System.out.println("\n\n\t ~ 회원목록 ~");
-							System.out.print("[ 1. 방문록 2. 로그아웃 선택 : ");
+							System.out.print("[ 1. 방문록 2. 방문록 목록 3. 로그아웃 선택 : ");
 							int ch2 = scanner.nextInt();
 							
 							if(ch2==1) {
