@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Day05_4_Board_Class {
 /* 1. 서로 다른 자료형을 하나로 묶기
- * 
  */
 	public static void main(String[] args) {
 		// 2. 작성한 클래스로 배열 선언

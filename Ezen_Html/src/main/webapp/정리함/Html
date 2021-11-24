@@ -199,4 +199,11 @@ form 태그
 [float]
 	float: left		왼쪽
 	float: right	오른쪽
+	clear: both		양쪽(float 제거)
+	
+[position]
+	position: relative	상대 위치[현재 div(어떤 아이디, 요소) 기준]
+	position: absolute	절대 위치[부모(body)기준]
+		상위(부모)요소의 position: relative가 있는경우[상위(부모)기준]
+	position: fixed		위치 고정[body기준으로 화면 내 고정 위치]
 	

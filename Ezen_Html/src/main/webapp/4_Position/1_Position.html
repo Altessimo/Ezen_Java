@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	#a, #b, #c , #d, #e, #f, #g, #h, #i, #j, #k, #l, #o, #p, #q
+	{width: 100px; height: 60px; background-color: yellow; border: solid 1px black;}
+	
+	#b{position: relative; /* 상대 위치(기준 : 현재 div 시작점 위치) */
+	left: 200px; top: 200px; background-color: red;} 
+	/*
+	#b{margin: 0 auto;} 	박스권 가운데 정렬
+	#a{text-align: center;} 박스 내 내용물 가운데 정렬
+	*/
+	#e{position: absolute; /* 절대 위치(기준 : body)*/
+	left: 80px; top: 50px; background-color: red;}
+	#parents{width: 350px; height: 200px; border: solid 1px red;
+	position: relative;} /* 현div 기준으로 절대값 지정 가능 / 본인기준?으로 잡을때 */
+	#h{position: absolute; left: 30px; top: 30px;}
+	#parents2{width: 350px; height: 200px; border: solid 1px red;}
+	#k{position: absolute; left: 30px; top: 30px;}
+	#p{position: fixed; /* 회면(body) 내 위치 고정 */
+	top: 30px; left: 200px;}
+</style>
+</head>
+<body> <!-- 부모 -->
+	<h3> 상대 위치 지정 </h3> <!-- 밖으로 나가지 않음 -->
+	<div id="a"> 요소 A </div>
+	<div id="b"> 요소 B 상대위치 </div> <!-- 자식 -->
+	<div id="c"> 요소 C </div>
+	
+	<h3> 절대 위치 지정 </h3>
+	<div id="d"> 요소 D </div>
+	<div id="e"> 요소 E 절대위치 </div>
+	<div id="f"> 요소 F </div>
+	
+	<h3> [부모 : relative사용하는 경우] 절대 위치 지정 </h3>
+	<div id="parents"> <!-- 의 자식은 id="h"가 됨 -->
+		<div id="g"> 요소 G </div>
+		<div id="h"> 요소 H </div> <!-- 부보는 div id="parents"가 됨 -->
+		<div id="i"> 요소 I </div>
+	</div>
+	
+	<h3> [부모 : relative 없을 경우] 절대 위치 지정 </h3>
+	<div id="parents2"> <!-- 의 자식은 id="h"가 됨 -->
+		<div id="j"> 요소 J </div>
+		<div id="k"> 요소 K </div>
+		<div id="l"> 요소 L </div>
+	</div>
+	
+	<h3> 위치 고정 </h3>
+	<div id="o"> 요소 O </div>
+	<div id="p"> 요소 P : 위치 고정 </div>
+	<div id="q"> 요소 Q </div>
+</body>
+</html>
