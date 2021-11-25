@@ -6,7 +6,7 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <style type="text/css">
-	."carousel-item{width: 200px; height: 200px; !inportant; /* !inportant > id > class > 테드 > * */
+	.carousel-item{width: 200px; height: 200px; !inportant; /* !inportant > id > class > 테드 > * */
 	
 	}
 </style>
