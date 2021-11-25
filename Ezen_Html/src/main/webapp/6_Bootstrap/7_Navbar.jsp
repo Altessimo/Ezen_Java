@@ -9,8 +9,9 @@
 <body>
 <%@ include file="1_BootstrapStart.jsp" %>
 <div class="container"> <!--  박스권 -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <!-- navbar : 메뉴 박스권 --> <!-- navbar-expand-lg : 1200px 이상 일때 -->
-			
+	<nav class="navbar navbar-expand-md navbar-light fixed-bottom style="background-color: red"> <!-- navbar : 메뉴 박스권 --> <!-- navbar-expand-lg : 1200px 이상 일때 -->
+													<
+													
 	<a class="navbar-brand" href="#"> 로고 </a> <!-- navbar-brand : 로고[ 진하게 ] -->
 		  	
 	<!-- 메뉴 없어질경우 버튼 -->
