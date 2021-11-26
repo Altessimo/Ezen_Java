@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title> 안산 쇼핑몰</title> <!-- 페이지 제목 -->
+<title> 게임 통판 홈페이지 </title> <!-- 페이지 제목 -->
 <!-- 부트스트랩 가져오기 Css -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -21,12 +21,12 @@
 	<header class="py-3"> <!-- 상단 메뉴 / 페딩, y축 -->
 		<div class="row justify-content-between align-items-center">
 			<div class="col-4 offset-4 text-center">
-				<a href="Main.jsp" class="text-dark header-logo"> 안산 쇼핑몰 </a>
+				<a href="Main.jsp" class="text-dark header-logo"> 게임 통판 홈페이지 </a>
 			</div>
 			<div class="col-4 d-flex justify-content-end align-items-center">
 				<ul class="nav header-topmanu">
-					<li><a href="#" class="text-info mx-1"> 로그인 </a> | </li> 
-					<li><a href="#" class="text-info mx-1"> 회원가입 </a> | </li>
+					<li><a href="Login.jsp" class="text-info mx-1"> 로그인 </a> | </li>
+					<li><a href="Join.jsp" class="text-info mx-1"> 회원가입 </a> | </li>
 					<li><a href="#" class="text-info mx-1"> 나의 쇼핑 </a> | </li>
 				</ul>
 			</div>
@@ -40,17 +40,12 @@
 
 <div class="collapse navbar-collapse" id="header-mainmenu">
 	<ul class="navbar-nav col-lg-12 justify-content-between">
-		<li class="nav-item"> <a href="#" class="nav-link"> 베스트 상품 </a></li>
-		<li class="nav-item"> <a href="#" class="nav-link"> 수트 </a></li>
-		<li class="nav-item"> <a href="#" class="nav-link"> 아우터 </a></li>
-		<li class="nav-item"> <a href="#" class="nav-link"> 상의 </a></li>
-		<li class="nav-item"> <a href="#" class="nav-link"> 니트 </a></li>
-		<li class="nav-item"> <a href="#" class="nav-link"> 셔츠 </a></li>
-		<li class="nav-item"> <a href="#" class="nav-link"> 바지 </a></li>
-		<li class="nav-item"> <a href="#" class="nav-link"> 신발 </a></li>
-		<li class="nav-item"> <a href="#" class="nav-link"> 스타일 </a></li>
-		<li class="nav-item"> <a href="#" class="nav-link"> 리뷰 </a></li>
+		<li class="nav-item"> <a href="#" class="nav-link"> 닌텐도 스위치 </a></li>
+		<li class="nav-item"> <a href="#" class="nav-link"> 닌텐도 3DS </a></li>
+		<li class="nav-item"> <a href="#" class="nav-link"> 소프트웨어 </a></li>
 		<li class="nav-item"> <a href="QnABoard.jsp" class="nav-link"> 고객센터 </a></li>
+		<li class="nav-item"> <a href="#" class="nav-link"> News </a></li>
+		<li class="nav-item"> <a href="#" class="nav-link"> 다운로드 구입 </a></li>
 		<li class="nav-item"> <a href="#" class="nav-link"> <i class="fas fa-search"></i></a></li>
 	</ul>
 	</div>

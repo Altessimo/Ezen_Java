@@ -45,14 +45,14 @@
 		
 			<div class="col-md-4 col-sm-6 my-5"> <!-- col-md-4 : 700px~900px 사이 / col-sm-6 : 700 밑으로 떨어짐 my : 위아리 마진-->
 				<div class="card"><!-- 카드 -->
-					<img class="card-img-top" src="img/img.jpg"> <!-- 카드 상단 이미지 -->
+					<img class="card-img-top" src="img/item.png"> <!-- 카드 상단 이미지 -->
 					<div class="card-body"><!-- 카드 내용 -->
-						<p class="card-text"> 소매 버튼 쉬폰 블라우스 </p>
+						<p class="card-text"> 포켓몬스터 브릴리언트 다이아몬드 샤이닝 펄 </p>
 						<hr>
 						<p class="item p-1">
-						디테일 컷이 실제 제품 색상과 가장 흡사합니다.
-						모니터에 따라 차이가있을 수 있습니다.<br><br>
-						판매가 <span class="price mr-2"> 47,000원</span> 65,000원<br>
+						포켓몬스터DP 디아루가 펄기아의 리메이크 작품<br>
+						산오지방을 무대로 펼쳐지는 또 하나의 이야기<br>
+						통판가격 <span class="price mr-2"> 64,800원</span> 64,800원<br>
 						
 						<span class="badge badge-pill badge-warning my-2"> 주문폭주 </span>
 						<span class="badge badge-pill badge-danger my-2"> 품절임박 </span>
@@ -63,14 +63,14 @@
 			
 			<div class="col-md-4 col-sm-6 my-5"> <!-- col-md-4 : 700px~900px 사이 / col-sm-6 : 700 밑으로 떨어짐 my : 위아리 마진-->
 				<div class="card"><!-- 카드 -->
-					<img class="card-img-top" src="img/img.jpg"> <!-- 카드 상단 이미지 -->
+					<img class="card-img-top" src="img/item.png"> <!-- 카드 상단 이미지 -->
 					<div class="card-body"><!-- 카드 내용 -->
-						<p class="card-text"> 소매 버튼 쉬폰 블라우스 </p>
+						<p class="card-text"> 포켓몬스터 브릴리언트 다이아몬드 샤이닝 펄 </p>
 						<hr>
 						<p class="item p-1">
-						디테일 컷이 실제 제품 색상과 가장 흡사합니다.
-						모니터에 따라 차이가있을 수 있습니다.<br><br>
-						판매가 <span class="price mr-2"> 47,000원</span> 65,000원<br>
+						포켓몬스터DP 디아루가 펄기아의 리메이크 작품<br>
+						산오지방을 무대로 펼쳐지는 또 하나의 이야기<br>
+						통판가격 <span class="price mr-2"> 64,800원</span> 64,800원<br>
 						
 						<span class="badge badge-pill badge-warning my-2"> 주문폭주 </span>
 						<span class="badge badge-pill badge-danger my-2"> 품절임박 </span>
@@ -78,16 +78,17 @@
 					</div>
 				</div>
 			</div>
+			
 			<div class="col-md-4 col-sm-6 my-5"> <!-- col-md-4 : 700px~900px 사이 / col-sm-6 : 700 밑으로 떨어짐 my : 위아리 마진-->
 				<div class="card"><!-- 카드 -->
-					<img class="card-img-top" src="img/img.jpg"> <!-- 카드 상단 이미지 -->
+					<img class="card-img-top" src="img/item.png"> <!-- 카드 상단 이미지 -->
 					<div class="card-body"><!-- 카드 내용 -->
-						<p class="card-text"> 소매 버튼 쉬폰 블라우스 </p>
+						<p class="card-text"> 포켓몬스터 브릴리언트 다이아몬드 샤이닝 펄 </p>
 						<hr>
 						<p class="item p-1">
-						디테일 컷이 실제 제품 색상과 가장 흡사합니다.
-						모니터에 따라 차이가있을 수 있습니다.<br><br>
-						판매가 <span class="price mr-2"> 47,000원</span> 65,000원<br>
+						포켓몬스터DP 디아루가 펄기아의 리메이크 작품<br>
+						산오지방을 무대로 펼쳐지는 또 하나의 이야기<br>
+						통판가격 <span class="price mr-2"> 64,800원</span> 64,800원<br>
 						
 						<span class="badge badge-pill badge-warning my-2"> 주문폭주 </span>
 						<span class="badge badge-pill badge-danger my-2"> 품절임박 </span>
@@ -95,16 +96,17 @@
 					</div>
 				</div>
 			</div>
+			
 			<div class="col-md-4 col-sm-6 my-5"> <!-- col-md-4 : 700px~900px 사이 / col-sm-6 : 700 밑으로 떨어짐 my : 위아리 마진-->
 				<div class="card"><!-- 카드 -->
-					<img class="card-img-top" src="img/img.jpg"> <!-- 카드 상단 이미지 -->
+					<img class="card-img-top" src="img/item.png"> <!-- 카드 상단 이미지 -->
 					<div class="card-body"><!-- 카드 내용 -->
-						<p class="card-text"> 소매 버튼 쉬폰 블라우스 </p>
+						<p class="card-text"> 포켓몬스터 브릴리언트 다이아몬드 샤이닝 펄 </p>
 						<hr>
 						<p class="item p-1">
-						디테일 컷이 실제 제품 색상과 가장 흡사합니다.
-						모니터에 따라 차이가있을 수 있습니다.<br><br>
-						판매가 <span class="price mr-2"> 47,000원</span> 65,000원<br>
+						포켓몬스터DP 디아루가 펄기아의 리메이크 작품<br>
+						산오지방을 무대로 펼쳐지는 또 하나의 이야기<br>
+						통판가격 <span class="price mr-2"> 64,800원</span> 64,800원<br>
 						
 						<span class="badge badge-pill badge-warning my-2"> 주문폭주 </span>
 						<span class="badge badge-pill badge-danger my-2"> 품절임박 </span>
@@ -112,7 +114,6 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 	

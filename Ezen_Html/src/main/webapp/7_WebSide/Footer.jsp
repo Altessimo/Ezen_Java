@@ -12,7 +12,7 @@
 		<div class="row"> <!-- 그리드 시작 -->
 			<div class="col-md-3 mb-4"><!-- 그리드 3 -->
 				<h3 class="text-uppercase fw-bold mb-4">
-				<i class="fas fa-arrow-alt-circle-right"></i>안산 쇼핑몰 </h3>
+				<i class="fas fa-arrow-alt-circle-right"></i> 게임 통판 홈페이지 </h3>
 				<p>OWNER 윤희수<br>C.P.O 윤희수</p>
 			</div>
 			
@@ -29,10 +29,10 @@
 			
 			<div class="col-md-3 my-5"><!-- my로 위치변경 -->
 				<a href="#" class="me-4 mx-1"> <i class="fab fa-facebook fa-2x"> </i></a>
-					<a href="#" class="me-4 mx-1"> <i class="fab fa-twitter fa-2x"> </i></a>
-					<a href="#" class="me-4 mx-1"> <i class="fab fa-google fa-2x"> </i></a>
-					<a href="#" class="me-4 mx-1"> <i class="fab fa-instagram fa-2x"> </i></a>
-					<a href="#" class="me-4 mx-1"> <i class="fab fa-github fa-2x"> </i></a>
+				<a href="#" class="me-4 mx-1"> <i class="fab fa-twitter fa-2x"> </i></a>
+				<a href="#" class="me-4 mx-1"> <i class="fab fa-google fa-2x"> </i></a>
+				<a href="#" class="me-4 mx-1"> <i class="fab fa-instagram fa-2x"> </i></a>
+				<a href="#" class="me-4 mx-1"> <i class="fab fa-github fa-2x"> </i></a>
 			</div>
 			
 			

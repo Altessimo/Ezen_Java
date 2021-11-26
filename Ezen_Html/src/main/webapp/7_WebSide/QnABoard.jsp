@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@include file="Heder.jsp" %>
+<%@ include file="Heder.jsp" %>
 <!-- 게시판 시작 -->
 <div class="container my-5">
 	<h3>QnA(고객센터)</h3>
