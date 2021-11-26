@@ -6,7 +6,7 @@
 <meta charset="EUC-KR">
 <title> 안산 쇼핑몰</title> <!-- 페이지 제목 -->
 <!-- 부트스트랩 가져오기 Css -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 <!-- 직접 작성한 Css 가져오기 -->
 <link href="css/main.css" rel="stylesheet">
@@ -16,11 +16,12 @@
 </head>
 <body>
 <!-- 헤더 시작 -->
+<div class="fixed-top bg-white"> <!-- 헤더 고정 -->
 <div class="container"> <!-- 전체 헤더메뉴를 잡아주는 역할 -->
 	<header class="py-3"> <!-- 상단 메뉴 / 페딩, y축 -->
 		<div class="row justify-content-between align-items-center">
 			<div class="col-4 offset-4 text-center">
-				<a href="#" class="text-dark header-logo"> 안산 쇼핑몰 </a>
+				<a href="Main.jsp" class="text-dark header-logo"> 안산 쇼핑몰 </a>
 			</div>
 			<div class="col-4 d-flex justify-content-end align-items-center">
 				<ul class="nav header-topmanu">
@@ -49,13 +50,16 @@
 		<li class="nav-item"> <a href="#" class="nav-link"> 신발 </a></li>
 		<li class="nav-item"> <a href="#" class="nav-link"> 스타일 </a></li>
 		<li class="nav-item"> <a href="#" class="nav-link"> 리뷰 </a></li>
-		<li class="nav-item"> <a href="#" class="nav-link"> 고객센터 </a></li>
+		<li class="nav-item"> <a href="QnABoard.jsp" class="nav-link"> 고객센터 </a></li>
 		<li class="nav-item"> <a href="#" class="nav-link"> <i class="fas fa-search"></i></a></li>
 	</ul>
 	</div>
 </nav>
 </div>
+</div>
 <!-- 헤더 종료 -->
+
+<!-- 캐러셀 -->
 
 <!-- 부트스트랩 가져오기 Js/j퀘리 -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

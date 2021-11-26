@@ -11,6 +11,7 @@
 </head>
 <body>
 	<%@ include file="Heder.jsp" %>
-	
+	<%@ include file="Main.jsp" %>
+	<%@ include file="Footer.jsp"%>
 </body>
 </html>

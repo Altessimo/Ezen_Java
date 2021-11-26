@@ -9,7 +9,7 @@
       footer {box-sizing:border-box; background-color: #A4A4A4;}
       .row {margin: 4px 0 4px 0; padding: 10px 0; }
       #s {position: relative; display: inline;}
-      footer li {position:relative; left:150px; list-style-type: none; float: right; display: inline; }
+      footer li {position:relative; left:150px; list-style-type: none; float: right; display: inline;}
    </style>
 </head>
 <body>

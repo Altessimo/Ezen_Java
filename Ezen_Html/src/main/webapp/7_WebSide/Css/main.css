@@ -10,6 +10,24 @@
 
 *{font-family: OTWelcomeBA}
 
-header{border-bottom: solid 1px #eeeeee; line-height: 1}
+header{border-bottom: solid 1px #eeeeee; line-height: 1;}
 .header-logo{font-size: 2.25rem;}
-.header-topmanu{font-size: 0.25rem;}
+.header-topmenu{font-size: 0.25rem;}
+.carousel-item img{width: 100%;}
+.item{font-size: 0.75rem; line-height: 150%;}
+.price{text-decoration: line-through;}
+.main-footer{font-size: 0.75rem; border-top: solid 1px #eeeeee; padding: 3rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
