@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+/* 웹 폰트 가져오기 */
+@font-face {
+    font-family: 'OTWelcomeBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{font-family: OTWelcomeBA}
+
+header{border-bottom: solid 1px #eeeeee; line-height: 1}
+.header-logo{font-size: 2.25rem;}
+.header-topmanu{font-size: 0.25rem;}
