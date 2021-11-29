@@ -20,7 +20,11 @@ int month=calendar.get(Calendar.MONTH)+1; // 현재 월 [1월:0 ~ 12:11]
 %>
 	<h1> 2021.11월 달력(Calendar) Day 12-5 </h1>
 	
-	<table border="1">
+	<form style="margin: 30px;">
+	검색 : <input type="text" name="year" placeholder="연도">
+	<input type="text" name="month" placeholder="월"> <input type="submit" value="검색">
+	</form>
+	<table border="1" style="margin: 30px;">
 		<thead>
 			<tr>
 				<th>일요일</th><th>월요일</th><th>화요일</th><th>수요일</th><th>목요일</th><th>금요일</th><th>토요일</th>
@@ -34,7 +38,11 @@ int month=calendar.get(Calendar.MONTH)+1; // 현재 월 [1월:0 ~ 12:11]
 				<% } %>
 				<% for(int i=1; i<=eday; i++) { %>
 				<td> <%=i %></td>
-				<% } %>
+				<% if(sweek%7==0){ // 요일이 토요일 마다 tr을 닫고 tr을 열어야 함
+					out.print("</tr><tr>");
+				}
+				sweek++;
+				} %>
 			</tr>
 		</tbody>
 		
