@@ -8,10 +8,10 @@
 </head>
 <body>
 	<%
-	request.setCharacterEncoding("utf-8");
-	out.print(request.getParameter("id")+"<br>");
-	out.print(request.getParameter("password"));
-	out.print(request.getParameter("contents"));
+	request.setCharacterEncoding("UTF-8");
+	out.print( request.getParameter("id") +"<br>");
+	out.print( request.getParameter("password") + "<br>");
+	out.print( request.getParameter("contents"));
 	%>
 </body>
 </html>
