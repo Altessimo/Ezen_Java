@@ -1,0 +1,63 @@
+JSP ������
+2021. 11. 29.
+	1. JSP : JavaServer Pages[�ڹ� ���� ������]
+	2. ���� : Java web program closs[�ڹ� �� ���α׷��� Ŭ����]
+		������ : java�� html ���� ��ƴ� �� ������ : jap
+	3. jsp : html ���� �� java �ۼ� ����[html+java]
+	4. jsp ��������
+		Ŭ���̾�Ʈ�� jsp ��û�ϸ�
+			1. html ��ȯ
+			2. jsp�� java �ڵ� �� java ����[���� ����]�� ��ȯ �� ����� html ����
+				- Ŭ���̾�Ʈ(�����)���� java ������ Ȯ�� �Ұ���
+	5. �±�
+		1. <%! ���� %> : 1. ���� ����[��������] 2. �޼ҵ� ����
+		2. <% ��ũ��Ʈ %> : 1. ���� ����[���� ����] 2. �����ڵ�
+		3. <%= ǥ���� %> : 1. Html�� java ���� �޼ҵ� ȣ��
+		4. <-- �ּ� --> : �ּ�
+			<% // ���� �ּ�	/* ������ �ּ� */ %> : ��ũ��Ʈ ������ �ּ�ó��
+	6. 서블릿
+		jsp → [jsp 컨테이너] → 서블릿으로 변환
+			1. 선언문 → 필드(맴버변수)
+			2. 스크립트문 → _jspService 메소드
+
+form
+action : "이동할 페이지 경로"
+method : 전송방식
+	post : 
+	get : 
+	
+	
+지시자
+	1. page 지시자 : 페이지 속성
+		1. <%@ page info="페이지속성내용">
+		2. <%@ page language="스크립트에 사용할 언어"> : 스트립트에서 사용할 언어
+		3. <%@ page contentType="text/html"> : 페이지 출력할 형식/문자타입
+		4. <%@ page import="java.utll.*" %> : 패키지 혹은 클래스 불러오기
+		5. <%@ page errorPage=""%> : 예외발생시 출력할 페이지 명
+			예외 페이지에 <%@ page isErrorPage="true" %> : 해당 페이지 예외페이지 설정
+			
+	2. include 지시자 : 페이지 포함
+		<%@ %> : 현재페이지에 페이지 포함
+	
+액션 태그
+	1. <jsp:include page="페이지명"></jsp:include> : 현재페이지에 페이지 포함
+	2. <jsp:forward page="페이지명"></jsp:forward> : 현재페이지에 페이지 이동
+			<jsp:param value="데이터" name="변수명">
+	3. 태그 다체 액션태그
+		<%! %> : <jsp:declaration></declaration> // 선언문
+		<% %> : <jsp:scriptlet></scriptlet>
+		<%= %> : <jsp:expression></expression> // 표현식
+	4. ★ 중요 자바빈즈[객체 통신 태그]
+	
+내장객체[미리 만들어진 객체]
+	1. request : 변수를 포함한 요청을 닿는 객체
+		0. setCharacterEncoding("UTF-8") : 요청문자 타입
+		1. getParameter("변수명") : 해당 변수 요청[무조건 문자로 밖에 안됌]
+		2.
+	2. response : 요청에 대한 응답을 담고 있는 객체
+		응답을 이미 가지고 있음
+	3. out : 출력 스트림 객체
+	4. sesstion : 세션정보를 담고 있는 객체
+	5. page : jsp 서블릿 객체[서블릿 페이지 정보]
+	6. exception : 예외
+	
