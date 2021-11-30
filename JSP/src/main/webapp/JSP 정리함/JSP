@@ -77,6 +77,12 @@ Post vs get[페이지(데이터) 요청 방식]
 	2. 보안 취약[제품명, 검색 등]
 	3. 캐시사용 [한번 사용 후 기록] : 다음에 접속할 때 빠름
 	4. 길이제한 O
+
+사용처
+	1. form(action="이동페이지경로" method="post.get")
+	2. URL 변수 추가[get]
+	3. 
+		
 	
 세션 vs 쿠키
 내장객체(http: 클래스의 객체
@@ -91,10 +97,9 @@ Post vs get[페이지(데이터) 요청 방식]
 		2. session.getAttribute("세션명") : 세션 호출 // 빼오기
 		3. session.invalidate() : 모든 세션 초기화
 			. sesstion.setAttribute("세션명", null) : 해당 세션 초기화
+		4. session.setMaxInactiveInterval(초) : 세션 유지 시간[초당]
 			
 	2. 쿠키 : 사용자[클라이언트] Pc에 데이터 저장
 			1. 사용자 pc에 저장하다보니 보안 취약[장바구니 , 로그인 정보 등]
 			2. 많은 쿠키를 사용시 서버 상관 X (컴퓨터, 인터넷이 느려짐)
 			3. 브라우저 많아도 쿠키유지
-			
-사용자 - 사용자 로그인 - 서버 - 

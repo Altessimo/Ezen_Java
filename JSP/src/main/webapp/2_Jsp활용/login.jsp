@@ -15,5 +15,9 @@
 		비밀번호 : <input type="password" name="password" placeholder="Password">
 		<input type="submit" value="로그인">
 	</form>
+	<% String result= request.getParameter("result"); %>
+	<% if(result != null) { %>
+	<h4> 로그인 실패 </h4>
+	<% } %>
 </body>
 </html>

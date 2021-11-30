@@ -17,16 +17,18 @@
 	// 존재여부 확인
 	boolean logincheck = false;
 	for(Member member : members) {
-		if(member.getId().equals(id)&&member.getPassword().equals(password)){
+		if(member.getId().equals(id)&&member.getPassword().equals(password)) {
 			// 로그인 성공
 			logincheck=true;
 			// 세션 생성
 			session.setAttribute("loginid", member.getId());
+			// 세션
+			session.setMaxInactiveInterval(10);
 			response.sendRedirect("main.jsp");
 		}
 	}
 	// 로그인 실패
-	if(!logincheck){response.sendRedirect("login.jsp");}
+	if(!logincheck){response.sendRedirect("login.jsp?result=fall");} // url 요청 번수로 길이 적용
 	%>
 </body>
 </html>
