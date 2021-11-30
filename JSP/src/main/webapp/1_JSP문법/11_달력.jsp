@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title> 달력 Day 12-5 </title>
 </head>
 <body>
 <%
