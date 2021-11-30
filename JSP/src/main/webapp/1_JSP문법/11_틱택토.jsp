@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title> 틱택토 게임 Day 04-6 </title>
 </head>
 <body>
 <%! // 선언문 : [(필드) 맴버 변수]

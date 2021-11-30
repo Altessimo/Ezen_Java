@@ -1,3 +1,4 @@
+<%@page import="Test.Book"%>
 <%@page import="Test.Board"%>
 <%@page import="java.io.FileInputStream"%>
 <%@page import="Test.Member"%>
@@ -32,7 +33,7 @@
 	}
 		fileInputStream.close();
 		
-		// 게시물 파일
+	// 게시물 파일
 	ArrayList<Board> boards=new ArrayList<>();
 	fileInputStream=new FileInputStream("C:/Users/505/git/Ezen_Java/JSP/src/main/java/Test/boardlist.txt");
 	bytes = new byte[1000];
@@ -44,6 +45,19 @@
 				boards.add(board);
 	}
 	fileInputStream.close();
+	/* 
+	// 도서 검색
+	ArrayList<Book> books=new ArrayList<>();
+	fileInputStream=new FileInputStream("C:/Users/505/git/Ezen_Java/JSP/src/main/java/Test/book.txt");
+	bytes = new byte[1000];
+	fileInputStream.read(bytes);
+	String sbook=new String(bytes);
+	String[] ssbook=sbook.split("\n");
+	for(int i=0; i<ssbook.length-1; i++){
+		Book book = new Book(ssbook[i].split(",")[0], ssbook[i].split(",")[1], ssbook[i].split(",")[2]);
+		books.add(book);
+	}
+	fileInputStream.close(); */
 	%>
 	
 	<h3> <a href="main.jsp"> 페이지 구역 </a></h3>
@@ -56,7 +70,7 @@
 		<li><a href="signup.jsp">회원가입 </a></li>
 		<li><a href="book.jsp"> 도서검색 </a></li>
 		<li><a href="lotto.jsp"> 로또구매 </a></li>
-		<li> 게시판 </li>
+		<li><a href="boardlist.jsp"> 게시판</a> </li>
 	</ul>
 </body>
 </html>

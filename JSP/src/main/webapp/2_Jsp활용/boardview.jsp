@@ -10,9 +10,7 @@
 	<%@include file="header.jsp" %>
 	
 	<h3> 게시물 상세 페이지 </h3>
-	<%
-	int bnum = Integer.parseInt(request.getParameter("bnum"));
-	%>
+	<% int bnum = Integer.parseInt(request.getParameter("bnum")); %>
 	<a href="boardlist.jsp"><button>목록보기</button> </a>
 	<table>
 		<tr>
