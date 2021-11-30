@@ -25,7 +25,7 @@ public class Day05_4_Board_Class {
 							boards[i].date, boards[i].count);
 							// .을 찍으면 객체 접근이 가능
 						}
-					}
+					}                           
 					System.out.println("-------------------------------------------------------");
 					System.out.println("1. 글쓰기 2. 글 상세 보기 >> 선택"); int ch = scanner.nextInt();
 					
