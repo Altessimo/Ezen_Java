@@ -1,0 +1,45 @@
+<%@page import="java.io.FileInputStream"%>
+<%@page import="Test.Member"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+	// 세션 불러오기
+	String loginid = (String)session.getAttribute("loginid");
+	%>
+	
+	<%
+	ArrayList<Member> members=new ArrayList<>(); // 1. 회원 초기화 
+	// 2. 파일 스트림 설정
+	FileInputStream fileInputStream = new FileInputStream("C:/Users/505/git/Ezen_Java/JSP/src/main/java/Test/memberlist.txt");
+	byte[] bytes = new byte[1000]; // 3. 읽어올 바이트를 저장할 바이트 배열
+	fileInputStream.read(bytes); // 4. 파일 읽기 → 문자열 변환
+	String smember = new String(bytes); // 5. 바이트 배열 → 문자열 변환
+	String[] ssmember = smember.split("\n"); // 6. 문자열 분해[\n] : 회원 구분
+	for(int i=0; i<ssmember.length-1; i++) { // 7. 마지막 \n을 제외한 반복문을 돌림 그래서 -1을 함
+		// 객체화
+		Member member = new Member(ssmember[i].split(",")[0],
+				ssmember[i].split(",")[1], ssmember[i].split(",")[2]);
+		members.add(member); // 리스트에 객체 저장
+	}
+	%>
+	
+	<h3> <a href="main.jsp"> 페이지 구역 </a></h3>
+	<ul>
+	<% if(loginid != null){out.print("<li>"+loginid+"님 안녕하세요</li>");} %>
+	<% if(loginid != null) { %>
+	<li> <a href="logout.jsp">로그아웃</a></li>
+	<% } %>
+		<li><a href="login.jsp">로그인</a></li>
+		<li><a href="signup.jsp">회원가입 </a></li>
+		<li> 게시판 </li>
+	</ul>
+</body>
+</html>

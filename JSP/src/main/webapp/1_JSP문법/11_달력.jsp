@@ -27,7 +27,7 @@ Calendar calendar = Calendar.getInstance(); // 현재 날짜, 시간
 		int sweek = calendar.get(Calendar.DAY_OF_WEEK); // 요일찾기 2 : 월요일
 		int eday = calendar.getActualMaximum(calendar.DAY_OF_MONTH); // 현재월의 마지막날 → 30
 %>
-	<h1> <%=year %>년 <%=month %>월 달력(Calendar) Day 12-5 </h1>
+	<h1> <%=year %>년 <%=month %>월 달력(Calendar) [Day 12-5] </h1>
 	
 	<form style="margin: 30px;" action="11_중간체크1.jsp" method="post"> <!-- 현재 페이지 다시 요청 -->
 	검색 : <input type="text" name="year" placeholder="연도">
