@@ -14,11 +14,20 @@
 	<p>로그인 후 게시물을 작성 할 수 있습니다 </p>
 	<% } else { %> <!-- 로그인이 되어있는 경우 -->
 	<a href="boardwrite.jsp"><button>글작성</button></a>
-	<%} %>
+	<% } %>
+	
 	<table>
 		<tr>
 			<th>번호</th><th>제목</th><th>작성자</th>
 		</tr>
+		<% for(int i=0; i<boards.size(); i++) { %>
+		<tr>
+			<td><%=(i+1) %></td>
+			<td> <a href="boardview.jsp?bnum=<%=i%>"> 
+			<%=boards.get(i).getTitle() %></a></td>
+			<td><%=boards.get(i).getContents() %></td>
+		</tr>
+		<% } %>
 	</table>
 </body>
 </html>

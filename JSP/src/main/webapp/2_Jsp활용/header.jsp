@@ -1,3 +1,4 @@
+<%@page import="Test.Board"%>
 <%@page import="java.io.FileInputStream"%>
 <%@page import="Test.Member"%>
 <%@page import="java.util.ArrayList"%>
@@ -29,6 +30,20 @@
 				ssmember[i].split(",")[1], ssmember[i].split(",")[2]);
 		members.add(member); // 리스트에 객체 저장
 	}
+		fileInputStream.close();
+		
+		// 게시물 파일
+	ArrayList<Board> boards=new ArrayList<>();
+	fileInputStream=new FileInputStream("C:/Users/505/git/Ezen_Java/JSP/src/main/java/Test/boardlist.txt");
+	bytes = new byte[1000];
+	fileInputStream.read(bytes);
+	String sboard=new String(bytes);
+	String[] ssboard=sboard.split("\n");
+	for(int i=0; i<ssboard.length-1; i++){
+		Board board = new Board(ssboard[i].split(",")[0], ssboard[i].split(",")[1], ssboard[i].split(",")[2]);
+				boards.add(board);
+	}
+	fileInputStream.close();
 	%>
 	
 	<h3> <a href="main.jsp"> 페이지 구역 </a></h3>
@@ -39,6 +54,8 @@
 	<% } %>
 		<li><a href="login.jsp">로그인</a></li>
 		<li><a href="signup.jsp">회원가입 </a></li>
+		<li><a href="book.jsp"> 도서검색 </a></li>
+		<li><a href="lotto.jsp"> 로또구매 </a></li>
 		<li> 게시판 </li>
 	</ul>
 </body>
