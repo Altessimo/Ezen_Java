@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <!-- 부트스트랩 설정 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<!--  -->
+<!-- 본인 css 호출 -->
 <link rel="stylesheet" href="/Ezen_Jsp/website/css/main.css">
+
 </head>
 <body>
 	<!-- 부트스트랩 js 설정 -->
