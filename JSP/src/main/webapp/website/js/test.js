@@ -29,6 +29,6 @@ function start() { // 함수 선언[function : 메소드명(){ 실행문 }]
 	var colors = color.length;
 	var colorLength=document.getElementById("colors");
 	colorLength.textContent = colors;
-	document.body.style.backgroundColor="blue";
+	document.body.style.backgroundColor="Khaki";
 }
 // 
