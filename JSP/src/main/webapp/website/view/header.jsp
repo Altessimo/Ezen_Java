@@ -23,11 +23,27 @@
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	
 	<h3> 헤더 부문 </h3>
+	<%
+	String loginid=(String)session.getAttribute("loginid");
+	%>
+	
 	<div><a href="/Ezen_Jsp/website/view/main.jsp"> 로고 </a></div>
 	
 	<ul>
+	<% if(loginid!=null){ // 로그인이 되어있는경우
+		if(loginid.equals("admin")){ // 로그인이 되어있으면서 관리자 이면
+		%>
+		<li><a href="/Ezen_Jsp/website/view/admin/adminmain.jsp"> 관리자 </a></li>
+		<% } %>
+		<li><a href="/Ezen_Jsp/website/view/member/memberinfo.jsp"> 회원정보 </a></li>
+		<li><a href="/Ezen_Jsp/website/controller/logoutcontroller.jsp"> 로그아웃 </a></li>
+		<% } else { // 로그인이 안되어있는경우
+		
+		%>
 		<li><a href="/Ezen_Jsp/website/view/member/singup.jsp"> 회원가입 </a></li>
 		<li><a href="/Ezen_Jsp/website/view/member/login.jsp"> 로그인 </a></li>
+		
+		<% } %>
 	</ul>
 </body>
 </html>

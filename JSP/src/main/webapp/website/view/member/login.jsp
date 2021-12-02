@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- 만약에 로그인이 되어있는경우 -->
+<%
+// 로그인[세션]이 되어있는 경우
+	if(session.getAttribute("loginid")!=null){
+		out.print("<script>alert('로그인이 되어 있습니다.'); </script>");
+		out.println("<script>location.href='../main.jsp';</script>");
+}
+%>
+
 	<%@ include file="../header.jsp" %>
 	
 	<div class="container"> <!-- 박스권 -->
@@ -20,7 +29,7 @@
 				<img src="../../img/signuplogo.jpg" width="100%">
 			</div>
 			<div class="col-md-6">
-				<form action="../../controller/singupcontroller.jsp" method="post">
+				<form action="../../controller/logincontroller.jsp" method="post">
 					<div class="row"> <!-- 3:8 -->
 						<div class="col-md-3 m-2"> <label>아이디</label> </div>
 						<div class="col-md-8"><input type="text" name="id" class="form-control" maxlength="15"></div>
@@ -30,6 +39,15 @@
 						<div class="col-md-3 m-2"> <label>비밀번호</label> </div>
 						<div class="col-md-8"><input type="password" name="password" class="form-control" maxlength="15"></div>
 					</div>
+					
+					<%
+					String result=request.getParameter("result");
+					if(result!=null){
+						%>
+						<div>
+							<span> 회원정보가 올바르지 않습니다. </span>
+						</div>
+						<% } %>
 					
 					<div>
 						<input type="submit" value="로그인" class="form-control p-3 m-3">					

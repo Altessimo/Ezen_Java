@@ -12,9 +12,10 @@ public class MemberDao {
 // 2. 프로젝트 내 WEB-INF → lib → 라이브러리 추가
 	
 	// 1. 자주 사용하는 인터페이스
-	private Connection con;
-	private ResultSet rs;
-	private PreparedStatement ps;
+	private Connection con; // DB 연결
+	private PreparedStatement ps; // SQL 조작
+	private ResultSet rs; // SQL 결과를 연결
+	
 	
 	// 2. 생성자
 	public MemberDao() {
@@ -58,4 +59,24 @@ public class MemberDao {
 		} catch (Exception e) { }
 		return false; // 아이디가 존재하지 않음
 	}
+	
+	// 로그인 체크 메소드
+	public boolean login(String id, String password) {
+		String sql="select * from member where m_id=? and m_password=?";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, id);
+			ps.setString(2, password);
+			rs = ps.executeQuery();
+			if(rs.next()) {return true;} 
+		} catch (Exception e) { }
+		return false;
+	}
 }
+
+
+
+
+
+
+
