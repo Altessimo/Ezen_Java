@@ -48,12 +48,6 @@ public class Member {
 			this.m_password = m_password;
 		}
 		
-		// 아이디 찾기
-		
-		
-		// 비밀번호 찾기
-		
-		
 		public int getM_num() {
 			return m_num;
 		}

@@ -33,3 +33,58 @@ function start() { // 함수 선언[function : 메소드명(){ 실행문 }]
 }
 
 // 
+function start2(){
+	var text = ""; // 변수선언[]자료형 없음]
+	var count = 1; // 변수선언
+	// while 문
+	while(count<10) { // 반복문
+		text +="<li> 여기는 숫자"+count+"</li>";
+			// 변수는 " " 처리 불가
+			// html 태그는 문자처리
+			count++;
+		
+	} document.getElementById("list").innerHTML=text;
+/*	if 문
+	if(document.getElementById("list").innerHTML != "text"){
+		document.getElementById("list").innerHTML = "";
+}*/
+
+// for 문
+var text1="";
+for(var i=1; i<6; i++){
+	text+="<li> 여기는 숫자 : "+i+"</li>";
+}
+document.getElementById("list1").innerHTML = text1;
+
+// for 배열
+var text2="";
+var phones=["아이폰", "캘럭시폰", "엘지폰"];
+for(var i=0; i<phones.length; i++){
+	text2+="<li>"+phone[i]+"</li>";
+}
+document.getElementById("list2").innerHTML=text2;
+}
+
+// 
+function cancel(){
+	document.getElementById("list").innerHTML = "";
+	document.getElementById("list1").innerHTML = "";
+	document.getElementById("list2").innerHTML = "";
+}
+
+// 추가 버튼을 누르면 콜라 문구가 계속 뜸
+function start3() {
+	// 기존 리스트를 가져오기
+	var text=document.getElementById("list").innerHTML;
+	var product="콜라"; // 변수명 
+	text+="<li>"+product+"</li>"; // 콜라 변수 추가
+	document.getElementById("list").innerHTML=text;
+}
+
+// 계산을 해줌
+function start4(num1, num2) { // 변수를 인수로 받음
+	var total=num1 * num2; // 인수연산
+	document.getElementById("result").textContent=total;
+}
+
+// 

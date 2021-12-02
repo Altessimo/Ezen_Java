@@ -55,3 +55,118 @@
             }
         }).open();
     }
+
+/* 다음주소 api end */
+
+/* 아이디 중복체크[ajax] */
+$(function() {
+	$("#id").change(function(){
+	// 비동기식 : $.ajax({속성명:"값"", 속성명:"값", 속성명:"값"});
+	$.ajax({
+		url:"idcheck.jsp", /* url : 통신할 페이지 경로 페이지 */
+		data: {userid:document.getElementById("singupform").id.value}, /* 이동할 데이터 */
+		/*  */
+		success: function(result) { // 통신이 성공 했을때
+			if(result==1) {
+				// alert("중복"); / js 변수는 자료형이 없음
+				document.getElementById("idresult").innerHTML="현재 사용중인 아이디 입니다.";
+			} else {
+				//alert("미중복");
+			}
+		}
+	});
+	});
+});
+
+/* 아이디 중복체크 end */
+
+/* 회원가입 유효성검사 */
+function singupcheck(){
+	//1. 폼 가져오기[폼에 id 존재]
+	// document.getElementById("singupform")
+	//2. 폼 내 아이디 입력 input 가져오기
+	var id = document.getElementById("singupform").id.value;
+	var password=document.getElementById("singupform").password.value;
+	var passwordconfirm=document.getElementById("singupform").passwordconfirm.value;
+	var name=document.getElementById("singupform").name.value;
+	var birth=document.getElementById("singupform").birth.value;
+	var sex1=document.getElementById("singupform").sex1.checked; // checked 유무 가져오기
+	var sex2=document.getElementById("singupform").sex2.checked;
+	var phone=document.getElementById("singupform").phone.value;
+	
+	//alert(id);
+	//3. 유효성 검사[정규표현식 : 텍스트 패턴 검사]
+		// 정규 표현식
+		var idj=/^[a-z0-9]{5,15}$/; // 아이디 정규 표현식
+		var pwj=/^[A-Za-z0-9]{5,15}$/; // 비밀번호 정수 표시
+		var phonej=/^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/; // 연락처 표현식
+		var namej=/^[A-Za-z0-9가-힣]{1,15}$/;	 // 이름 정규표현식
+		
+		/*
+			/^ : 정규표현식 시작
+			$/ : 정규표현식 끝
+			[] : 문자 패턴
+				[a-z] : 소문자 a-z만 가능
+				[A-Z] : 대문자 A-Z만 가능
+				[0-9] : 숫자 0~9까지만 가능
+				[가-힣] : 한글만 가능
+			{} : 문자 개수
+				{최소길이, 최대길이}
+				{5, 15} : 5~12길이만 가능
+			() : 문자 하나로 인식
+				// [0|1|6|7|8|9] 중에 1개
+			와일드 카드 :
+				* : 문자 없거나 혹은 여러개 존재
+				? : 문자 있거나 혹은 하나가 있음[?당 문자 1개]
+					? 대신에 - 도 가능
+		*/
+	
+	// 아이디
+	if(!idj.test(id)){
+		document.getElementById("idresult").innerHTML="아이디는 소문자의 숫자 조합 5~15사이만 가능합니다.";
+		document.getElementById("idresult").style.color="red";
+		return false; // form submit 불가
+	} else {
+		document.getElementById("idresult").innerHTML="사용가능한 아이디 입니다.";
+		document.getElementById("idresult").style.color="green";
+		}
+		
+		// 패스워드[두 패스워드 동일한지 검사]
+		if(!pwj.test(password)||!pwj.test(passwordconfirm)) {
+			document.getElementById("pwresult").innerHTML="대소문자 조합 5~15사이만 가능합니다."; return false;
+		} else if(password!=passwordconfirm) {
+			document.getElementById("pwresult").innerHTML="패스워드가 동일하지 않습니다."; return false;
+		} else {
+			document.getElementById("pwresult").innerHTML="사용가능한 패스워드 입니다.";
+		}
+		
+		// 이름
+		if(!namej.test(name)) {
+		document.getElementById("nameresult").innerHTML="이름을 입력해주세요.[특수문자는 제외]"; return false;
+		} else {
+			document.getElementById("nameresult").innerHTML=" ";
+		}
+		
+		// 생년월일
+		if(birth==""){
+		document.getElementById("birthsult").innerHTML="생년월일을 선택해주세요."; return false;
+		} else {
+			document.getElementById("birthsult").innerHTML=" ";
+		}
+		
+		// 성별
+		if(!sex1 && !sex2) { // 둘 다 false 이면 = 둘 다 체크를 안했으면
+		document.getElementById("sexsult").innerHTML="성별을 선택해주세요."; return false;
+		} else {
+			document.getElementById("sexsult").innerHTML=" ";
+		}
+		
+		// 전화번호
+		if(!phonej.test(phone)){
+			document.getElementById("phoneresult").innerHTML="전화번호 형식으로 입력해주세요"; return false;
+		} else {
+			document.getElementById("phoneresult").innerHTML=" ";
+		}
+}
+
+/* 회원가입 유효성검사 end */

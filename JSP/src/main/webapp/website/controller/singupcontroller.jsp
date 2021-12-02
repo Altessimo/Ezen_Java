@@ -21,8 +21,8 @@
 	String address = request.getParameter("address1")+","+ request.getParameter("address2")+","+
 					request.getParameter("address3")+","+request.getParameter("address4");
 	
-	// 유효성 검사
-	if(id.equals("")||password.equals("")||passwordconfirm.equals("")||name.equals("")||birth.equals("")
+	// 유효성 검사[JS 사용시 ]
+	/* if(id.equals("")||password.equals("")||passwordconfirm.equals("")||name.equals("")||birth.equals("")
 			||sex.equals("")||address.equals("")) {
 		out.print("<script>alert('입력이 안된 사항이 있습니다.'); </script>");
 		out.println("<script>location.href='../view/member/signup.jsp'; </script>");
@@ -47,7 +47,7 @@
 		out.print("<script>alert('상세주소는 , 제외하고 입력해주세요'); </script>");
 		out.println("<script>location.href='../view/member/signup.jsp'; </script>");
 	}
-	else{
+	else{ */
 	// 객체화
 	Member member = new Member(id, password, name, birth, sex, phone, address);
 	
@@ -58,7 +58,7 @@
 		} else{	// 회원가입 실패
 			response.sendRedirect("../view/member/signup.jsp");
 		}
-	}
+	// }
 	%>
 </body>
 </html>
