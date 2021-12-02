@@ -8,8 +8,8 @@
 </head>
 <body>
 	<h3> 자바 스크립트 변수/배열 </h3>
-	<p> 변수 값 <span id="number"></span>이 들어옵니다.</p>
-	<p> 변수 조건에 대한 변수 값<span id="number1"></span>이 들어옵니다.</p>
+	<p> 변수 값 <span id="number"></span>이(가) 들어옵니다.</p>
+	<p> 변수 조건에 대한 변수 값 <span id="number1"></span>이(가) 들어옵니다.</p>
 	<p> 색상 변수 <span id="color"></span> 입니다</p>
 	<p> 배열 총 개수 <span id="colors"></span> 입니다</p>
 	
