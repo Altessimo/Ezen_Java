@@ -58,6 +58,32 @@
 
 /* 다음주소 api end */
 
+/* 회원탈퇴 api start */
+ // ${function(){실행문}} : 함수
+$(function(){
+	// 버튼을 클릭했을때 이벤트 걸기
+	$("#delete").click(function(){
+		// ajax : 비동기식 통신[페이지 전환 없이 통신]
+		// $.ajax({속성명: 값, 속성명: 값, 속성명: 값});
+	$.ajax({
+		url: "../../controller/memberdeletecontroller.jsp",
+		data: {password: document.getElementById("deleteform").password.value},
+		success : function(result){
+			/* 통신된 결과를 반환 */
+			if(result == 1){
+				alert('회원탈퇴 되었습니다.');
+				location.href='../../controller/logoutcontroller.jsp';
+			} else {
+				document.getElementById("deleteresult").innerHTML="회원정보가 다릅니다";
+			}
+		} 
+	});
+	}); // 버튼을 클릭 했을때 함수 끝 / 1. url 2. data 3. 
+}); // 전체 함수 끝
+
+/* 다음주소 api end */
+
+
 /* 아이디 중복체크[ajax] */
 $(function() {
 	$("#id").change(function(){
@@ -65,7 +91,7 @@ $(function() {
 	$.ajax({
 		url:"idcheck.jsp", /* url : 통신할 페이지 경로 페이지 */
 		data: {userid:document.getElementById("singupform").id.value}, /* 이동할 데이터 */
-		/*  */
+		/* data : {변수명 : 값} */ 
 		success: function(result) { // 통신이 성공 했을때
 			if(result==1) {
 				// alert("중복"); / js 변수는 자료형이 없음
@@ -79,6 +105,10 @@ $(function() {
 });
 
 /* 아이디 중복체크 end */
+
+function namechange(){
+document.getElementById("tdname").innerHTML="<input type='text' id='name' class='form-control'> <button id='namechangebtn' class='form-control'>확인</button>"
+}
 
 /* 회원가입 유효성검사 */
 function singupcheck(){

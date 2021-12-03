@@ -31,8 +31,7 @@ public class Member {
 			this.m_sdate = m_sdate;
 		}
 		// 회원가입 생성자 
-		public Member(String m_id, String m_password, String m_name, String m_brith, String m_sex, String m_phone,
-				String m_address) {
+		public Member(String m_id, String m_password, String m_name, String m_brith, String m_sex, String m_phone, String m_address) {
 			this.m_id = m_id;
 			this.m_password = m_password;
 			this.m_name = m_name;
@@ -41,13 +40,7 @@ public class Member {
 			this.m_phone = m_phone;
 			this.m_address = m_address;
 		}
-		
-		// 로그인 생성자?
-		public Member(String m_id, String m_password) {
-			this.m_id = m_id;
-			this.m_password = m_password;
-		}
-		
+
 		public int getM_num() {
 			return m_num;
 		}
