@@ -34,7 +34,7 @@
 						
 					<div class="tab-pane fade show active" id="pills-order">
 						<h3> 신청목록 </h3>
-							<div class="content"> 신청목록 입니다. </div>
+							<div class="content"> 신청목록 </div>
 					</div>
 					
 					<%
@@ -50,7 +50,8 @@
 								</tr>
 					
 									<tr>
-										<td> 아이디 </td><td colspan="2"><%= member.getM_id() %></td>
+										<td> 아이디 </td>
+										<td colspan="2"><%= member.getM_id() %></td>
 									</tr>
 								
 									<tr>
@@ -59,38 +60,62 @@
 									</tr>
 									
 									<tr>
-										<td> 포인트 </td><td colspan="2"><%= member.getM_point() %></td>
+										<td> 포인트 </td>
+										<td colspan="2"><%= member.getM_point() %></td>
 									</tr>
 									
 									<tr>
 										<td> 회원명 </td>
 										<td id="tdname"><%= member.getM_name() %></td>
 										<td><button onclick="namechange();" class="form-control">수정</button></td>
+										
 									</tr>
 									
 									<tr>
-										<td> 성별 </td><td><%= member.getM_sex() %></td>
-										<td><button class="form-control">수정</button></td>
+										<td> 성별 </td>
+										<td id="tdsex"><%= member.getM_sex() %></td>
+										<td><button onclick="sexchange();" class="form-control">수정</button></td>
 									</tr>
 									
 									<tr>
-										<td> 생년월일 </td><td><%= member.getM_brith() %></td>
-										<td><button class="form-control">수정</button></td>
+										<td> 생년월일 </td>
+										<td id="tdbrith"><%= member.getM_brith() %></td>
+										<td><button onclick="brithchange();" class="form-control">수정</button></td>
 									</tr>
 									
 									<tr>
-										<td> 연락처 </td><td><%= member.getM_phone() %></td>
-										<td><button class="form-control">수정</button></td>
+										<td> 연락처 </td>
+										<td id="phone"><%= member.getM_phone() %></td>
+										<td><button onclick="phonechange();" class="form-control">수정</button></td>
 									</tr>
 									
 									<tr>
-										<td> 주소 </td><td><%= member.getM_address() %></td>
+										<td> 주소 </td>
+										<td><%= member.getM_address() %></td>
 										<td><button class="form-control">수정</button></td>
 									</tr>
 									
+									<tr style="display: none;" id="traddress"> <!-- css 숨김 -->
+									<td colspan="3">
+										<div class="row">	<!-- 3:8 -->
+										<div class="col-md-3 m-2"> <label>주소</label> </div>
+										<div class="col-md-8"> 
+											<div class="row">
+												<div class="col-md-6"> <input type="text" name="address1" id="sample4_postcode" placeholder="우편번호" class="form-control"> </div>
+												<div class="col-md-6"> <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="form-control"><br></div>
+											</div>
+											<div class="row">
+												<div class="col-md-6"> <input type="text" name="address2" id="sample4_roadAddress" placeholder="도로명주소" class="form-control"> </div>
+												<div class="col-md-6"> <input type="text" name="address3" id="sample4_jibunAddress" placeholder="지번주소" class="form-control"> </div>
+											</div>
+											<input type="text" id="sample4_detailAddress" name="address4" placeholder="상세주소" class="form-control">
+										</div>
+									</div>
+									</tr>
+									
 									<tr>
-										<td> 가입일 </td><td colspan="2"><%= member.getM_sdate() %></td>
-										<td><button class="form-control">수정</button></td>
+										<td> 가입일 </td>
+										<td colspan="2"><%= member.getM_sdate() %></td>
 									</tr>
 								</table>
 					</div>
@@ -101,7 +126,8 @@
 				</div>
 				
 				<div class="tab-pane fade" id="pills-memberupdate">
-					<
+					<h3> 회원수정 </h3>
+						<div class="content"> 안녕하세요!</div>
 				</div>
 				
 				<div class="tab-pane fade" id="pills-memberdelete">

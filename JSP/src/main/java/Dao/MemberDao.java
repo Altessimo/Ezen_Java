@@ -81,7 +81,7 @@ public class MemberDao {
 		ps=con.prepareStatement(sql1);
 		ps.setString(1, id);
 		ps.setString(2, password);
-		rs=ps.executeQuery(); // 조작한 검색결과를 rs를 연결 해줌
+		rs=ps.executeQuery(); // 검색결과를 rs에 연결 해준다
 		
 		if(rs.next()) { // 아이디와 비밀번호가 동일할 경우에 결과가 있는 경우에만 회원 객체
 			PreparedStatement ps2 = con.prepareStatement(sql2);
@@ -112,6 +112,19 @@ public class MemberDao {
 			}
 		} catch (Exception e) { } return null;
 	}
+	
+	// 회원수정
+	public boolean update(String type, String newdata, String id) {
+		String sql="update member set "+type+"=? where m_id=?";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, newdata);
+			ps.setString(2, id);
+			ps.executeUpdate(); return true;
+		} catch (Exception e) { } return false;
+	}
+	
+	// 
 }
 
 

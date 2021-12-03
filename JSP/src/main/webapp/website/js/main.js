@@ -1,4 +1,4 @@
-/**
+/*
  * 다음 js
  */
  	function sample4_execDaumPostcode() {
@@ -55,8 +55,7 @@
             }
         }).open();
     }
-
-/* 다음주소 api end */
+										/* 다음주소 api end */
 
 /* 회원탈퇴 api start */
  // ${function(){실행문}} : 함수
@@ -81,9 +80,6 @@ $(function(){
 	}); // 버튼을 클릭 했을때 함수 끝 / 1. url 2. data 3. 
 }); // 전체 함수 끝
 
-/* 다음주소 api end */
-
-
 /* 아이디 중복체크[ajax] */
 $(function() {
 	$("#id").change(function(){
@@ -106,8 +102,26 @@ $(function() {
 
 /* 아이디 중복체크 end */
 
+// 회원이름 수정
 function namechange(){
 document.getElementById("tdname").innerHTML="<input type='text' id='name' class='form-control'> <button id='namechangebtn' class='form-control'>확인</button>"
+
+if(function(){
+	// $("id명")	.이벤트명(함수명(){실행코드;});
+	$("#namechangebtn"),click(function(){
+	$.ajax({
+		url: "../../controller/memberupdate.jsp", /* url : 통신할 페이지 경로 페이지 */
+		data:{newname: document.getElementById("name").value}, /* 이동할 데이터 */
+		success: function(result){ // 통신이 성공 했을때
+			if(result == 1){
+				document.getElementById("tdname").innerHTML=document.getElementById("name").value;
+			} else {
+				alert("[수정오류] 관리자에게 문의")
+			}
+		}
+	})
+	});
+});
 }
 
 /* 회원가입 유효성검사 */
