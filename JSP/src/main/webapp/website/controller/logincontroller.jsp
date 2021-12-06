@@ -1,3 +1,4 @@
+<%@page import="Dto.Login"%>
 <%@page import="Dao.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -17,7 +18,11 @@
 	// Db 결과처리
 		if(result){// 로그인 성공시
 			// 세션 부여[내장객체 : 기본값(30분)]
-			session.setAttribute("loginid", id); // 세션명, 세션 데이터
+			int m_num= MemberDao.getmemberDao().getmembernum(id);
+			// 로그인 객체
+			Login login = new Login(m_num, id);
+			// 세션
+			session.setAttribute("login", login);
 		response.sendRedirect("../view/main.jsp");
 		} else { // 로그인 실패
 		response.sendRedirect("../view/member/login.jsp?result=fail");

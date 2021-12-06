@@ -1,3 +1,4 @@
+<%@page import="Dto.Login"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,8 +24,10 @@
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	
 	<%
-	String loginid=(String)session.getAttribute("loginid");
-	
+	Login login=(Login)session.getAttribute("login");
+	String loginid = null; // 
+	if(login != null) {loginid = login.getM_id();}
+	// 세션이 있을 경우에만 로그인을 해야하는데 없는 경우엔 Null 값이 계속 들어감
 	%>
 	
 	<!-- 헤더 start -->
@@ -70,7 +73,7 @@
 							<li class="nav-item"><a href="#" class="nav-link">겨울</a></li>
 							<li class="nav-item"><a href="#" class="nav-link">이벤트</a></li>
 							<li class="nav-item"><a href="#" class="nav-link">방문후기</a></li>
-							<li class="nav-item"><a href="#" class="nav-link">고객센터</a></li>
+							<li class="nav-item"><a href="board/boardlist.jsp" class="nav-link">고객센터</a></li> 
 						</ul>
 					</div>
 				</nav>

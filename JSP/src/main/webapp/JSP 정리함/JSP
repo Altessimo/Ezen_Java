@@ -179,10 +179,22 @@ $/ : 정규표현식 끝
 	|← ----- |
 	|→ --- → |
 	
-	
-		
-		
-		
+설계[DB] : 게시판[공지사항]
+	1. 게시물번호[PK, AUTO, INT]
+	2. 제목[varchar]
+	3. 내용[varchar]
+	4. 회원번호[식별용 / 작성자] [FK, INT]
+	5. 작성일[timestamp, default now]
+	6. 첨부파일[varchar] : 실제파일은 서버에 저장 / 경로는 DB에 저장
+	7. 조회수[INT]
+	8. 게시물 상태[1. 표시 / 2. 숨기기] [INT]
+
+
+
+1. SQL
+create table jsp.board (
+b_no int 
+2. DTO 클래스
 		
 		
 		

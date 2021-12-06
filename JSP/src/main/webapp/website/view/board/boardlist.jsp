@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%@ include file="../header.jsp" %>
+<div class="container">
+	<a href="boardwirte.jsp"><button> 글쓰기 </button></a>
+</div>
 </body>
 </html>

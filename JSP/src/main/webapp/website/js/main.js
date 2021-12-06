@@ -104,9 +104,10 @@ $(function() {
 
 // 회원이름 수정
 function namechange(){
+	// 1. 클릭했을때 html 수정
 document.getElementById("tdname").innerHTML="<input type='text' id='name' class='form-control'> <button id='namechangebtn' class='form-control'>확인</button>"
 
-if(function(){
+$(function(){
 	// $("id명")	.이벤트명(함수명(){실행코드;});
 	$("#namechangebtn"),click(function(){
 	$.ajax({
