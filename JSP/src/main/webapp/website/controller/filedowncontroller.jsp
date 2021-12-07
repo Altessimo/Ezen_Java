@@ -13,6 +13,9 @@ String filename = request.getParameter("file");
 // 2. 서버 내 업로드 폴더애서 파일 찾기
 String folderpath = request.getSession().getServletContext().getRealPath("website/upload/"+filename);
 					// request.getSession().getRealPath : 서버 내 경로 찾기 // 현재 문서의 경로 찾기
+// 2. 작업폴더 경로에서 파일 찾기
+//String folderpath="C:/Users/505/git/Ezen_Java/JSP/src/main/webapp/website/uploud";
+
 // 3. 서버 내 업로드 폴더 내 파일 찾아서 파일을 객체화
 File file = new File(folderpath);
 

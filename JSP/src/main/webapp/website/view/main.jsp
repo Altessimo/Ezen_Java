@@ -30,10 +30,10 @@
 			</div>
 			
 			<!-- 케러셀 이미지 이동 버튼 -->
-			<a class="carousel-control-prev" href="#carouselcontent" data-slide="prov" >
+			<a class="carousel-control-prev" href="#carouselcontent" data-slide="prov">
 				<span class="carousel-control-prev-icon"></span>
 			</a>
-			<a class="carousel-control-next" href="#carouselcontent" data-slide="next" >
+			<a class="carousel-control-next" href="#carouselcontent" data-slide="next">
 				<span class="carousel-control-next-icon"></span>
 			</a>
 		</div>

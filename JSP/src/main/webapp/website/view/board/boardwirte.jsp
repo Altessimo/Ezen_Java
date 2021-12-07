@@ -9,7 +9,7 @@
 <body>
 	<%@ include file="../header.jsp" %>
 	<!-- 글쓰기 페이지 -->
-	<<div class="container">
+	<div class="container">
 		<form action="../../controller/boardwritecontroller.jsp" method="post" enctype="multipart/form-data">
 			<!-- form 전송데이터 기본 타입 : text(string) enctype="application/x-www-form-urlencoded 기본값 -->
 			<!-- form 파일 데이터 타입 : multipart/form-data -->

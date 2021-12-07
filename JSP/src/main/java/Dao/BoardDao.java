@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Observable;
+
 import Dto.Board;
 
 public class BoardDao {
@@ -57,6 +59,7 @@ public ArrayList<Board> boardlist(){
 		return boards;
 	} catch (Exception e) { } return null;
 }
+
 // 게시물 번호의 해당 게시물 가져오기
 public Board getboard(int b_num) {
 	String sql="select * from board where b_num=?";
@@ -71,4 +74,44 @@ public Board getboard(int b_num) {
 		}
 	} catch (Exception e) { } return null;
 }
+
+// 조회수 증가
+public boolean boardcount(int b_num) {
+	String sql="update board set b_view = b_view+1 where b_num=?";
+	try {
+		ps=con.prepareStatement(sql);
+		ps.setInt(1, b_num);
+		ps.executeUpdate();
+		return true;
+	} catch (Exception e) { } return false;
+}
+
+// 게시물 삭제 메소드
+public boolean boarddelete(int b_num) {
+	String sql="delete from board where b_num=?";
+	try {
+		ps=con.prepareStatement(sql);
+		ps.setInt(1, b_num);
+		ps.executeUpdate();
+		return true;
+	} catch (Exception e) { } return false;
+}
+
+// 게시물 수정 페이지
+public boolean boardupdate(Board board) {
+	String sql="update board set b_title =?, b_contents=?, b_file=? where b_num=?";
+	try {
+		ps=con.prepareStatement(sql);
+		ps.setString(1, board.getB_title());
+		ps.setString(2, board.getB_contents());
+		ps.setString(3, board.getB_file());
+		ps.setInt(4, board.getB_num());
+		ps.executeUpdate();
+		return true;
+	} catch (Exception e) { } return false;
+}
+
+// 댓글 추가 메소드
+
+
 }
