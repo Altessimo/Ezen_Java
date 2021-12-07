@@ -81,9 +81,6 @@
 	</div>
 	<!-- 헤더 end -->
 	<br><br><br><br><br><br><br>
-	
-	<div><a href="/Ezen_Jsp/website/view/main.jsp"> 로고 </a></div>
-	
 	<ul>
 	
 	</ul>

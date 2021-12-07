@@ -13,10 +13,10 @@
 		<form action="../../controller/boardwritecontroller.jsp" method="post" enctype="multipart/form-data">
 			<!-- form 전송데이터 기본 타입 : text(string) enctype="application/x-www-form-urlencoded 기본값 -->
 			<!-- form 파일 데이터 타입 : multipart/form-data -->
-			제목 : <input type="text" name="title">
-			내용 : <textarea rows="" cols="" name="contents"></textarea>
-			첨부파일 : <input type="file" name="file">
-			<input type="submit" value="등	록"><br>
+			제목 : <input type="text" name="title"><br>
+			내용 : <textarea rows="10" cols="50" name="contents"></textarea><br>
+			첨부파일 : <input type="file" name="file"><br>
+			<input type="submit" value="등	록">
 		</form>
 	</div>
 </body>

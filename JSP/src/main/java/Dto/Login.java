@@ -1,6 +1,7 @@
 package Dto;
 
 public class Login {
+	
  private int m_num;
  private String m_id;
 

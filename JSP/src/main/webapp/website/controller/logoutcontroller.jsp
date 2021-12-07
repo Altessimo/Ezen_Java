@@ -9,7 +9,7 @@
 </head>
 <body>
 	<%
-		session.setAttribute("loginid", null); // 로그인 세션을 초기화
+		session.setAttribute("login", null); // 로그인 세션을 초기화
 		response.sendRedirect("../view/main.jsp");
 	%>
 </body>

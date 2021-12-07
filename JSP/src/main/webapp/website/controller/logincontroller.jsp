@@ -19,6 +19,7 @@
 		if(result){// 로그인 성공시
 			// 세션 부여[내장객체 : 기본값(30분)]
 			int m_num= MemberDao.getmemberDao().getmembernum(id);
+			
 			// 로그인 객체
 			Login login = new Login(m_num, id);
 			// 세션

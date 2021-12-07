@@ -2,20 +2,20 @@ package Dto;
 
 public class Board {
 	// 필드
- String b_num;
- String b_title;
- String b_contents;
- int m_num;
- String b_date;
- String b_file;
- int b_view;
- int b_activation;
+ private int b_num;
+ private String b_title;
+ private String b_contents;
+ private int m_num;
+ private String b_date;
+ private String b_file;
+ private int b_view;
+ private int b_activation;
  
 // 빈 생성자
 public Board() {}
 
 // 전체 생성자
-public Board(String b_num, String b_title, String b_contents, int m_num, String b_date, String b_file, int b_view,
+public Board(int b_num, String b_title, String b_contents, int m_num, String b_date, String b_file, int b_view,
 		int b_activation) {
 	super();
 	this.b_num = b_num;
@@ -36,12 +36,13 @@ public Board(String b_title, String b_contents, int m_num, String b_file) {
 	this.m_num = m_num;
 	this.b_file = b_file;
 }
+
 //get, set
-public String getB_num() {
+public int getB_num() {
 	return b_num;
 }
 
-public void setB_num(String b_num) {
+public void setB_num(int b_num) {
 	this.b_num = b_num;
 }
 
@@ -100,4 +101,8 @@ public int getB_activation() {
 public void setB_activation(int b_activation) {
 	this.b_activation = b_activation;
 }
+
+
+
+
 }

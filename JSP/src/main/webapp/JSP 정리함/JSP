@@ -192,15 +192,61 @@ $/ : 정규표현식 끝
 
 
 1. SQL
-create table jsp.board (
-b_no int 
+create table jsp.board(
+      b_num int primary key auto_increment , 
+      b_title varchar(30) not null ,
+      b_contents varchar(1000) not null ,
+      m_num int not null ,
+      b_date timestamp default now() ,
+      b_file varchar(1000) ,
+      b_view int default 0 ,
+      b_activation int default 1 ,
+      foreign key ( m_num ) references member( m_num )  
+)
 2. DTO 클래스
-		
-		
-		
-		
-		
-		
+
+파일 업로드
+1. cos.jar 라이브러리 이용[파일을 복사해주는 라이브러리]
+1. form 인코딩 : enc
+2. MultipartRequest 객체 = new MultipartRequest(1, 2, 3, 4, 5)
+	1. 요청방식 : request
+	2. 업로드 할 폴더 경로
+	3. 용량 : 바이트 단위
+	4. 인코딩 타입 : utf-8
+	5. 보안 : new DefaultFileRenamePolicy()
+			DefaultFileRenamePolicy : 파일명이 동일할경우 자동으로 파일명 뒤에 번호 매기기[파일명 중복 제거 클래스]
+3. form 변수요청시[form의 인코딩 타입이 multipart일 경우 request 객체요청 사용불가]
+	1. 객체명.getParameter() : 변수 값 요청
+	2. getFilesystemName() : 첨부파일에 올라간 파일명 요청
+
+워크스페이스 : 작업폴더[프로젝트/파일 작성하는 곳]
+서버폴더 : 서버 실행시 작업 폴더에 있는 파일들을 서버로 이동
+클라이서버	  ←→ 		폴더			←→		워크 스페이스[프로젝트 폴더]
+사용자	 			요청, 응답				* Git (Project Exploer은 서버가 X)
+					개발자
+서버의 구동원리
+	1. 프로젝트 실행 → 프로젝트 내 서블릿/프론트엔드 분리
+	2. 서버폴더 패치
+	3. 클라이언트 요청/응답에 따른 서버폴더 내 요청/응답
+
+서버 경로 찾기[서블릿]
+	1.  request.getSession().getServletContext().getRealPath("경로명/파일명");
+파일 다운로드
+	1. 파일명의 경로 찾기
+	2. 해당파일 객체화[File file = new File(경로/파일명)] : 해당파일이 객체화[다양한 메소드 제공]
+		// 해당 파일의 다양한 기능 : FileInputStream(file)
+		1. 파일을 바이트형 변환[String]
+	3. 다운로드 형식
+		response.setHeader("Content-Disposition", "attachment;filename="+파일이름+";");	
+	4. 전송방식
+		1. 서바가 해당파일을 바이트 형으로 읽어온다
+			BufferedInputStream 객체명 = new BufferedInputStream(new FileInputStream(파일객체))
+			객체명.read(배열명)
+		2. 서버가 읽어온 파일의 바이트를 클라이언트에게 응답[전송]
+			BufferedOutputStream 객체명 = new BufferedOutputStream(response.getOutputStream());
+			객체명.write(배열명)
+		3. 스트림 초기화/종료
+			스트림 객체.close()
 		
 		
 		

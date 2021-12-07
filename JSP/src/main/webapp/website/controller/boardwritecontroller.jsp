@@ -24,7 +24,11 @@
 			5. 보안 : new DefaultFileRenamePolicy()
 				1. DefaultFileRenamePolicy : 파일명이 동일할경우 자동으로 파일명 뒤에 번호 부여[식별용]
 		*/
-	String folderpath="C:/Users/505/git/Ezen_Java/JSP/src/main/webapp/website/uploud";
+		// 현재 작업폴더 업로드
+	// String folderpath="C:/Users/505/git/Ezen_Java/JSP/src/main/webapp/website/uploud";
+	// 서버 폴더 업로드
+		// 1. 서버 실제 경로
+	String folderpath = request.getSession().getServletContext().getRealPath("website/upload");
 	MultipartRequest multi = new MultipartRequest(request, folderpath, 1024*1024*10, "utf-8", new DefaultFileRenamePolicy());
 	// 컴퓨터에 있는 파일을 Cos 서버로 이동
 	
@@ -41,14 +45,10 @@
 		String file = request.getParameter("file");
 		*/
 		
-		// 첨부파일[]
-		out.print(title+"<br>");
-		
-		String file = request.getParameter("file");
-		
 		// 작성자의 회원 번호
 		Login login = (Login)session.getAttribute("login");
 		int m_num = login.getM_num();
+		
 		
 		// 객체화
 		Board board = new Board(title, contents, m_num, file);
@@ -56,6 +56,7 @@
 		// db 처리
 		BoardDao.getboardDao().boardwrite(board);
 		
+		response.sendRedirect("../view/board/boardlist.jsp");
 		
 	%>
 </body>

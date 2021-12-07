@@ -25,6 +25,7 @@
 				<div class="carousel-item active"> <img src="../img/spring.jpg"> </div>
 				<div class="carousel-item"> <img src="../img/summer.jpg"> </div>
 				<div class="carousel-item"> <img src="../img/autumn.jpg"> </div>
+	
 				<div class="carousel-item"> <img src="../img/winter.jpg"> </div>
 			</div>
 			
