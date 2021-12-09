@@ -7,6 +7,11 @@
     font-style: normal;
 }
 
-*{font-family: 'MaplestoryOTFLight';}
+.carousel-inner > .item > img {
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 500px;
+    } 
 
-main_h2{font-weight: 700;}
+*{font-family: 'MaplestoryOTFLight';}

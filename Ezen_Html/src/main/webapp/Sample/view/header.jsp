@@ -41,7 +41,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 	
-	<div class="collapse navbar-collapse" id="header-mainmenu">
+	<div class="collapse navbar-collapse m-4" id="header-mainmenu">
 		<ul class="navbar-nav col-lg-12 justify-content-between">
 			<li class="nav-item"> <a href="#" class="nav-link"> 닌텐도 스위치 </a></li>
 			<li class="nav-item"> <a href="#" class="nav-link"> 닌텐도 3DS </a></li>
