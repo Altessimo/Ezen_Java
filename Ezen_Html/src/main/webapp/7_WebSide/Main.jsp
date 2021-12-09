@@ -19,9 +19,9 @@
             
 		<!-- 캐러셀 이미지 넣기 -->
 		<div class="carousel-inner">
-			<div class="carousel-item active"><img src="img/main.jpg"></div>
-			<div class="carousel-item"><img src="img/main2.jpg"></div>
-			<div class="carousel-item"><img src="img/main3.jpg"></div>
+			<div class="carousel-item active"><img src="img/item2.jpg"></div>
+			<div class="carousel-item"><img src="img/item2.jpg"></div>
+			<div class="carousel-item"><img src="img/item2.jpg"></div>
 		</div>
 	<!-- 캐러셀 이미지 이동버튼 -->
 	<a class="carousel-control-prev" href="#carouselcontent" data-slide="prov" >

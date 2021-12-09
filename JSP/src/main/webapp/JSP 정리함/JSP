@@ -252,13 +252,26 @@ Project Exploer은 서버가 아님
 			객체명.write(배열명)
 		3. 스트림 초기화/종료
 			스트림 객체.close()
-		
-		
-		
-		
-		
-		
-		
+
+페이징 처리
+	limit : 검색개수를 제한
+		limit(시작개수, 마지막개수)
+1. lastrow : 총 게시물 수
+2. listsize : 페이지 당 표시할 게시물 수
+3. lastpage : 마지막 페이지 번호
+	lastpage=lastrow/listsize
+	나머지가 있을경우 +1
+4. 
+검색
+key : 필드명
+keyword : 필드명 내 검색 데이터		
+동일한 값을 찾는 일반 검색
+ select*from board where b_title = "12345"
+ 필드 내 포함된 값을 찾는 검색
+ like : 비교연산자[필드명 like '%검색단어%']
+ 	? : 하나문자			% : 여러문자
+동일한 값 검색 : select*from 테이블명 where 필드명 = 검색데이터
+포함된 값 검색 : select*from 테이블 명 where 필드명 like '%검색데이터%'	
 		
 		
 		

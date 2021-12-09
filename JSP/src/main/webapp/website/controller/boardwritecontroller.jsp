@@ -67,7 +67,6 @@
 		BoardDao.getboardDao().boardwrite(board);
 		
 		response.sendRedirect("../view/board/boardlist.jsp");
-		
 	%>
 </body>
 </html>

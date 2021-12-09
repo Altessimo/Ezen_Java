@@ -3,20 +3,23 @@ package Dto;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import Dao.MemberDao;
+
 public class Reply {
 	
 	// 필드
 	private int r_num;
-	private int r_contents;
-	private String b_date;
+	private String r_contents;
+	private String r_date;
 	private int m_num;
 	private int b_num;
+	private String r_writer; // 회원아이디
 	
-	// 빈 생성자
+	// 빈 생성자 : 임시로 만든것
 	public Reply() { }
 
-	// 전체 생성자
-	public Reply(int r_num, int r_contents, String b_date, int m_num, int b_num) {
+	// 전체 생성자 : DB에서 꺼내올때
+	public Reply(int r_num, String r_contents, String r_date, int m_num, int b_num) {
 		super();
 		this.r_num = r_num;
 		this.r_contents = r_contents;
@@ -26,20 +29,21 @@ public class Reply {
 		SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat timeformat = new SimpleDateFormat("hh:mm");
 		try {
-			Date date=datetimeformat.parse(b_date);
+			Date date=datetimeformat.parse(r_date);
 			if(dateformat.format(date).equals(dateformat.format(today))) {
-				this.b_date=timeformat.format(date);
+				this.r_date=timeformat.format(date);
 		} else {
-			this.b_date=dateformat.format(date);
+			this.r_date=dateformat.format(date);
 		}
 		} catch (Exception e) { }
 		this.m_num = m_num;
 		this.b_num = b_num;
+		this.r_writer=MemberDao.getmemberDao().getmemberid(m_num);
 	}
 	
-	// 댓글 
+	// DB 넣을때 / 특정 생성자 / 댓글
 		// 어떤 게시물에 어떤 댓글이 있는지 구별
-	public Reply(int r_contents, int m_num, int b_num) {
+	public Reply(String r_contents, int m_num, int b_num) {
 		this.r_contents = r_contents;
 		this.m_num = m_num;
 		this.b_num = b_num;
@@ -54,20 +58,20 @@ public class Reply {
 		this.r_num = r_num;
 	}
 
-	public int getR_contents() {
+	public String getR_contents() {
 		return r_contents;
 	}
 
-	public void setR_contents(int r_contents) {
+	public void setR_contents(String r_contents) {
 		this.r_contents = r_contents;
 	}
 
-	public String getB_date() {
-		return b_date;
+	public String getR_date() {
+		return r_date;
 	}
 
-	public void setB_date(String b_date) {
-		this.b_date = b_date;
+	public void setR_date(String r_date) {
+		this.r_date = r_date;
 	}
 
 	public int getM_num() {
@@ -84,5 +88,13 @@ public class Reply {
 
 	public void setB_num(int b_num) {
 		this.b_num = b_num;
+	}
+
+	public String getR_writer() {
+		return r_writer;
+	}
+
+	public void setR_writer(String r_writer) {
+		this.r_writer = r_writer;
 	}
 }

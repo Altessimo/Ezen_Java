@@ -215,3 +215,31 @@ function singupcheck(){
 }
 
 /* 회원가입 유효성검사 end */
+
+/* 제품 상태변경 */
+// function : 함수
+	function activeupdate(p_num){
+		if(confirm("상태변경하시겠습니까?")==true) { // 확인버튼 눌렀을때
+			// 동기식
+				// location.href('../../controller/productdeletecontroller.jsp?p_num='+p_num);	 
+			// 비 동기식
+				// ajax 통신으로 상태를 다음 상태로 변경
+			$(function(){
+				$.ajax({
+					url: "../../controller/productactivecontroller.jsp",
+					data : {p_num:p_num}, // 여러개일 경우 ,로 구분
+					success : function(result) {
+						if(result == 1) { // js 자료형이 없다
+							// 현재 페이지를 초기화[현재 페이지 refresh]
+							alert("변경성공");
+								location.reload(); // j쿼리 메소드
+						} else {
+							alert("변경실패");
+						}
+					}
+					
+				});
+			});
+		}
+	}
+/* 제품 상태변경 end */

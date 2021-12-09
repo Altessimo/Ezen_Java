@@ -45,16 +45,16 @@
 							if(loginid.equals("admin")){ // 로그인이 되어있으면서 관리자 이면
 							%>
 							
-							<li><a href="/Ezen_Jsp/website/view/admin/adminmain.jsp" class="heder_menu col-md-4"> 관리자 </a></li>
+							<li><a href="/Ezen_Jsp/website/view/admin/dashboard.jsp" class="heder_menu"> 관리자 </a></li>
 							<% } %>
 							<li> <span  class="header_menu"> <%=loginid %>님 </span> </li>
-							<li><a href="/Ezen_Jsp/website/view/member/memberinfo.jsp" class="heder_menu col-md-4"> 회원정보 </a></li>
-							<li><a href="/Ezen_Jsp/website/controller/logoutcontroller.jsp" class="heder_menu col-md-4"> 로그아웃 </a></li>
+							<li><a href="/Ezen_Jsp/website/view/member/memberinfo.jsp" class="heder_menu"> 회원정보 </a></li>
+							<li><a href="/Ezen_Jsp/website/controller/logoutcontroller.jsp" class="heder_menu"> 로그아웃 </a></li>
 							<%
 							} else { // 로그인이 안되어있는경우
 							%>
-							<li><a href="/Ezen_Jsp/website/view/member/login.jsp" class="heder_menu col-md-4"> 로그인 </a></li>
-							<li><a href="/Ezen_Jsp/website/view/member/singup.jsp" class="heder_menu col-md-4"> 회원가입 </a></li>
+							<li><a href="/Ezen_Jsp/website/view/member/login.jsp" class="heder_menu"> 로그인 </a></li>
+							<li><a href="/Ezen_Jsp/website/view/member/singup.jsp" class="heder_menu"> 회원가입 </a></li>
 							<% } %>
 						</ul>
 					</div>

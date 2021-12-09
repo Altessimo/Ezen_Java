@@ -22,3 +22,12 @@ h1,h2,h3,h4,h5,h6{font-family:'CookieRun-Regular';}
 }
 
 .carousel-item img{width: 100%;}
+
+.item .price{
+	font-family: 'CookieRun-Regular';
+	font-size: 16px;
+}
+
+.pimg:hover {
+	transform : scale(1.1);
+}

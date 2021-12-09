@@ -1,3 +1,4 @@
+<%@page import="Dto.Reply"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Dao.BoardDao"%>
 <%@page import="Dto.Board"%>
@@ -77,26 +78,43 @@
 	</table>
 	<br><br>
 	<hr>
-	
-	<div class="row">
+	<form action="../../controller/replywritecontroller.jsp" method="post" class="row">
+	<!-- 댓글 저장시 : 1. 댓글 내용 2. 댓글 작성자[세션] 3. 게시물번호 -->
+	<input type="hidden" name="b_num" value="<%=b_num%>">
 		<div class="col-md-2">
 			<h6> 댓글 작성 </h6>
 		</div>
 		
 		<div class="col-md-8">
-			<textarea rows="" cols="" class="form-control"></textarea>
+			<textarea rows="" cols="" class="form-control" name="contents"></textarea>
 		</div>
-		
+			
 		<div class="col-md-2">
-			<button class="form-control"> 등록 </button>
+			<input type="submit" value="등록" class="form-control">
 		</div>
+	</form>
+	
 		<table class="table m-3">
 			<tr>
 				<th> 작성자 </th> <th> 내용 </th> <th> 작성일 </th>
 			</tr>
-			</form>
+			
+			<%
+			ArrayList<Reply> replies = BoardDao.getboardDao().replylist(b_num);
+			for(Reply reply : replies) {
+			%>
+			<tr>
+				<th><%=reply.getR_writer() %> </th>
+				<th> <%=reply.getR_contents() %> </th>
+				<th> <%=reply.getR_date()%> </th>
+				<th>
+					<a href="../../controller/replydeletecontroller.jsp?r_num=<%=reply.getR_num()%>&b_num=<%=b_num%>">
+					<button class="form-control">삭제</button>
+					</a>
+				<!-- 삭제버튼 눌렀을때 댓글번호 이동 -->
+			<% } %>
+			</tr>
 		</table>
 	</div>
-</div>
 </body>
 </html>
