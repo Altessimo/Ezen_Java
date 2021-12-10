@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 <!-- css 호출 -->
-<link rel="stylesheet" href="/Ezen_Jsp/website/css/main.css">
+<link rel="stylesheet" href="/Ezen_Html/Test/css/main.css">
 </head>
 <body>
 <!-- 부트스트랩 가져오기 Js/j퀘리 -->
@@ -21,16 +21,19 @@
 <div class="fixed-top bg-white">
 	<div class="container">
 		<header class="py-3">
+		<div id="logo">
+			<img src="img/logo.gif">
+		</div>
 		<div class="row justify-content-between align-items-center">
 			<div class="col-4 offset-3 text-center">
 				<a href="main.jsp" class="p-3 mb-2 bg-danger text-white">
-				<span style="font-size: 2rem">닌텐도(Nintendo)</span></a>
+				<span style="font-size: 2rem"> 게임 구입 페이지 </span></a>
 			</div>
 			<div class="col-3 d-flex justify-content-end align-items-center">
 				<ul class="nav header-topmamu">
-					<li><a href="login.jsp" class="p-2 mb-1 bg-info text-white"> 로그인 </a>
-					<li><a href="login.jsp" class="p-2 mb-1 bg-info text-white"> 회원가입 </a>
-					<li><a href="#" class="p-2 mb-1 bg-info text-white"> 게시판 </a>
+					<li><a href="/Ezen_Jsp/Test/view/member/login.jsp" class="p-2 mb-1 bg-info text-white"> 로그인 </a>
+					<li><a href="/Ezen_Jsp/Test/view/member/singup.jsp" class="p-2 mb-1 bg-info text-white"> 회원가입 </a>
+					<li><a href="/Ezen_Jsp/Test/view/board/board.jsp" class="p-2 mb-1 bg-info text-white"> 게시판 </a>
 				</ul>
 			</div>
 			</div>
@@ -54,5 +57,6 @@
 		</nav>
 	</div>
 </div>
+
 </body>
 </html>
