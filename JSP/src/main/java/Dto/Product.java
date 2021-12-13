@@ -16,11 +16,12 @@ public class Product {
 	private String p_contents; // 제품 설명
 	private String p_date; // 등록일
 	
+	// this용
 	public String getprice() { // 천단위 쉼표 메소드
 		DecimalFormat decimalFormat = new DecimalFormat("###,###"); // DecimalFormat : 숫자형식
 		return decimalFormat.format(this.p_price);
 	}
-	
+
 	public String getactive() { // 상태를 문자형으로 나타내주는 메소드
 		if(this.p_active==1) {return "준비중";}
 		if(this.p_active==2) {return "판매중";}

@@ -17,6 +17,6 @@
 	String pimg = multi.getParameter("pimg");
 	String pcontents = multi.getParameter("pcontents");
 	
-	contents=contents.replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n", "<br>");
+	pcontents=pcontents.replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n", "<br>");
 	
 %>
