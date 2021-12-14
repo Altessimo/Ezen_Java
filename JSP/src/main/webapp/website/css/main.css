@@ -32,7 +32,11 @@ h1,h2,h3,h4,h5,h6{font-family:'CookieRun-Regular';}
 	transform : scale(1.1);
 }
 
-#total{
+#total {
 	font-family: 'CookieRun-Regular';
-	font-size: 1.5rem;
+}
+
+.pview{
+	font-family: 'CookieRun-Regular';
+	font-size: 1rem;
 }
