@@ -40,3 +40,13 @@ h1,h2,h3,h4,h5,h6{font-family:'CookieRun-Regular';}
 	font-family: 'CookieRun-Regular';
 	font-size: 1rem;
 }
+
+.carttotal{
+	font-family: 'CookieRun-Regular';
+	font-size: 1.5rem;
+}
+
+.totalbox{
+	border: 3px solid #eeeeee;
+	margin: 40px; padding: 40px;
+}

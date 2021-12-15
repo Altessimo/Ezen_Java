@@ -253,22 +253,22 @@ function pchange(type, stock, price) { // function : 함수 신청
 	if(type=='m'){ // 마이너스 버튼을 눌렀을때
 		pcount -=1; // 현재수량 -1
 		if(pcount<1){ // 만약에 1보다 작아지면
-			alert("수량은 1개 이상 가능합니다"); // 메시지
+			alert("수량은 1개 이상 가능합니다");  pcount = 1; // 메시지
 			pcount =1;
 		}
 	} else if(type=='p'){ // 플러스 버튼을 눌렀을 때
 		pcount+=1; // 현재 수량 +1
 		if(pcount>stock){ // 만약에 1보다 커지면
-			alert("죄송합니다. 재고가 부족합니다"); // 메시지
+			alert("죄송합니다. 재고가 부족합니다"); pcount = stock; // 메시지
 			pcount=stock;
 		}
 	} else{ // 만약에 직접수량을 입력했을때
 		if(pcount>stock){ // 만약에 1보다 커지면
-			alert("죄송합니다. 재고가 부족합니다"); // 메시지
+			alert("죄송합니다. 재고가 부족합니다"); pcount = stock; // 메시지
 			pcount=stock;
 		}
 		if(pcount<1) { // 만약에 1보다 작아지면
-			alert("수량은 1개 이상 가능합니다"); // 메시지
+			alert("수량은 1개 이상 가능합니다"); pcount = 1; // 메시지
 			pcount=1;
 		}
 	}
@@ -348,10 +348,117 @@ function cartdelete(type, p_num, p_size){
 	// js ←-→ jsp 클래스 포함 X
 	$.ajax({ // 페이지 전환이 없음[해당 페이지와 통신]
 		url : "../../controller/productcartdeletecontroller.jsp",
-		data: {type : type, p_num:p_num, p_size:p_size},
+		data: {type : type, p_num:p_num, p_size:p_size, i:-1},
 		success: function(result){
 			location.reload(); // 현재 페이지 새로고침
 		}
 			});
 }
 /* 장바구니 삭제 end */
+
+/* 장바구니 수량 변경 */
+function pchange2(i, type, stock, price) {
+	var p_count = document.getElementById("pcount"+i).value*1;
+	
+	if(type=='m'){ // 마이너스 버튼을 눌렀을때
+		p_count -= 1; // 현재수량 -1
+		if(p_count<1){ // 만약에 1보다 작아지면
+			alert("수량은 1개 이상 가능합니다"); p_count = 1// 메시지
+			p_count =1;
+		}
+	} else if(type=='p'){ // 플러스 버튼을 눌렀을 때
+		p_count+=1; // 현재 수량 +1
+		if(p_count>stock){ // 만약에 1보다 커지면
+			alert("죄송합니다. 재고가 부족합니다"); p_count = stock // 메시지
+			p_count=stock;
+		}
+	} else{ // 만약에 직접수량을 입력했을때
+		if(p_count>stock){ // 만약에 1보다 커지면
+			alert("죄송합니다. 재고가 부족합니다"); p_count = stock // 메시지
+			p_count=stock;
+		}
+		if(p_count<1) { // 만약에 1보다 작아지면
+			alert("수량은 1개 이상 가능합니다"); p_count = 1 // 메시지
+			p_count=1;
+		}
+	}
+	// 현재수량을 현재수량 입력상자에 대입
+	document.getElementById("pcount"+i).value=p_count;
+									// value 속성 태그[입력상자 input]
+	var totalprice = p_count * price; // 총 가격 = 제품수량 * 제품가격
+	document.getElementById("total"+i).innerHTML=totalprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
+										// .innerHTML 속성태그 div
+										// 총 가격.toString() : 문자열 반환
+										// .replace(기존문자, 새로운문자)
+											// 정규표현식 :  1. / : 시작
+												// 2. \b : 시작, 끝 문자[예 : 1234일경우 1, 4]
+												// 3. \d{3} : 문자길이[예 : {3} : 숫자길이 123]
+												// 4. !\d : 뒤에 숫자 없을 경우
+												// 5. /g : 전역 검색
+	$.ajax({ // 페이지 전환이 없음[해당 페이지와 통신]
+		url : "../../controller/productcartdeletecontroller.jsp",
+		data: {type : type, p_num:-1, p_size:-1, i:i, p_count:p_count},
+		success: function(result){
+			location.reload(); // 현재 페이지 새로고침
+		}
+			});									
+}
+/* 장바구니 수량 변경 end */
+
+/* 결제 API 아임포트 */
+function payment() {
+	var IMP = window.IMP;
+    IMP.init("imp66357572"); // 관리자 식별코드
+    
+    IMP.request_pay({ // param
+          pg: "html5_inicis",
+          pay_method: "card",
+          merchant_uid: "ORD20180131-0000011",
+          name: "나만의 쇼핑몰", // 결제창에 나오는 결제 이름
+          amount: document.getElementById("totalprice").value,
+          buyer_email: "gildong@gmail.com",
+          buyer_name: "홍길동",
+          buyer_tel: "010-4242-4242",
+          buyer_addr: "서울특별시 강남구 신사동",
+          buyer_postcode: "01181"
+      }, function (rsp) { // callback
+          if (rsp.success) {  // 결제 성공 했을때 → 주문완료 페이지로 이동
+          	
+          } else { // 결제 실패 했을 때
+              
+          }
+      });
+}
+/* 결제 API 아임포트 end */
+
+/* 회원과 동일 체크 */
+// $(document).ready(function(){실행문}); // 문서 내에서 대기상태 메소드
+
+$(document).ready(function(){ // 체크 유무 검사[jquery]
+	$("#checkbox").change(function(){ // 체크박스가 변경 이벤트
+		if($("#checkbox").is(":checked")){
+			// 체크박스가 체크가 되었는지 확인 = true
+				// is : 해당 태그에 속성 유무 확인[":속성명"] 메소드
+				$("#name").val($("#mname").val());
+				$("#phone").val($("#mphone").val());
+		} else { // 체크 해제시 금악 지음
+			$("#name").val("");
+			$("#phone").val("");
+		}
+	});
+	$("#checkbox2").change(function(){ // 체크박스가 변경 이벤트
+		if($("#checkbox2").is(":checked")){
+			$("#sample4_postcode").val($("#address1").val());
+			$("#sample4_roadAddress").val($("#address2").val());
+			$("#sample4_jibunAddress").val($("#address3").val());
+			$("#sample4_detailAddress").val($("#address4").val());
+		} else { // 체크 해제시 금악 지음
+			$("#sample4_postcode").val("");
+			$("#sample4_roadAddress").val("");
+			$("#sample4_jibunAddress").val("");
+			$("#sample4_detailAddress").val("");
+		}
+	});
+}); 
+/* 회원과 동일 체크 end */
+

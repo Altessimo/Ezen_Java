@@ -73,7 +73,8 @@
 							<li class="nav-item"><a href="#" class="nav-link">겨울</a></li>
 							<li class="nav-item"><a href="#" class="nav-link">이벤트</a></li>
 							<li class="nav-item"><a href="#" class="nav-link">방문후기</a></li>
-							<li class="nav-item"><a href="board/boardlist.jsp" class="nav-link">고객센터</a></li> 
+							<li class="nav-item"><a href="/Ezen_Jsp/website/view/board/boardlist.jsp" class="nav-link">고객센터</a></li> 
+							<li class="nav-item"><a href="/Ezen_Jsp/website/view/product/productcart.jsp" class="nav-link">장바구니</a></li>
 						</ul>
 					</div>
 				</nav>
