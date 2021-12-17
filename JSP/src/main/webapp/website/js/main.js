@@ -57,7 +57,7 @@
     }
 										/* 다음주소 api end */
 
-/* 회원탈퇴 api start */
+/* 회원탈퇴 API Start */
  // ${function(){실행문}} : 함수
 $(function(){
 	// 버튼을 클릭했을때 이벤트 걸기
@@ -405,27 +405,56 @@ function pchange2(i, type, stock, price) {
 }
 /* 장바구니 수량 변경 end */
 
+/* 결제 방식 선택  */
+function paymentselect(payselect) {
+	document.getElementById("payselect").innerHTML=payselect;
+}
+
 /* 결제 API 아임포트 */
 function payment() {
+	
+	if(document.getElementById("payselect").innerHTML==""){
+		alert("결제방식을 선택해주세요"); return;
+	}
+	
 	var IMP = window.IMP;
-    IMP.init("imp66357572"); // 관리자 식별코드
+    IMP.init("imp66357572"); // [본인]관리자 식별코드[관리자 계정마다 다름]
     
-    IMP.request_pay({ // param
-          pg: "html5_inicis",
-          pay_method: "card",
-          merchant_uid: "ORD20180131-0000011",
+    IMP.request_pay({ // 결제 요청변수
+          pg: "html5_inicis", // pg사[아임포트 관리자 페이지에서 선택한 pg사]
+          pay_method: document.getElementById("payselect").innerHTML, // 결제방식
+          merchant_uid: "ORD20180131-0000011", // 주문번호[별도]
           name: "나만의 쇼핑몰", // 결제창에 나오는 결제 이름
-          amount: document.getElementById("totalprice").value,
+          amount: document.getElementById("totalprice").innerHTML, // 결제금액
           buyer_email: "gildong@gmail.com",
-          buyer_name: "홍길동",
-          buyer_tel: "010-4242-4242",
-          buyer_addr: "서울특별시 강남구 신사동",
-          buyer_postcode: "01181"
+          buyer_name: $("#name").val(),
+          buyer_tel: $("#phone").val(),
+          buyer_addr: $("#sample4_roadAddress").val()+","+$("#sample4_jibunAddress").val()+","+$("#sample4_detailAddress").val(),
+          buyer_postcode: $("#sample4_postcode").val() // 우편번호
       }, function (rsp) { // callback
-          if (rsp.success) {  // 결제 성공 했을때 → 주문완료 페이지로 이동
+          if (rsp.success) {  // 결제 성공 했을때 → 주문완료 페이지로 이동[]
           	
           } else { // 결제 실패 했을 때
-              
+              // 테스트 : 결제 성공
+              $.ajax({
+				url : "../../controller/productpaymentcontroller.jsp",
+				data : {
+					order_name : $("#name").val(), // productpayment.jsp의 이름 id 값
+					order_phone : $("#phone").val(),
+					order_address : $("#sample4_roadAddress").val()+","+$("#sample4_jibunAddress").val()+","+$("#sample4_detailAddress").val(),
+					order_pay : document.getElementById("totalpay").innerHTML,
+					order_payment : document.getElementById("payselect").innerHTML,
+					delivery_pay : 3000,
+					order_contents : document.getElementById("prequest").value
+				}, success : function(result) { // 결제성공과 DB 처리 성공시 결제주문 완료 페이지 이동
+				// 결제성공과 DB처리 성공시 결제 주문 완료 페이지 이동
+					if(result==1) {
+						location.href="productpaymentsuccess.jsp";
+					} else {
+						alert("주문 DB 오류 관리자에게 문의");
+						}
+				}
+			})
           }
       });
 }
@@ -441,7 +470,7 @@ $(document).ready(function(){ // 체크 유무 검사[jquery]
 				// is : 해당 태그에 속성 유무 확인[":속성명"] 메소드
 				$("#name").val($("#mname").val());
 				$("#phone").val($("#mphone").val());
-		} else { // 체크 해제시 금악 지음
+		} else { // 체크 해제시 공백 채움
 			$("#name").val("");
 			$("#phone").val("");
 		}
@@ -462,3 +491,44 @@ $(document).ready(function(){ // 체크 유무 검사[jquery]
 }); 
 /* 회원과 동일 체크 end */
 
+/* 결제 정보 */
+function pointcheck(mpoint) {
+	var point = document.getElementById("point").value*1;
+	
+	if(mpoint<point) {
+		alert("포인트 부족");
+		point = 0;
+	} else {
+		document.getElementById("usepoint").innerHTML = point;
+	}
+	var totalprice = document.getElementById("totalprice").innerHTML*1
+	var totaldeliverpay = document.getElementById("totaldeliverpay").innerHTML*1
+	document.getElementById("totalpay").innerHTML = totalprice + totaldeliverpay - point;
+}
+/* 결제 정보 end */
+
+/* 주문목록 스크롤[jquery] */
+var item = 2; // 기본 주문 2개를 제외한 3번째 주문 부터 
+
+// $(window) : 현재 창
+$(window).scroll(function() { // 스크롤 이벤트
+
+/* $(window).scrollTop()) : 현재 스크롤의 위치
+alert("현재 스크롤 위치 : " + $(window).scrollTop());
+alert("현재 화면의 높이[보이는 화면(보고 있는 화면)] : " + $(window).height());
+alert("문서 높이[보이지 않는 화면까지 포함] : " + $(document).height()); */
+
+// 스크롤 바닥에 닿았을 때 계산
+	if($(window).scrollTop() == $(document).height() - $(window).height()) {
+		// 계산 : (문서 전체) 현재 스크롤 위치 == 문서전체높이 - 현재 문서 높이
+		$.ajax({
+			url:"../../controller/orderlistscrollcontroller.jsp",
+			data: {item : item},
+			sucess : function(result) {
+				 $("section").append(result); // $("태그명").append(html) : 해당 태그에 html 저장
+			}
+		});
+			item++; // 스크롤이 바닥에 닿았을 때 주문 1씩 증가
+	} 
+});
+/* 주문목록 스크롤 end */

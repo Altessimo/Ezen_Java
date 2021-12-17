@@ -1,5 +1,3 @@
-<%@page import="org.apache.catalina.startup.ClassLoaderFactory.Repository"%>
-<%@page import="Test.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>

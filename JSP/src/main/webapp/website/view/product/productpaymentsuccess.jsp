@@ -4,13 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> Day04-7 로또판별기</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="header.jsp" %>
-	<%
-	int[] number = new int[6]; 
-	int[] random = new int[6];
-	 %>
+	<%@include file="../header.jsp" %>
+	
+	<div class="container"> 주문 완료 </div>
+	
 </body>
 </html>

@@ -7,23 +7,30 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+	if(session.getAttribute("loginid")!=null){
+		out.print("<script>alert('로그인이 되어 있습니다.'); </script>");
+		out.println("<script>location.href='../main.jsp';</script>");
+}
+%>
 <%@ include file="../header.jsp" %>
+
 <div class="container">
     <div class="input-form-backgroud row">
       <div class="input-form col-md-12 mx-auto">
         <h4 class="mb-3">회원가입</h4>
-        <form class="validation-form" novalidate>
+        <form id="singupform" action="../../controller/singupcontroller.jsp" method="post" class="validation-form">
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="name">아이디</label>
-              <input type="id" class="form-control" id="id">
+              <input id="id" onchange="singupcheck();" type="text" name="id" class="form-control">
               <div class="invalid-feedback">
                 아이디를 입력해주세요.
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="password">비밀번호</label>
-              <input type="password" class="form-control" id="password">
+              <input id="password" onchange="singupcheck();" type="password" name="password" class="form-control">
               <div class="invalid-feedback">
                 비밀번호를 입력해주세요.
               </div>
@@ -65,7 +72,7 @@
             </div>
             <div class="col-md-4 mb-3">
               <label for="code">이름</label>
-              <input type="text" class="form-control" id="code" placeholder="" required>
+              <input id="name" onchange="singupcheck();" type="text" name="name" class="form-control">
               <div class="invalid-feedback">
                 이름을 입력해주세요.
               </div>

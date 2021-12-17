@@ -1,3 +1,8 @@
+<%@page import="Dto.Login"%>
+<%@page import="Test.Board"%>
+<%@page import="java.io.FileInputStream"%>
+<%@page import="Test.Member"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,6 +22,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+<%
+	Login login=(Login)session.getAttribute("login");
+	String loginid = null;
+	if(login != null) {loginid = login.getM_id();}
+	
+	ArrayList<Board> boards=new ArrayList<>();
+	FileInputStream fileInputStream=new FileInputStream("C:/Users/505/git/Ezen_Java/JSP/src/main/java/Test/boardlist.txt");
+	byte[] bytes= new byte[1000];
+	fileInputStream.read(bytes);
+	String sboard=new String(bytes);
+	String[] ssboard=sboard.split("\n");
+	for(int i=0; i<ssboard.length-1; i++){
+		Board board = new Board(ssboard[i].split(",")[0], ssboard[i].split(",")[1], ssboard[i].split(",")[2]);
+				boards.add(board);
+	}
+	fileInputStream.close();
+%>
+
 <!-- 헤더 시작 -->
 <div class="fixed-top bg-white">
 	<div class="container">
@@ -26,16 +49,24 @@
 		</div>
 		<div class="row justify-content-between align-items-center">
 			<div class="col-4 offset-3 text-center">
-				<a href="/Ezen_Jsp/Test/view/main.jsp" class="p-3 mb-2 bg-danger text-white">
-				<span style="font-size: 2rem"> 게임 구입 페이지 </span></a>
+				<a href="/Ezen_Jsp/Test/view/main.jsp" class="heder_logo"> 게임 구입 페이지 </a>
 			</div>
-			<div class="col-3 d-flex justify-content-end align-items-center">
-				<ul class="nav header-topmamu">
-					<li><a href="/Ezen_Jsp/Test/view/member/login.jsp" class="p-2 mb-1 bg-info text-white"> 로그인 </a>
-					<li><a href="/Ezen_Jsp/Test/view/member/singup.jsp" class="p-2 mb-1 bg-info text-white"> 회원가입 </a>
-					<li><a href="/Ezen_Jsp/Test/view/board/boardlist.jsp" class="p-2 mb-1 bg-info text-white"> 게시판 </a>
-				</ul>
-			</div>
+			
+			<div class="col-md-4 d-flex justiy-content-end">
+						<ul class="nav">
+							<% if(loginid != null){ %>
+							
+							<li> <span  class="header_menu"> <%=loginid %>님 </span> </li>
+							<li><a href="/Ezen_Jsp/Test/view/member/memberinfo.jsp" class="heder_menu"> 회원정보 </a></li>
+							<li><a href="/Ezen_Jsp/Test/controller/logoutcontroller.jsp" class="heder_menu"> 로그아웃 </a></li>
+							<%
+							} else {
+							%>
+							<li><a href="/Ezen_Jsp/Test/view/member/login.jsp" class="heder_menu"> 로그인 </a></li>
+							<li><a href="/Ezen_Jsp/Test/view/member/signup.jsp" class="heder_menu"> 회원가입 </a></li>
+							<% } %>
+						</ul>
+					</div>
 			</div>
 		</header>
 		
@@ -49,7 +80,7 @@
 			<li class="nav-item"> <a href="#" class="nav-link"> 닌텐도 스위치 </a></li>
 			<li class="nav-item"> <a href="#" class="nav-link"> 닌텐도 3DS </a></li>
 			<li class="nav-item"> <a href="#" class="nav-link"> 소프트웨어 </a></li>
-			<li class="nav-item"> <a href="board/boardlist.jsp" class="nav-link"> 고객센터 </a></li>
+			<li class="nav-item"> <a href="/Ezen_Jsp/Test/view/board/boardlist.jsp" class="nav-link"> 고객센터 </a></li>
 			<li class="nav-item"> <a href="#" class="nav-link"> News </a></li>
 			<li class="nav-item"> <a href="#" class="nav-link"> 다운로드 구입 </a></li>
 		</ul>

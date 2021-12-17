@@ -32,8 +32,7 @@
 				<tr>
 					<td colspan="5" class="text-center"> 장바구니에 상품이 없습니다. </td>
 				</tr>
-			<% 
-			} else {
+			<% } else {
 				int i = 0; // 반복 인덱스 변수
 				for(Cart cart : carts) {
 				Product product= ProductDao.getProductDao().getproduct(cart.getP_num()); // 제품번호에 해당하는 제품정보 가져오기
@@ -71,9 +70,11 @@
 			</tr>
 			<% i++; } } %>
 		</table>
+		
 			<div class="col-md-3">
 				<button onclick="cartdelete('all', '0', '0')" class="form-control"> 모두 삭제 </button>
 			</div>
+			
 			<div class="text-center totalbox">
 				<p> 총 상품 가격 <span class="carttotal"><%=decimalFormat.format(totalprice) %></span>
 				+ 총 배송비 <span class="carttotal">3,000</span>
@@ -85,6 +86,7 @@
 				<a href="productpayment.jsp">
 					<button class="form-control bg-success text-white p-3"> 주문하기 </button></a>
 				</div>
+				
 				<div class= "col-md-3">
 					<button class="form-control p-3"> 쇼핑하기 </button>
 				</div>

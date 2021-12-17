@@ -45,12 +45,14 @@
 			<tr class="text-center">
 				<th>이미지</th> <th>상품정보</th> <th>수량</th> <th>가격</th>
 			</tr>
+			
 			<%
 			for(Cart cart : carts) {
 				Product product = ProductDao.getProductDao().getproduct(cart.getP_num());
 				
 				totalprice += cart.getP_count()*product.getP_price();
 			%>
+			
 			<tr>
 				<td width="10%"><img alt="" src="../../upload/<%=product.getP_img()%>" style="max-width: 100%">  </td>
 				<td width="50%">
@@ -72,18 +74,19 @@
 		</table>
 		<br><br>
 		<div class="row">
+		
 			<div class="col-md-6">
 				<h3> 배송 정보 </h3>
 					<span class="priew"> 받는 사람 정보 </span> <input type="checkbox" id="checkbox"> 회원과 동일
 						<div class="row"> <!-- 3:8 -->
 							<div class="col-md-3 m-2"> <label>이름</label> </div>
-							<div class="col-md-8"><input id="name" onchange="singupcheck();" type="text" name="name" class="form-control" maxlength="15"></div>
+							<div class="col-md-8"><input id="name" type="text" name="name" class="form-control" maxlength="15"></div>
 						</div>
 					
 						<div class="row">	<!-- 3:8 -->
 							<div class="col-md-3 m-2"> <label>연락처</label> </div>
 							<div class="col-md-8">
-								<input id="phone" onchange="singupcheck();" type="text" name="phone" class="form-control" placeholder="000-0000-0000">
+								<input id="phone" type="text" name="phone" class="form-control" placeholder="000-0000-0000">
 							</div>
 						</div>
 					
@@ -106,11 +109,53 @@
 							<input type="text" id="sample4_detailAddress" name="address4" placeholder="상세주소" class="form-control">
 				</div>
 				
-			<div class="col-md-6">
-				<h3> 결제 정보 </h3>
-					<input id="totalprice" value="<%=totalprice %>">
-					<button onclick="payment();"> 카드결제 </button>
-			</div>
+				<div class="col-md-6 border p-3">
+					<h3> 결제 정보 </h3>
+					<h6> 결제 내용 </h6>
+						<div class="row">	<!-- 3:8 -->
+						<div class="col-md-3 m-2"> <label> 마일리지 </label> </div>
+						<div class="col-md-6">
+							<input type="text" id="point" placeholder="사용할 포인트" class="form-control"><br>
+							사용가능 마일리지 : <%=member.getM_point() %>
+						</div>
+							<div class="col-md-2">
+								<button class="btn btn-info" onclick="pointcheck('<%=member.getM_point()%>')">사용</button>
+							</div>
+							</div> <hr>
+							
+							<h6> 결제 금액 </h6>
+								<div class="row">
+									<div class="col-md-3"> 총 주문 금액 </div>
+									<div class="col-md-9 text-right payment">
+										<span id="totalprice" class="payment"><%=totalprice %></span>
+										(총 주문상품 수 : <%=carts.size() %>)
+									</div>
+									
+									<div class="col-md-3"> 총 배송비 </div>
+									<div class="col-md-9 text-right"><span id="totaldeliverpay" class="payment">3000</span></div>
+									
+									<div class="col-md-3"> 사용 포인트 </div>
+									<div class="col-md-9 text-right"><span id="usepoint" class="payment">0</span></div>
+									
+									<div class="col-md-3"> 최종 결제금액 </div>
+									<div class="col-md-9 text-right"><span id="totalpay" class="payment"><%=totalprice+3000 %></span></div>
+								</div> <hr>
+								
+								<h6> 결제 방식 </h6>
+								<div class="row d-flex justify-conyent-around">
+									<button onclick="paymentselect('samsung');" class="btn btn-outline-danger col-md-2"> 삼성페이 </button>
+									<button onclick="paymentselect('card');" class="btn btn-outline-danger col-md-2"> 신용카드 </button>
+									<button onclick="paymentselect('trans');" class="btn btn-outline-danger col-md-2"> 계좌이체 </button>
+									<button onclick="paymentselect('vbank');" class="btn btn-outline-danger col-md-2"> 가상계좌 </button>
+									<button onclick="paymentselect('phone');" class="btn btn-outline-danger col-md-2"> 휴대폰 </button>
+								</div>
+								
+								<div id="payselect"></div>
+								<div class="row d-flex justify-content-around my-5">
+									<button class="col-md-5 form-control p-3 bg-success text-white" onclick="payment();"> 결제하기 </button>
+									<button class="col-md-5 form-control p-3"> 취소하기 </button>
+								</div>
+				</div>
 			</div>
 		</div>
 		<br><br><br><br><br><br><br><br><br><br><br><br>

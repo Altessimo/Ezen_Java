@@ -158,6 +158,21 @@ public class ProductDao extends DB {
 			if(rs.next()) { // 좋아요 기존에 존재하면
 				return true;
 			}
-		} catch (Exception e) { } return false; // DB 오류 
+		} catch (Exception e) { } return false; // DB 오류
+	}
+	
+	// 9. 실시간 재고가 0이면 제품 상태를 품절로 업데이트 처리
+	public void stockupdate() {
+		// 재고가 0인 제품 찾기
+		String sql="select * from product where p_stock = 0";
+		try {
+			ps=con.prepareStatement(sql);
+			rs=ps.executeQuery(); // 검색결과는 다수이기 때문에
+			while(rs.next()) {
+				sql="update product set p_active = 3 where p_num ="+rs.getInt(1);
+				ps=con.prepareStatement(sql);
+				ps.executeUpdate();
+			}
+		} catch (Exception e) { }
 	}
 }
