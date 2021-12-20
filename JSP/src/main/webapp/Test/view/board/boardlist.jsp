@@ -8,15 +8,10 @@
 </head>
 <body>
 <%@ include file="../header.jsp" %>
-<%
-	
-%>
-
 
 	<div class="container my-5">
 		<h3> 게시판 </h3>
 		<p> 게시물 목록 </p>
-				<a href="boardwrite.jsp"><button>글작성</button></a>
 			
 		<div class="col-md-5 offset-7 input-group my-3">
 			<select class="custom-select col-cmd-3" name="key">
@@ -33,13 +28,6 @@
 				<tr class="table-info">
 					<th>번호</th><th>제목</th><th>작성자</th><th>작성일</th><th>조회수</th>
 				</tr>
-				<% for(int i=0; i<boards.size(); i++) { %>
-			<tr>
-				<td><%=(i+1) %></td>
-				<td><a href="boardview.jsp?bum=?<%=i %>">
-				<%=boards.get(i).getTitle() %></a></td>
-			</tr>
-			<% } %>
 		</table>
 	</div>
 	<nav aria-label="Page navigation example">

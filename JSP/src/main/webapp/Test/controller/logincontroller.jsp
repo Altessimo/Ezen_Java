@@ -14,6 +14,7 @@
 	String password = request.getParameter("password");
 	
 	boolean result = MemberDao.getmemberDao().login(id, password);
+
 		if(result){
 			int m_num= MemberDao.getmemberDao().getmembernum(id);
 			Login login = new Login(m_num, id);

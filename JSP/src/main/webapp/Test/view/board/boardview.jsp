@@ -1,3 +1,4 @@
+<%@page import="Test2.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,18 +9,27 @@
 </head>
 <body>
 	<%@ include file="../header.jsp" %>
+	
+	
 <div class="container">
+	<h3> 게시물 상세 페이지 </h3>
+	<a href="boardlist.jsp"><button> 목록보기 </button></a>
 	<div class="row">
 		<div class="offset-1 col-md-10 offset-1">
-			<input type="text" placeholder="제목" class="form-control my-1">
-			<textarea rows="20" cols="내용" name="contents" class="form-control my-1"></textarea>
-			 <input type="file" name="file">
-			<div class="offset-11 my-1">
-				<a href="/Ezen_Jsp/Test/view/board/boardview.jsp"><button class="btn btn-success">글 삭제하기</button></a>
-			</div>
-			<div class="offset-11 my-1">
-				<a ><button class="btn btn-success">글 등록하기</button></a>
-			</div>
+			<table class="table">
+				<tr>
+					<td style="width: 20%"> 번호 : </td>
+					<td> <%=bnum %> </td>
+				</tr>
+				<tr>
+					<td> 제목 : </td>
+					<td colspan="2"> <%=boards.get(bnum).getTitle() %> </td>
+				</tr>
+				<tr>
+					<td style="height: 300px;"> 내용 : </td>
+					<td colspan="2"> <%=boards.get(bnum).getContents() %> </td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </div>

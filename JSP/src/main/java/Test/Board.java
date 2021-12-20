@@ -1,11 +1,15 @@
 package Test;
 
+import Dao.MemberDao;
+
 public class Board {
 
 	// 1. 필드
+	
 	private String title;
 	private String contents;
 	private String writer;
+	
 	
 	// 2. 생성자
 	public Board() {	}
@@ -42,3 +46,4 @@ public class Board {
 	}
 	
 }
+	

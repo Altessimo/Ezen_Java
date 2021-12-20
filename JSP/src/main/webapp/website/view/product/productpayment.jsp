@@ -15,10 +15,6 @@
 </head>
 <body>
 	<%@ include file="../header.jsp"%>
-	
-	<!-- 결제 API iamport.payment.js -->
-	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
-	
 	<%
 		String sname = "cart"+ login.getM_id();
 		ArrayList<Cart> carts = (ArrayList<Cart>)session.getAttribute(sname); // 카트 세션 호출

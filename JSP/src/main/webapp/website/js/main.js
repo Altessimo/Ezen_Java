@@ -80,7 +80,7 @@ $(function(){
 	}); // 버튼을 클릭 했을때 함수 끝 / 1. url 2. data 3. 
 }); // 전체 함수 끝
 
-/* 아이디 중복체크[ajax] */
+/* 아이디 중복체크[ajax] 혼자서 해야 할 줄 알아야함 */
 $(function() {
 	$("#id").change(function(){
 	// 비동기식 : $.ajax({속성명:"값"", 속성명:"값", 속성명:"값"});
@@ -532,3 +532,89 @@ alert("문서 높이[보이지 않는 화면까지 포함] : " + $(document).hei
 	} 
 });
 /* 주문목록 스크롤 end */
+/* Json */
+/* js에서 변수 저장하는 방법
+1. var 변수명 = 값 : 하나의 값 저장
+2. var 배열명 = [  ] : 여러개 값 저장
+	var arr = [1, 2, 3, 4];
+3. var json = {  } : 여러개 엔트리(키:값) 저장
+	// 값 호출시 → 키를 이용함
+		// json변수명[키] → 값 호출
+			// json 키 호출시 → Object.keys(json 변수명) : 모든 키 호출
+		// json 활용[배열과 중첩 사용가능]
+			// 키 : [   ]
+		// Db 데이터를 → json 변환[json 통신]
+*/
+// var : 변수 자료형[js는 자료형이 없다]
+// 배열 형식 [ ]
+// json 형식 { } [java map 형식]
+/*var test = {'id':'1234', 'password':'1234'}
+// 키 : 값 → 한쌍[엔트리]
+
+var keys = Object.keys(test); // Object.keys(json 변수명) : 모든 키 호출[ ]
+for(var i=0; i<keys.length; i++) { // 키 개수 만큼 반복
+var key = keys[i];
+	alert("키 : "+key[i]+" 값 : "+test[key]); // 키 메시지 출력
+}*/
+	// json 형식으로 가져오기
+	// $.getJSON('경로/파일명', function(json인수명){})
+$.getJSON('../../controller/productchart.jsp', function(jsonObject){
+	var keyval = []; // 모든 키를 저장하는 배열
+	var valueval = []; // 모든 값을 저장하는 배열
+	
+	var keys = Object.keys(jsonObject);
+			// Object.keys(json 변수명) : 모든 키 호출[ ]
+	for(var i=0; i<keys.length; i++) { // 키 개수 만큼 반복
+		keyval[i]=keys[i]; // i번째 키 저장
+		valueval[i]=jsonObject[keyval[i]]; // i번째 값 저장
+	}
+	
+		/* chart 만들기 */
+		// 1. 차트를 표시할 위치선정[canvas 태그 id 동일]
+		var context = document.getElementById("mychart").getContext("2d");
+		// 2. 차트 변수 만들기
+		// var 차트이름 = new Chart("차트위치",{차트속성:값1, 차트속성:값2, 차트속성:값3});
+		var myChart = new Chart(context, {
+			type : 'bar', // 차트의 형태[bar : 막대차트, line : 선 차트 등]
+			data : { // 차트의 데이터[가로축, 세로축, 계열값] (계열 : 실제 값) 시작
+				labels : keyval, // 가로축
+				datasets : [ // 계열 추가 [{계열1},{계열2},{계열3}]
+					{ // 범례 = 하나의 계열
+					lable : '과일별 판매수', // 계열(=범례) 이름
+					data : valueval, // 계열 값(실제 값)
+					backgroundColor: [	// 계열색상
+							                'rgba(255, 99, 132, 0.2)',
+							                'rgba(54, 162, 235, 0.2)',
+							                'rgba(255, 206, 86, 0.2)',
+							                'rgba(75, 192, 192, 0.2)',
+							                'rgba(153, 102, 255, 0.2)',
+							                'rgba(255, 159, 64, 0.2)'
+							            ],
+									borderColor: [	// 계열 테두리 색상
+							                'rgba(255, 99, 132, 1)',
+							                'rgba(54, 162, 235, 1)',
+							                'rgba(255, 206, 86, 1)',
+							                'rgba(75, 192, 192, 1)',
+							                'rgba(153, 102, 255, 1)',
+							                'rgba(255, 159, 64, 1)'
+							            ],
+							      	borderWidth: 1	// 계열 테두리 굵기
+							  	},
+							]
+						},
+					options: {	// 차트 옵션 
+				    	scales: {	
+				       		yAxes: 	// y : 세로축 
+								[
+				            		{
+				               			ticks: {	
+												beginAtZero: true // 기본값 : 0부터 시작 
+												}
+				                   	}
+				             	]
+				           		}
+				        	}
+					});
+				/* 차트 만들기 end */
+		});
+/* json end */
