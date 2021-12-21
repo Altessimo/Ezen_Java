@@ -679,24 +679,24 @@ function pchange(){
 }
 /*  end */
 /* kakao 지도 Start */
-	var type = 0;
-function map(i, lat, lng) {
-	if(type==0){
-		document.getElementById('map'+i).style.display="";
-		var mapContainer = document.getElementById('map'+i), // 지도를 표시할 div 
-		    mapOption = { 
-		        center: new kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
-		        level: 1 // 지도의 확대 레벨[1 : 최대 확대]
-		    };
-		   type++;
-	
-		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-		var map = new kakao.maps.Map(mapContainer, mapOption);
-	} else {
-		document.getElementById('map'+i).style.display="none";
-		type=0;
+var type = 0;
+	function map(i, lat, lng) {
+		if(type==0){
+			document.getElementById('map'+i).style.display="";
+			var mapContainer = document.getElementById('map'+i), // 지도를 표시할 div 
+			    mapOption = { 
+			        center: new kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
+			        level: 1 // 지도의 확대 레벨[1 : 최대 확대]
+			    };
+			   type=1;
+		
+			// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+			var map = new kakao.maps.Map(mapContainer, mapOption);
+		} else {
+			document.getElementById('map'+i).style.display="none";
+			type=0;
+		}
 	}
-}
 /* kakao 지도 end */
 
 

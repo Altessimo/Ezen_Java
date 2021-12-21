@@ -49,7 +49,7 @@
 		<td><%=content.get("facilityName") %></td> <!-- json명.get("키") -->
 		<td><%=content.get("address") %></td>
 		<td><%=content.get("phoneNumber") %></td>
-		<td> <button id="maplist" onclick='map(<%=i%>, <%=content.get("lat") %>, <%=content.get("lng") %>)'> 지도보기 </button></td>
+		<td> <button onclick='map(<%=i%>, <%=content.get("lat") %>, <%=content.get("lng") %>)'> 지도보기 </button></td>
 		
 	</tr>
 	<tr>
