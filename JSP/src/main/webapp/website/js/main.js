@@ -558,7 +558,7 @@ var key = keys[i];
 }*/
 	// json 형식으로 가져오기
 	// $.getJSON('경로/파일명', function(json인수명){})
-$.getJSON('../../controller/productchart.jsp', function(jsonObject){
+$.getJSON('../../controller/productchart.jsp?type=1', function(jsonObject){
 	var keyval = []; // 모든 키를 저장하는 배열
 	var valueval = []; // 모든 값을 저장하는 배열
 	
@@ -571,7 +571,7 @@ $.getJSON('../../controller/productchart.jsp', function(jsonObject){
 	
 		/* chart 만들기 */
 		// 1. 차트를 표시할 위치선정[canvas 태그 id 동일]
-		var context = document.getElementById("mychart").getContext("2d");
+		var context = document.getElementById("mychart").getContext('2d');
 		// 2. 차트 변수 만들기
 		// var 차트이름 = new Chart("차트위치",{차트속성:값1, 차트속성:값2, 차트속성:값3});
 		var myChart = new Chart(context, {
@@ -618,3 +618,178 @@ $.getJSON('../../controller/productchart.jsp', function(jsonObject){
 				/* 차트 만들기 end */
 		});
 /* json end */
+
+$.getJSON('../../controller/productchart.jsp?type=2', function(jsonObject){
+	var productname=[]; // 제품 별 이름 배열
+	var productcount=[]; // 제품 별 판매량 배열
+	
+	var keys2 = Object.keys(jsonObject);
+	for(var i=0; i<keys2.length; i++){
+		productname[i]=keys2[i]; // json 변수명에 있는 모든 키를 이름배열 저장
+		productcount[i]=jsonObject[productname[i]]; // json변수명에 있는 값을 ????
+								// json 변수명[키] → 값
+	}
+/* 제품별 판매량 */
+var context2 = document.getElementById("productchart").getContext('2d');
+var myChart2 = new Chart(context2, {
+	type : 'line', // 차트의 형태[bar : 막대차트, line : 선 차트 등]
+			data : { // 차트의 데이터[가로축, 세로축, 계열값] (계열 : 실제 값) 시작
+				labels : productname, // 가로축
+				datasets : [ // 계열 추가 [{계열1},{계열2},{계열3}]
+					{ // 범례 = 하나의 계열
+					lable : '제품별 판매량', // 계열(=범례) 이름
+					data : productcount // 계열 값(실제 값)
+				     }
+				]
+				}
+});
+/* 제품별 판매량 end */
+});
+
+/* 목록상자 데이터 변경되면 */
+function pchange(){
+	var p_num = $("#pselect").val(); // 해당 아이디의 값 가져오기
+	$.getJSON('../../controller/productchart.jsp?type=3&p_num='+p_num, function(jsonObject){
+		
+	var productdate=[]; // 제품 별 이름 배열
+	var productcount2=[]; // 제품 별 판매량 배열
+	
+	var keys3 = Object.keys(jsonObject);
+	for(var i=0; i<keys3.length; i++){
+		productdate[i]=keys3[i]; // json 변수명에 있는 모든 키를 이름배열 저장
+		productcount2[i]=jsonObject[productdate[i]]; // json변수명에 있는 값을 ????
+								// json 변수명[키] → 값
+	}
+		
+		var context3= document.getElementById("productdatechart").getContext('2d');
+		var myChart3 = new Chart(context3, {
+			type : 'line', // 차트의 형태[bar : 막대차트, line : 선 차트 등]
+			data : { // 차트의 데이터[가로축, 세로축, 계열값] (계열 : 실제 값) 시작
+				labels : productdate, // 가로축
+				datasets : [ // 계열 추가 [{계열1},{계열2},{계열3}]
+					{ // 범례 = 하나의 계열
+					lable : '제품별 판매 추이', // 계열(=범례) 이름
+					data : productcount2 // 계열 값(실제 값)
+				     }
+				]
+				}
+});
+/* 제품별 판매량 end */
+	});
+}
+/*  end */
+/* kakao 지도 Start */
+	var type = 0;
+function map(i, lat, lng) {
+	if(type==0){
+		document.getElementById('map'+i).style.display="";
+		var mapContainer = document.getElementById('map'+i), // 지도를 표시할 div 
+		    mapOption = { 
+		        center: new kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
+		        level: 1 // 지도의 확대 레벨[1 : 최대 확대]
+		    };
+		   type++;
+	
+		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+		var map = new kakao.maps.Map(mapContainer, mapOption);
+	} else {
+		document.getElementById('map'+i).style.display="none";
+		type=0;
+	}
+}
+/* kakao 지도 end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*test*/
+function excelTest() {
+    var form = $('#excelForm')[0];
+
+    // FormData 객체 생성
+    var formData = new FormData(form);
+
+    // 코드로 동적으로 데이터 추가 가능.
+		// formData.append("userId", "testUser!");
+
+$.ajax({
+    type: "POST",
+    enctype: 'multipart/form-data',
+    url: "/api/playlists/14/2017-07-21/mapper/excel",
+    data: formData,
+    processData: false,
+    contentType: false,
+    cache: false,
+    timeout: 600000,
+    success: function (data) {
+        console.log("SUCCESS : ", data);
+    },
+    error: function (e) {
+        console.log("ERROR : ", e);
+    }
+});
+}

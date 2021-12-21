@@ -19,12 +19,14 @@
    <!-- 부트스트랩 js 설정 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<!-- 다음 주소 api js 호출 -->
+	<!-- 다음 우편 주소 api js 호출 -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<!-- 결제 API iamport.payment.js -->
 	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 	<!-- chart Api -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<!-- Kakao Map(지도) Api -->
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b028ade5d3f1b82fd18a67af94de38ea"></script>
 	<!-- 본인 js 호출 -->
 	<script type="text/javascript" src="/Ezen_Jsp/website/js/main.js"></script>
 	

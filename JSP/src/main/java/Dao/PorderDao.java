@@ -1,5 +1,7 @@
 package Dao;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -103,8 +105,8 @@ public class PorderDao extends DB {
 		String sql = "select substring_index(order_date, ' ', 1), count(*)" + " from porder group by substring_index(order_date, ' ', 1)";
 		
 		try {
-			ps=con.prepareStatement(sql);
-			rs=ps.executeQuery();
+			PreparedStatement ps4=con.prepareStatement(sql);
+			ResultSet rs4=ps4.executeQuery();
 			while(rs.next()) { // 검색된 배열로  추가
 				jsonObject.put(rs.getString(1), rs.getInt(2));
 								// 날짜, 주문수 → 엔트리 저장[키:값]
@@ -113,5 +115,43 @@ public class PorderDao extends DB {
 		} catch (Exception e) { } return null;
 	}
 	
+	// 제품별 판매량
+	public JSONObject getpcount() {
+		JSONObject jsonObject = new JSONObject();
+		String sql="select p_num, sum(p_count) from porderdetail group by p_num";
+		try {
+			ps=con.prepareStatement(sql);
+			rs=ps.executeQuery();
+			while(rs.next()) {
+				sql="select p_name from product where p_num= "+rs.getInt(1);
+				PreparedStatement ps2=con.prepareStatement(sql);
+				ResultSet rs2=ps2.executeQuery();
+				if(rs2.next()) {
+					jsonObject.put(rs2.getString(1), rs.getInt(2));
+								// sql2 결과[제품명] / sql 결과[제품번호, 제품총판매수]
+				}
+			}
+			return jsonObject;
+		} catch (Exception e) { } return null;
+	}
+	
+	// 제품별 날짜 판매량
+	public JSONObject getpdatecount(int p_num){
+		JSONObject jsonObject = new JSONObject();
+		String sql="select order_num, p_count from porderdetail where p_num="+p_num;
+		try {
+			ps=con.prepareStatement(sql);
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				sql = "select substring_index(order_date, ' ', 1) from porder where order_num="+rs.getInt(1);
+				PreparedStatement ps2=con.prepareStatement(sql);
+				ResultSet rs2=ps2.executeQuery();
+				if(rs2.next()) {
+					jsonObject.put(rs2.getString(1), rs.getInt(2));
+				}
+			}
+			return jsonObject;
+		} catch (Exception e) { } return null;
+	}
 }
 
