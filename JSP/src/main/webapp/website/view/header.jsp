@@ -82,7 +82,7 @@
 							<li class="nav-item"><a href="#" class="nav-link">여름</a></li>
 							<li class="nav-item"><a href="#" class="nav-link">가을</a></li>
 							<li class="nav-item"><a href="#" class="nav-link">겨울</a></li>
-							<li class="nav-item"><a href="#" class="nav-link">이벤트</a></li>
+							<li class="nav-item"><a href="/Ezen_Jsp/website/view/member/chatting.jsp" class="nav-link">실시간 채팅</a></li> 
 							<li class="nav-item"><a href="#" class="nav-link">방문후기</a></li>
 							<li class="nav-item"><a href="/Ezen_Jsp/website/view/board/boardlist.jsp" class="nav-link">고객센터</a></li> 
 							<li class="nav-item"><a href="/Ezen_Jsp/website/view/product/productcart.jsp" class="nav-link">장바구니</a></li>

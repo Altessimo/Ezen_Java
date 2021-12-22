@@ -63,7 +63,7 @@
 				</a>
 				<div class="card-body">
 					<p class="card-text">
-					<h4> <%= product.getP_name() %></h4></p>
+					<h4> <%= product.getP_name() %></h4>
 					<hr>
 				<p class="item"> <%= product.getP_contents() %> <br><br>
 					<span class="price"> <%= product.getprice( ) %> 원 </span><br>

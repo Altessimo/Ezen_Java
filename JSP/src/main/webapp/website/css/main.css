@@ -55,3 +55,57 @@ h1,h2,h3,h4,h5,h6{font-family:'CookieRun-Regular';}
 	font-family: 'CookieRun-Regular';
 	font-size: 1.2rem;
 }
+
+/* 채팅창 */
+#msgbox{
+	height: 500px; /* 높이 */
+	background: #b2c7d9; /* 배경색 */
+	margin-bottom: 10px; /* 바깥 여백 */
+	border: 1px solid #eeeeee; /* 테두리 */
+	border-radius:  30px; /* 모서리 곡선 */
+	overflow: outo; /* 박스 크기보다 내용물이 넘쳤을때 스크롤 */
+	/* js and edge : 스크롤 숨기기 */
+	-ms-overflow-style: none;
+}
+
+/* 스크롤 표시 숨기기 : 브라우저마다 다름 */
+#msgbox::-wabkit-scrollbar{ /* 크롬, 사파리 */
+	display: none;
+}
+
+/* 보내는 메시지 */
+.from{
+	font-family: 'CookieRun-Regular';
+	font-size: 1.0rem;
+	background: #ffeb33;
+	border-radius:  10px;
+	padding: 10px;
+}
+
+/* 메시지 시간 */
+.msgtime{
+	font-size: 0.8rem;
+}
+
+/* 받는 메시지 */
+.to{
+	font-family: 'GongGothicBold';
+	font-size: 1.0rem;
+	background: white;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+/* 현재 접속 된 회원 */
+#mlist{
+	height: 350px; /* 높이 */
+	background: white; /* 배경색 */
+	margin-bottom: 10px; /* 바깥 여백 */
+	border: 1px solid #eeeeee; /* 테두리 */
+	border-radius:  30px; /* 모서리 곡선 */
+	overflow: outo; /* 박스 크기보다 내용물이 넘쳤을때 스크롤 */
+}
+.profile{
+	font-family: 'GongGothicBold';
+	font-size: 0.8rem;
+}
