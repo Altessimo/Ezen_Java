@@ -66,6 +66,7 @@
 		
 		 // 입력이 없을떄 유효성 검사 {전송막기}
 		 if(msginput==""){return;}
+		 
 		// 날짜
 		 let today = new Date(); // js에서 현재 날짜/시간 객체
 		 var time = today.toLocaleTimeString(); // 시간만 가져오기
@@ -90,9 +91,9 @@
 		 // 엔터를 눌렀을떄
 		 if(window.event.keyCode==13){ // ★ https://blog.lael.be/post/75 윈도우 이벤트 키코드 중에 13번이 엔터
 	
-			 
 		// 1. 입력창에 입력된 데이터를 가져온다
 		var msginput = document.getElementById("msginput").value;
+		 
 		// 날짜
 		 let today = new Date(); // js에서 현재 날짜/시간 객체
 		 var time = today.toLocaleTimeString(); // 시간만 가져오기
@@ -101,7 +102,6 @@
 		// 입력이 없을떄 유효성 검사 {전송막기}
 		 if(msginput==""){return;}
 		 
-		
 		 // 입력 된 문자와 날짜를 채팅방 div에 추가
 		msgbox.innerHTML +=
 			"<div class='d-flex justify-content-end mx-2 my-2'><span class='msgtime d-flex align-items-end'>"+time+"</span><span class='from mx-1'>"+msginput+"</span></div>";
@@ -124,8 +124,8 @@
 			 "<div class='d-flex justify-content-start mx-2 my-2'><span class='to mx-1'>"+msg+"</span><span class='msgtime d-flex align-items-end'>"+time+"</span></div>";
 		msgbox.scrollTop=msgbox.scrollHeight; // 현 스크롤 위쪽 위치 = 스크롤 전체 높이[바닥]
 	}
-		
-	
+	 
+	 
 </script>
 </body>
 </html>
