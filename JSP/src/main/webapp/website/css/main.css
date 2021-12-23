@@ -105,7 +105,15 @@ h1,h2,h3,h4,h5,h6{font-family:'CookieRun-Regular';}
 	border-radius:  30px; /* 모서리 곡선 */
 	overflow: outo; /* 박스 크기보다 내용물이 넘쳤을때 스크롤 */
 }
+
 .profile{
 	font-family: 'GongGothicBold';
 	font-size: 0.8rem;
+}
+
+/* 방 입장 */
+.roomstart{
+	font-family: 'GongGothicBold';
+	font-size: 0.8rem;
+	background-color: #eeeeee;
 }
