@@ -35,10 +35,10 @@
 	%>
 	
 	<%
-	Login login=(Login)session.getAttribute("login");
-	String loginid = null; // 
-	if(login != null) {loginid = login.getM_id();}
-	// 세션이 있을 경우에만 로그인을 해야하는데 없는 경우엔 Null 값이 계속 들어감
+		Login login=(Login)session.getAttribute("login");
+		String loginid = null; // 
+		if(login != null) {loginid = login.getM_id();}
+		// 세션이 있을 경우에만 로그인을 해야하는데 없는 경우엔 Null 값이 계속 들어감
 	%>
 	
 	<!-- 헤더 start -->

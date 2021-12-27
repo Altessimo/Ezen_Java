@@ -21,13 +21,6 @@ JSP
 	Jsp를 요청하면 서블릿으로 변환
 	
 
-form
-action : "이동할 페이지 경로"
-method : 전송방식
-	post : 
-	get : 
-	
-	
 지시자
 	1. page 지시자 : 페이지 속성
 		1. <%@ page info="페이지속성내용">
